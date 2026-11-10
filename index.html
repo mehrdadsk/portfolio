@@ -16,6 +16,7 @@
   <title>Mehrdad Shoae Kazemi — Data Engineer & Analyst</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
+  <script src="./hero.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,37 +39,62 @@
     </header>
 
     <main id="main">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-aura" aria-hidden="true"></div>
+      <section class="hero section-shell hero-v2" aria-labelledby="hero-title">
+        <div class="hero-grid-haze" aria-hidden="true"></div>
         <div class="hero-copy">
           <div class="eyebrow"><span class="live-dot"></span><span id="hero-status">OPEN TO MEANINGFUL DATA CHALLENGES</span></div>
-          <div class="hero-mini">DATA ENGINEERING <span>✳</span> DATA SCIENCE <span>✳</span> BIOINFORMATICS</div>
-          <h1 id="hero-title">Turning <em>complex data</em> into work people can <span class="accent-mark">trust.</span></h1>
-          <p class="hero-lede" id="hero-description">I build reliable data foundations, reusable scientific workflows and evidence that helps teams make confident decisions.</p>
-          <div class="hero-buttons"><a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="./cv.html">View résumé <span aria-hidden="true">↗</span></a></div>
-          <div class="hero-footnote"><span class="location-pin" aria-hidden="true">⌁</span> Based near Copenhagen, Denmark <span class="hero-divider"></span> Healthcare & beyond</div>
-        </div>
-        <div class="hero-visual" aria-label="Abstract illustration of nodes linking complex datasets into a validated workflow">
-          <canvas id="hero-canvas" aria-hidden="true"></canvas>
-          <div class="visual-frame">
-            <div class="visual-topline"><span>DATA / SYSTEMS</span><span class="faux-indicators" aria-hidden="true">● ● ●</span></div>
-            <div class="visual-center">
-              <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div>
-              <div class="node node-one">01</div><div class="node node-two">02</div><div class="node node-three">03</div><div class="node node-four">04</div>
-              <div class="central-orb"><span class="orb-ring"></span><span class="orb-glyph">M</span><span class="orb-core"></span></div>
-              <span class="orbit-label label-a">INGEST</span><span class="orbit-label label-b">VALIDATE</span><span class="orbit-label label-c">ANALYZE</span>
-            </div>
-            <div class="visual-bottom"><div><span class="tiny-label">WORKFLOW STATUS</span><strong><i class="status-dot"></i> Traceable & reliable</strong></div><span class="visual-code">DATA → INSIGHT</span></div>
+          <div class="hero-self">HELLO, I'M MEHRDAD <span aria-hidden="true">✳</span></div>
+          <h1 id="hero-title">I make <em>complex data</em><br><span class="hero-type">make sense<span class="hero-endpoint">.</span></span></h1>
+          <p class="hero-lede" id="hero-description">I build trustworthy data systems and turn scientific complexity into useful insight.</p>
+          <div class="hero-role-tags" aria-label="Professional areas">
+            <span>DATA ENGINEERING</span><i aria-hidden="true"></i><span>DATA SCIENCE</span><i aria-hidden="true"></i><span>BIOINFORMATICS</span>
           </div>
-          <div class="floating-note top-note"><span class="note-icon">✳</span><span>Quality by design<br><small>From source to insight</small></span></div>
-          <div class="floating-note bottom-note"><span class="note-spark">↗</span><span>Built for decisions<br><small>Not just dashboards</small></span></div>
-          <span class="visual-disclaimer">Conceptual illustration · not patient data</span>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="./cv.html">My résumé <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-socials" aria-label="Professional links">
+            <a href="https://www.linkedin.com/in/mehrdadshoaekazemi/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/mehrdadsk" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+            <span class="hero-city">COPENHAGEN AREA, DENMARK</span>
+          </div>
         </div>
+        <div class="hero-portrait-stage" id="portrait-stage">
+          <div class="portrait-aura" aria-hidden="true"></div>
+          <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
+          <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
+          <div class="portrait-signal signal-one" aria-hidden="true"></div>
+          <div class="portrait-signal signal-two" aria-hidden="true"></div>
+          <div class="portrait-signal signal-three" aria-hidden="true"></div>
+          <div class="portrait-signal signal-four" aria-hidden="true"></div>
+          <div class="portrait-ticker ticker-top" aria-hidden="true"><span class="signal-pip"></span> HUMAN-CENTERED ENGINEERING</div>
+          <div class="portrait-card" id="portrait-card">
+            <div class="portrait-photo-wrap">
+              <img class="portrait-photo" id="profile-photo" src="https://avatars.githubusercontent.com/u/67460215?v=4" alt="Profile picture from Mehrdad's GitHub account" fetchpriority="high" decoding="async">
+              <div class="portrait-image-wash" aria-hidden="true"></div>
+              <div class="portrait-corner corner-top" aria-hidden="true"></div>
+              <div class="portrait-corner corner-bottom" aria-hidden="true"></div>
+            </div>
+            <div class="portrait-caption">
+              <div><span class="portrait-caption-top">ABOUT ME</span><strong>Mehrdad Shoae Kazemi</strong></div>
+              <span class="portrait-caption-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+          <div class="portrait-metric metric-top"><span class="metric-spark" aria-hidden="true">✳</span><div><strong>19 registries</strong><small>European research data</small></div></div>
+          <div class="portrait-metric metric-bottom"><span class="metric-spark" aria-hidden="true">↗</span><div><strong>10–20× faster</strong><small>Scientific pipelines</small></div></div>
+          <div class="portrait-ticker ticker-bottom" aria-hidden="true">DATA <span>→</span> MEANING <span>→</span> IMPACT</div>
+        </div>
+        <a class="hero-scroll-cue" href="#portfolio-paths"><span class="scroll-cue-line" aria-hidden="true"></span> SCROLL TO EXPLORE</a>
       </section>
 
-      <section class="trust-strip" aria-label="Professional focus"><div class="section-shell trust-inner">
-        <span>WORKING AT THE INTERSECTION OF</span><div class="trust-items"><span>CLINICAL DATA</span><b>+</b><span>DATA ENGINEERING</span><b>+</b><span>SCIENTIFIC COMPUTING</span><b>+</b><span>APPLIED AI</span></div>
-      </div></section>
+      <section class="portfolio-paths" id="portfolio-paths" aria-label="Quick ways to explore the portfolio">
+        <div class="section-shell paths-inner">
+          <a class="path-link" href="#work"><span class="path-number">01</span><span><strong>Explore work</strong><small>Projects & outcomes</small></span><span class="path-arrow" aria-hidden="true">↗</span></a>
+          <a class="path-link" href="#expertise"><span class="path-number">02</span><span><strong>Discover expertise</strong><small>Skills & tools</small></span><span class="path-arrow" aria-hidden="true">↗</span></a>
+          <a class="path-link" href="#journey"><span class="path-number">03</span><span><strong>Career journey</strong><small>Experience & research</small></span><span class="path-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
 
       <section class="section-shell section-padding impact-section" id="about" aria-labelledby="about-title">
         <div class="section-heading two-col">
