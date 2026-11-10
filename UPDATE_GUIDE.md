@@ -110,14 +110,14 @@ The brief résumé is a concise recruiter-focused overview; the full résumé pr
 
 ## 8. Change the visual style
 
-In `styles.css`, the first `:root` block sets the dark theme. The `:root[data-theme="light"]` block sets the light theme.
+The portfolio now has one consistent black theme. To change the current color scheme, edit the CSS variables at the top of `palette.css`, which loads after `styles.css` and `hero.css`.
 
 Useful variables:
-- `--bg`: background
+- `--bg`: near-black background
 - `--panel`: card backgrounds
 - `--fg`: main text
 - `--text`: muted body text
-- `--accent`: primary green accent
+- `--accent`: primary orange accent
 - `--border`: card/divider borders
 
 The headline is in `index.html`. To change its wording, edit the text inside `<h1 id="hero-title">...`.
@@ -210,3 +210,19 @@ Update `content.js`, `cv.js` and `full-resume-data.js` consistently when you rev
 - The website honours the user's **Reduce motion** preference.
 
 To change the photo, upload an image you own and modify both image `src` references. The public GitHub avatar is the default only until you choose a preferred picture.
+
+## 15. Customize the black, orange, pink and purple theme
+
+The palette is in `palette.css`, with these main colors:
+
+```css
+:root {
+  --bg: #09070d;       /* near-black */
+  --accent: #ff9a4b;   /* orange */
+  --burnt: #d87034;    /* dark orange */
+  --pink: #ff78c1;     /* pink */
+  --purple: #c29aff;   /* purple */
+}
+```
+
+To change it, open `palette.css` on GitHub, click the pencil icon, edit the values, and commit. Edit `resume-palette.css` to match the résumé colors. The brief and full résumé pages intentionally print on white. The old light/dark switch was removed to keep the requested black appearance consistent.
