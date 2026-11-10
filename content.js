@@ -7,7 +7,7 @@ window.PORTFOLIO = {
   headline: "Data Engineer & Analyst | Clinical Data | Data Science | Bioinformatics",
   location: "Copenhagen area, Denmark",
   status: "OPEN TO MEANINGFUL DATA CHALLENGES",
-  description: "I bring clarity to heterogeneous datasets and scientific workflows, from the first quality check to decisions people can act on. My work connects hands-on engineering with research and practical delivery.",
+  description: "I build reliable data systems and turn complex scientific data into meaningful insights.",
   introduction: "At COPECARE, Rigshospitalet, I help turn real-world clinical data from European registries into analysis-ready research assets. I enjoy investigating unexpected results, making inherited code faster and more reliable, and collaborating with researchers to answer the right question.",
   principle: "The most useful insight is one you can explain, reproduce and trust.",
   contact: {
