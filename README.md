@@ -9,15 +9,15 @@ A custom-built, responsive professional portfolio for data engineering, clinical
 ## Features
 
 - Custom dark editorial visual identity with an optional light theme
-- Interactive homepage with a gentle abstract data-network animation
+- Portrait-first homepage with interactive hover depth, ambient movement, and scroll reveals
 - Impact metrics grounded in career history
 - Filterable project cards with detailed, accessible case-study dialogs
 - Interactive expertise explorer and career timeline
 - Research, education and publications
-- Dedicated résumé page, printable directly to PDF
+- Both a concise brief résumé and an expandable full résumé, printable to PDF
 - Mobile-responsive design, reduced-motion support and keyboard interaction
 - No npm, external libraries, build tools, tracking scripts or paid hosting required
-- All public-facing career content maintained in **one editable file: \`content.js\`**
+- Main portfolio content in **`content.js`** and detailed full résumé data in **`full-resume-data.js`**
 
 ## Run it locally
 
@@ -27,14 +27,14 @@ A custom-built, responsive professional portfolio for data engineering, clinical
 
    Windows / macOS / Linux, with Python installed:
 
-   \`\`\`bash
+   ```bash
    python -m http.server 8000
-   \`\`\`
+   ```
 
 4. Open **http://localhost:8000** in Chrome or Edge.
-5. Navigate to **http://localhost:8000/cv.html** for the printable résumé.
+5. Open **http://localhost:8000/cv.html** for the brief résumé, or **http://localhost:8000/full-resume.html** for the detailed résumé.
 
-You can also simply open \`index.html\`, but serving it locally is recommended for consistent browser behaviour.
+You can also simply open `index.html`, but serving it locally is recommended for consistent browser behaviour.
 
 ## Publish with GitHub Pages
 
@@ -43,7 +43,7 @@ You can also simply open \`index.html\`, but serving it locally is recommended f
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Choose **main** and **/(root)** and click **Save**.
 5. GitHub will publish the website at **https://mehrdadsk.github.io/portfolio/**. Deployment may take a few minutes.
-6. Every future commit to the \`main\` branch automatically updates the site.
+6. Every future commit to the `main` branch automatically updates the site.
 
 GitHub Pages might need to be enabled manually in your account; the repository files alone do not mean that the live website is currently published.
 
@@ -59,7 +59,7 @@ Open **content.js** in GitHub and click the pencil icon, or edit the file in VS 
 - Career timeline, degrees and publications
 
 **Important before publishing:**
-- \`contact.email\` is deliberately blank until you choose which email should appear publicly.
+- `contact.email` is deliberately blank until you choose which email should appear publicly.
 - Check job titles, dates, all published research links, and any confidential study descriptions.
 - Do not add patient data, study-only figures, registry exports, proprietary code, internal URLs, or private work screenshots.
 - This website uses conceptual or synthetic graphics only. It does not claim to publish clinical production systems.
@@ -68,26 +68,32 @@ See **UPDATE_GUIDE.md** for illustrated-by-example editing instructions and trou
 
 ## File layout
 
-\`\`\`text
+```text
 portfolio/
 ├── index.html           # Homepage layout and accessible sections
 ├── styles.css           # Entire design, responsiveness and themes
 ├── content.js           # ALL editable professional content
 ├── app.js               # Project filters, dialogs, expertise, timeline, animation
-├── cv.html              # Printable résumé layout
-├── cv.js                # Generates résumé from content.js
+├── hero.css             # Animated portrait landing-page design
+├── hero.js              # Portrait pointer motion and scroll reveals
+├── cv.html              # Brief résumé with print-to-PDF option
+├── cv.js                # Brief résumé renderer
+├── full-resume.html     # Detailed résumé with section navigation
+├── full-resume.css      # Full résumé and printing styles
+├── full-resume-data.js  # Editable detailed career history
+├── full-resume.js       # Full résumé renderer and interactions
 ├── favicon.svg          # Browser icon
 ├── social-card.svg      # Sharing graphic
 ├── README.md            # Overview and setup
 └── UPDATE_GUIDE.md      # Step-by-step maintenance instructions
-\`\`\`
+```
 
 ## Styling and customization
 
-- Colors and backgrounds are CSS variables at the top of \`styles.css\`.
-- The desktop-to-mobile responsive breakpoints are near the bottom of \`styles.css\`.
-- Edit the page structure in \`index.html\`.
-- Edit behaviour (filters, interactions, card dialogs) in \`app.js\`.
+- Colors and backgrounds are CSS variables at the top of `styles.css`.
+- The desktop-to-mobile responsive breakpoints are near the bottom of `styles.css`.
+- Edit the page structure in `index.html`.
+- Edit behaviour (filters, interactions, card dialogs) in `app.js`.
 - The project is designed for **no build step**, so GitHub Pages will serve it as-is.
 
 ## Public claims, privacy, and accessibility
@@ -95,3 +101,18 @@ portfolio/
 Professional achievements are based on the supplied CV/career history. They should be re-checked for external publication; some are approximate. Generated visuals are decorative illustrations, not real data or proof of production deployments. The UI includes keyboard-accessible buttons, semantic headings, focus indicators, dialog dismissal and reduced-motion handling.
 
 **License:** Personal portfolio content belongs to its author. No separate open-source license is granted for use of the site's source code by default.
+
+
+## New homepage and both résumé versions
+
+The landing page presents a portrait sourced from your public GitHub profile avatar, a short professional introduction, key navigation, and immediate links to **Brief résumé**, **Full résumé**, LinkedIn and GitHub.
+
+- Update the portrait in `index.html` at `id="profile-photo"` and in `full-resume.html` (sidebar photo). A recommended replacement is a personally supplied file such as `assets/portrait.webp`.
+- Update homepage copy, metrics, case studies and skills in `content.js`.
+- The brief résumé is `cv.html`; most of its information comes from `content.js`, with concise curated summary bullets in `cv.js`.
+- The full résumé is `full-resume.html`; update its expanded career information in `full-resume-data.js`.
+- Both résumé pages have a Print / Save PDF control.
+- The design is managed in `styles.css` and `hero.css`; the hover tilt and scroll reveal behavior lives in `hero.js`.
+- Sensitive or restricted datasets and study-specific internal documents should never be published.
+
+**Editing note:** Some key career facts appear in multiple content sources. When a fact changes, keep `content.js`, `cv.js`, and `full-resume-data.js` consistent.
