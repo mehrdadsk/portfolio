@@ -1,0 +1,29 @@
+/* Subject-only portrait cutout.
+   Source photograph included visible checkerboard pixels rather than actual transparency.
+   This SVG silhouette mask removes them in the rendered website without altering the face.
+   The gradient of the underlying card shows naturally behind the person.
+*/
+.portrait-photo,
+.sidebar-photo img {
+  -webkit-mask-image: url("./portrait-mask.svg");
+  mask-image: url("./portrait-mask.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.portrait-photo {
+  -webkit-mask-position: center 34%;
+  mask-position: center 34%;
+}
+.sidebar-photo img {
+  -webkit-mask-position: center center;
+  mask-position: center center;
+}
+/* Subtle framing color rather than a checkerboard behind the cutout. */
+.portrait-photo-wrap {
+  background: radial-gradient(ellipse at 55% 35%, #4b2b54 0%, #28152e 50%, #160e22 100%);
+}
+.sidebar-photo {
+  background: radial-gradient(circle at 52% 35%, #45264c 0%, #180d22 90%);
+}
