@@ -1,6 +1,6 @@
 /*
   INTEGRATED PORTRAIT — no rectangular photo card.
-  Photo is a true-transparent WebP. The original frame, cutout path, name caption,
+  Original source includes checkerboard pixels; a refined subject mask removes them. The frame, name caption,
   and overlay metric cards are removed from the hero. The bottom fade makes the
   portrait naturally blend into the background without an obvious crop edge.
   This stylesheet intentionally loads after hero-fit.css and palette.css.
@@ -72,9 +72,10 @@
   border-radius: 0;
   box-shadow: none;
   background: none;
-  /* No traced image mask; genuine transparency keeps real hair/suit edges. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 77%, transparent 99%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 77%, transparent 99%);
+  /* Precisely traced subject opacity, with soft fade at the lower edge.
+     Required because the supplied bitmap contains the checkerboard as pixels. */
+  -webkit-mask-image: url("./portrait-integrated-mask.svg");
+  mask-image: url("./portrait-integrated-mask.svg");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
