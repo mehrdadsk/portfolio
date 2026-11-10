@@ -121,14 +121,6 @@ menu.addEventListener("click",()=>{
  const open=menu.getAttribute("aria-expanded")==="true";menu.setAttribute("aria-expanded",String(!open));menu.setAttribute("aria-label",open?"Open menu":"Close menu");mobile.hidden=open;
 });
 mobile.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mobile.hidden=true;menu.setAttribute("aria-expanded","false");menu.setAttribute("aria-label","Open menu");}));
-const themeButton=$(".theme-toggle");const themeKey="portfolio-theme";
-function setTheme(theme){
- const mode=theme==="light"?"light":"dark";document.documentElement.dataset.theme=mode;
- themeButton.setAttribute("aria-label",mode==="dark"?"Switch to light theme":"Switch to dark theme");$(".theme-icon").textContent=mode==="dark"?"☼":"☾";
- try{localStorage.setItem(themeKey,mode);}catch(_){}
-}
-let initial="dark";try{initial=localStorage.getItem(themeKey)||"dark";}catch(_){}setTheme(initial);
-themeButton.addEventListener("click",()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
 const canvas=$("#hero-canvas"),visual=$(".hero-visual");
 const motionReduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(canvas && !motionReduced){
