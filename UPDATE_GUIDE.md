@@ -124,7 +124,7 @@ The headline is in `index.html`. To change its wording, edit the text inside `<h
 
 ## 9. Add a professional photograph
 
-The homepage now shows an animated portrait frame using your public GitHub avatar. To replace it with a preferred professional photo:
+The homepage now shows your own uploaded `portrait.webp` inside an animated portrait frame. To replace it with another professional photo:
 1. Add a photo you own (for example `assets/portrait.webp`) to the repository.
 2. Find the `<img class="portrait-photo" id="profile-photo"` element in `index.html` and change its `src` to `./assets/portrait.webp`.
 3. Find the sidebar image in `full-resume.html` and also change its `src` to `./assets/portrait.webp`.
@@ -209,7 +209,7 @@ Update `content.js`, `cv.js` and `full-resume-data.js` consistently when you rev
 - Cursor tilt and scroll reveals live in `hero.js`.
 - The website honours the user's **Reduce motion** preference.
 
-To change the photo, upload an image you own and modify both image `src` references. The public GitHub avatar is the default only until you choose a preferred picture.
+To change the photo, upload an image you own and modify both image `src` references. The currently selected picture is `portrait.webp`, stored in the root of the GitHub repository.
 
 ## 15. Customize the black, orange, pink and purple theme
 
