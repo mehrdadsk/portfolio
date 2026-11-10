@@ -8,7 +8,7 @@ A custom-built, responsive professional portfolio for data engineering, clinical
 
 ## Features
 
-- Custom dark editorial visual identity with an optional light theme
+- Black-first Noir / Ember / Orchid identity with orange, burnt orange, pink and purple accents
 - Portrait-first homepage with interactive hover depth, ambient movement, and scroll reveals
 - Impact metrics grounded in career history
 - Filterable project cards with detailed, accessible case-study dialogs
@@ -71,7 +71,8 @@ See **UPDATE_GUIDE.md** for illustrated-by-example editing instructions and trou
 ```text
 portfolio/
 ├── index.html           # Homepage layout and accessible sections
-├── styles.css           # Entire design, responsiveness and themes
+├── styles.css           # Original layout and responsive design
+├── palette.css          # Black/orange/pink/purple main visual theme
 ├── content.js           # ALL editable professional content
 ├── app.js               # Project filters, dialogs, expertise, timeline, animation
 ├── hero.css             # Animated portrait landing-page design
@@ -80,6 +81,7 @@ portfolio/
 ├── cv.js                # Brief résumé renderer
 ├── full-resume.html     # Detailed résumé with section navigation
 ├── full-resume.css      # Full résumé and printing styles
+├── resume-palette.css   # Dark screen palette for both résumé pages
 ├── full-resume-data.js  # Editable detailed career history
 ├── full-resume.js       # Full résumé renderer and interactions
 ├── favicon.svg          # Browser icon
@@ -90,10 +92,10 @@ portfolio/
 
 ## Styling and customization
 
-- Colors and backgrounds are CSS variables at the top of `styles.css`.
+- To change the current colors, edit the variables at the top of `palette.css`. This file overrides the original stylesheet and keeps the site black.
 - The desktop-to-mobile responsive breakpoints are near the bottom of `styles.css`.
 - Edit the page structure in `index.html`.
-- Edit behaviour (filters, interactions, card dialogs) in `app.js`.
+- Edit behaviour (filters, interactions, card dialogs) in `app.js`. The old light-mode toggle has been removed; the current site uses black throughout.
 - The project is designed for **no build step**, so GitHub Pages will serve it as-is.
 
 ## Public claims, privacy, and accessibility
@@ -116,3 +118,7 @@ The landing page presents a portrait sourced from your public GitHub profile ava
 - Sensitive or restricted datasets and study-specific internal documents should never be published.
 
 **Editing note:** Some key career facts appear in multiple content sources. When a fact changes, keep `content.js`, `cv.js`, and `full-resume-data.js` consistent.
+
+## Noir / Ember / Orchid theme
+
+The website uses a black background and four typography accents: orange (#ff9a4b), burnt orange (#d87034), pink (#ff78c1), and purple (#c29aff). Major headings use smooth color gradients; body paragraphs use softer peach and lavender for contrast. `palette.css` controls the main website colors; `resume-palette.css` handles both résumé pages on screen. Résumés still print on a white background.
