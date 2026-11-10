@@ -195,3 +195,26 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait-integrated .portrait-display { transition: none!important; }
 }
+
+/* Small résumé portrait: no visible square border or checkerboard. */
+body.full-resume .sidebar-photo {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+body.full-resume .sidebar-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  -webkit-mask-image: url("./portrait-integrated-mask.svg");
+  mask-image: url("./portrait-integrated-mask.svg");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
