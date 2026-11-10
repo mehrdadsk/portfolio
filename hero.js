@@ -6,15 +6,29 @@
   const card=document.getElementById("portrait-card");
   const photo=document.getElementById("profile-photo");
   if(photo){
+    // A cached 404 for a newly published GitHub Pages image can persist after deployment.
+    // Retry the same original PNG through GitHub's raw-image host, then a smaller backup.
+    const fallbacks=[
+      "https://raw.githubusercontent.com/mehrdadsk/portfolio/main/p2.png?rev=9fb8b7f72b2a",
+      "./portrait-color.avif",
+      "https://avatars.githubusercontent.com/u/67460215?v=4"
+    ];
+    let fallbackIndex=0;
     photo.addEventListener("error",()=>{
-      photo.style.display="none";
-      const wrap=photo.parentElement;
-      wrap.setAttribute("role","img");
-      wrap.setAttribute("aria-label","Portrait not available; add a personal photo to the portfolio.");
-      const fallback=document.createElement("span");
-      fallback.className="portrait-fallback";fallback.textContent="M.";
-      wrap.append(fallback);
-    },{once:true});
+      if(fallbackIndex<fallbacks.length){
+        photo.src=fallbacks[fallbackIndex++];
+      }else{
+        photo.style.display="none";
+        const wrap=photo.parentElement;
+        if(!wrap.querySelector(".portrait-fallback")){
+          wrap.setAttribute("role","img");
+          wrap.setAttribute("aria-label","Portrait image unavailable.");
+          const fallback=document.createElement("span");
+          fallback.className="portrait-fallback";fallback.textContent="M.";
+          wrap.append(fallback);
+        }
+      }
+    });
   }
   const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer=window.matchMedia("(hover: hover) and (pointer: fine)").matches;
