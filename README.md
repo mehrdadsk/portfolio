@@ -127,3 +127,7 @@ The website uses a black background and four typography accents: orange (#ff9a4b
 ## Adjust homepage layout and portrait scale
 
 The main home-page scale and spacing are now defined in `hero-fit.css` (loaded after `palette.css`). Modify `.hero-v2 h1` to change headline size, `.hero-portrait-stage .portrait-card` to change portrait dimensions, and `.hero-portrait-stage .portrait-stats` for the achievement cards. The two cards sit below the picture instead of overlapping it. Screen-specific adjustments are grouped at the bottom of `hero-fit.css`. Leave `palette.css` for colors.
+
+## Freestanding portrait (November 2026)
+
+The homepage picture now floats directly on the dark theme, with **no rectangular frame, card, or caption box**. Achievement numbers remain in the separate About & Impact section instead of covering the photo. The visible portrait is still the original uploaded `portrait.webp`. Because its checkerboard pattern was baked into the bitmap, `portrait-integrated-mask.svg` hides the patterned background and gradually fades the torso at the bottom; `portrait-integrated.css` controls the composition and responsiveness. The same CSS styles the small full résumé picture. Replacing the photograph may require updating the silhouette mask too. A truly transparent original PNG/WebP can be substituted later and the mask rule removed.
