@@ -1,0 +1,196 @@
+/*
+  INTEGRATED PORTRAIT — no rectangular photo card.
+  Photo is a true-transparent WebP. The original frame, cutout path, name caption,
+  and overlay metric cards are removed from the hero. The bottom fade makes the
+  portrait naturally blend into the background without an obvious crop edge.
+  This stylesheet intentionally loads after hero-fit.css and palette.css.
+*/
+.hero-v2 {
+  min-height: min(690px,calc(100svh - 78px));
+  grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+  gap: clamp(25px,3vw,48px);
+}
+.hero-portrait-integrated {
+  width: min(100%,510px);
+  max-width: 510px;
+  height: 525px;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+}
+.hero-portrait-integrated .portrait-aura {
+  inset: 6% -5% 11%;
+  z-index: -1;
+  background: radial-gradient(ellipse at 52% 52%,
+      rgba(184,76,194,.20) 0%,
+      rgba(115,38,134,.11) 36%,
+      rgba(226,101,116,.048) 60%,
+      transparent 77%);
+  filter: blur(25px);
+}
+.hero-portrait-integrated .portrait-orbit-one {
+  width: 435px;
+  height: 435px;
+  left: calc(50% - 217.5px);
+  top: 34px;
+  border-color: rgba(243,120,196,.19);
+}
+.hero-portrait-integrated .portrait-orbit-two {
+  width: 365px;
+  height: 365px;
+  left: calc(50% - 182.5px);
+  top: 69px;
+  border-color: rgba(200,149,249,.13);
+}
+.hero-portrait-integrated .portrait-display {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: min(490px, 99%);
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+  transform: translateY(19px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .25s ease-out;
+  will-change: transform;
+}
+.hero-portrait-integrated .portrait-photo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  /* No traced image mask; genuine transparency keeps real hair/suit edges. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 77%, transparent 99%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 77%, transparent 99%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  filter: none;
+  transform: none;
+  transition: none;
+}
+.hero-portrait-integrated .portrait-display:hover {
+  box-shadow: none;
+}
+.hero-portrait-integrated .portrait-display:hover .portrait-photo {
+  transform: none;
+  filter: none;
+}
+.hero-portrait-integrated .portrait-ambient-label {
+  position: absolute;
+  z-index: 4;
+  white-space: nowrap;
+  font: 700 10px/1.2 ui-monospace,Consolas,monospace;
+  letter-spacing: .13em;
+  color: #efa3d4;
+  pointer-events: none;
+}
+.hero-portrait-integrated .ambient-top {
+  top: 12px;
+  right: 6%;
+}
+.hero-portrait-integrated .ambient-bottom {
+  bottom: 17px;
+  right: 16%;
+  color: #c5a0fa;
+}
+.hero-portrait-integrated .ambient-bottom span {
+  color: #ffae63;
+  padding: 0 6px;
+}
+.hero-portrait-integrated .portrait-signal {
+  width: 5px;
+  height: 5px;
+}
+.hero-portrait-integrated .signal-one { left: 4%; top: 23%; }
+.hero-portrait-integrated .signal-two { right: 4%; top: 33%; }
+.hero-portrait-integrated .signal-three { left: 9%; bottom: 21%; }
+.hero-portrait-integrated .signal-four { right: 9%; bottom: 20%; }
+@media (max-width: 1120px) and (min-width: 821px) {
+  .hero-v2 { grid-template-columns: minmax(0, 1.10fr) minmax(0, .90fr); }
+  .hero-portrait-integrated {
+    height: 445px;
+    max-width: 420px;
+  }
+  .hero-portrait-integrated .portrait-display { width: min(420px, 100%); }
+  .hero-portrait-integrated .portrait-orbit-one {
+    width: 350px; height: 350px;
+    top: 29px; left: calc(50% - 175px);
+  }
+  .hero-portrait-integrated .portrait-orbit-two {
+    width: 300px; height: 300px;
+    top: 55px; left: calc(50% - 150px);
+  }
+  .hero-portrait-integrated .ambient-top { right: 0; font-size: 8px; }
+}
+@media (max-width: 820px) {
+  .hero-v2 { grid-template-columns: 1fr; gap: 9px; }
+  .hero-portrait-integrated {
+    height: 455px;
+    width: min(100%, 500px);
+    max-width: 500px;
+    padding: 0;
+    overflow: visible;
+  }
+  .hero-portrait-integrated .portrait-display {
+    width: min(415px, 88%);
+    transform: translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  }
+  .hero-portrait-integrated .portrait-orbit-one {
+    width: 395px; height: 395px;
+    top: 23px; left: calc(50% - 197.5px);
+  }
+  .hero-portrait-integrated .portrait-orbit-two {
+    width: 330px; height: 330px;
+    top: 54px; left: calc(50% - 165px);
+  }
+}
+@media (max-width: 600px) {
+  .hero-v2 { gap: 7px; }
+  .hero-portrait-integrated {
+    width: 100%;
+    height: min(94vw, 390px);
+    padding: 0;
+  }
+  .hero-portrait-integrated .portrait-display {
+    width: min(89vw, 360px);
+  }
+  .hero-portrait-integrated .portrait-orbit-one {
+    width: min(86vw, 335px);
+    height: min(86vw, 335px);
+    top: 17px;
+    left: 50%;
+    margin-left: calc(-1 * min(43vw, 167.5px));
+  }
+  .hero-portrait-integrated .portrait-orbit-two {
+    width: min(71vw, 275px);
+    height: min(71vw, 275px);
+    top: 47px;
+    left: 50%;
+    margin-left: calc(-1 * min(35.5vw, 137.5px));
+  }
+  .hero-portrait-integrated .ambient-top { top: 4px;right: 2%;font-size: 8px; }
+  .hero-portrait-integrated .ambient-bottom { bottom: 3px;right: 11%;font-size: 8px; }
+}
+@media (max-width: 370px) {
+  .hero-portrait-integrated { height: 325px; }
+  .hero-portrait-integrated .portrait-display { width: 94%; }
+  .hero-portrait-integrated .ambient-top { font-size: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait-integrated .portrait-display { transition: none!important; }
+}
