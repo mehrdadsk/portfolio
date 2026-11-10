@@ -249,3 +249,9 @@ Your original `portrait.webp` was created from a photo with a **visible gray/whi
 - `portrait.webp`: original picture, kept unchanged; checkerboard is hidden on the published site by the mask.
 
 **If you upload a different photo:** its silhouette may not line up with the existing mask. Replace it with a truly transparent PNG/WebP and either remove the mask rules from `portrait-cutout.css`, or generate a new silhouette mask matching the new photograph. To keep the current face and remove only the squares, do not replace the face with an AI-generated portrait.
+
+## 18. Integrated, unframed portrait
+
+The homepage no longer shows a rectangular picture card, name caption, or metrics floating over the image. Instead the portrait appears directly in the right side of the hero, with a natural gradient fade toward the bottom. Its position and size are defined in **`portrait-integrated.css`**, loaded last so it overrides the older card styling. The visual cutout uses **`portrait-integrated-mask.svg`** because the current `portrait.webp` contains checkerboard squares embedded in the image. This is a display mask; the source photograph itself is unchanged.
+
+When replacing the portrait with a truly transparent photo, remove the `mask-image` and `-webkit-mask-image` URL rules in `portrait-integrated.css`, retaining or adding only a bottom gradient fade if desired. For a different photo with an opaque background, the silhouette mask must be replaced to match its outline. The matching small profile image in the full résumé uses the same style; the brief résumé is intentionally text-only.
