@@ -76,6 +76,7 @@ portfolio/
 ├── content.js           # ALL editable professional content
 ├── app.js               # Project filters, dialogs, expertise, timeline, animation
 ├── hero.css             # Animated portrait landing-page design
+├── hero-fit.css         # Compact hero dimensions and overlap-safe layout
 ├── hero.js              # Portrait pointer motion and scroll reveals
 ├── cv.html              # Brief résumé with print-to-PDF option
 ├── cv.js                # Brief résumé renderer
@@ -122,3 +123,7 @@ The landing page presents a portrait sourced from your public GitHub profile ava
 ## Noir / Ember / Orchid theme
 
 The website uses a black background and four typography accents: orange (#ff9a4b), burnt orange (#d87034), pink (#ff78c1), and purple (#c29aff). Major headings use smooth color gradients; body paragraphs use softer peach and lavender for contrast. `palette.css` controls the main website colors; `resume-palette.css` handles both résumé pages on screen. Résumés still print on a white background.
+
+## Adjust homepage layout and portrait scale
+
+The main home-page scale and spacing are now defined in `hero-fit.css` (loaded after `palette.css`). Modify `.hero-v2 h1` to change headline size, `.hero-portrait-stage .portrait-card` to change portrait dimensions, and `.hero-portrait-stage .portrait-stats` for the achievement cards. The two cards sit below the picture instead of overlapping it. Screen-specific adjustments are grouped at the bottom of `hero-fit.css`. Leave `palette.css` for colors.
