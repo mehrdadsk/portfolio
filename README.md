@@ -108,7 +108,7 @@ Professional achievements are based on the supplied CV/career history. They shou
 
 ## New homepage and both résumé versions
 
-The landing page presents a portrait sourced from your public GitHub profile avatar, a short professional introduction, key navigation, and immediate links to **Brief résumé**, **Full résumé**, LinkedIn and GitHub.
+The landing page presents your uploaded professional portrait (`portrait.webp`), a short professional introduction, key navigation, and immediate links to **Brief résumé**, **Full résumé**, LinkedIn and GitHub.
 
 - Update the portrait in `index.html` at `id="profile-photo"` and in `full-resume.html` (sidebar photo). A recommended replacement is a personally supplied file such as `assets/portrait.webp`.
 - Update homepage copy, metrics, case studies and skills in `content.js`.
