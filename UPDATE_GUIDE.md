@@ -226,3 +226,16 @@ The palette is in `palette.css`, with these main colors:
 ```
 
 To change it, open `palette.css` on GitHub, click the pencil icon, edit the values, and commit. Edit `resume-palette.css` to match the résumé colors. The brief and full résumé pages intentionally print on white. The old light/dark switch was removed to keep the requested black appearance consistent.
+
+## 16. Adjust homepage size and fix overlapping elements
+
+The homepage now uses `hero-fit.css` for layout adjustments. It is deliberately loaded **after** the main `styles.css`, `hero.css`, and `palette.css` so its spacing rules take precedence without changing the rest of the website.
+
+- **Photo size:** find `.hero-portrait-stage .portrait-card` and adjust `width` / `height`.
+- **Headline size:** find `.hero-v2 h1` and adjust `font-size`.
+- **Photo achievement cards:** find `.hero-portrait-stage .portrait-stats`. They are in a separate row **below** the portrait; do not move them back over the image.
+- **Spacing:** find `.hero-v2` and change `gap`, `padding-top` or `padding-bottom`.
+- **Phones/tablets:** edit the `@media` rules near the end of `hero-fit.css`.
+- **Colors:** edit `palette.css`, not `hero-fit.css`.
+
+Changes are committed directly to GitHub's `main` branch and will be picked up by GitHub Pages. If you have a local clone, use GitHub Desktop **Fetch origin → Pull origin**, or run `git pull origin main` from the portfolio folder. Avoid local modifications to the same CSS file before pulling, or merge conflicts may occur.
