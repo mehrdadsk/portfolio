@@ -239,3 +239,13 @@ The homepage now uses `hero-fit.css` for layout adjustments. It is deliberately 
 - **Colors:** edit `palette.css`, not `hero-fit.css`.
 
 Changes are committed directly to GitHub's `main` branch and will be picked up by GitHub Pages. If you have a local clone, use GitHub Desktop **Fetch origin → Pull origin**, or run `git pull origin main` from the portfolio folder. Avoid local modifications to the same CSS file before pulling, or merge conflicts may occur.
+
+## 17. Transparent portrait background (checkerboard removal)
+
+Your original `portrait.webp` was created from a photo with a **visible gray/white checkerboard baked into the image pixels**, not actual transparency. The site now removes that pattern with a subject-specific silhouette mask, keeping the original face and suit unchanged.
+
+- `portrait-mask.svg`: transparent/opaque silhouette matching the current original portrait.
+- `portrait-cutout.css`: applies that mask to both homepage and full résumé pictures.
+- `portrait.webp`: original picture, kept unchanged; checkerboard is hidden on the published site by the mask.
+
+**If you upload a different photo:** its silhouette may not line up with the existing mask. Replace it with a truly transparent PNG/WebP and either remove the mask rules from `portrait-cutout.css`, or generate a new silhouette mask matching the new photograph. To keep the current face and remove only the squares, do not replace the face with an AI-generated portrait.
