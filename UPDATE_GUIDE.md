@@ -126,9 +126,10 @@ The headline is in `index.html`. To change its wording, edit the text inside `<h
 
 The homepage now shows an animated portrait frame using your public GitHub avatar. To replace it with a preferred professional photo:
 1. Add a photo you own (for example `assets/portrait.webp`) to the repository.
-2. Insert an image element in `index.html` where desired.
-3. Use descriptive `alt` text and style it in `styles.css`.
-4. Avoid uploading private metadata with photos.
+2. Find the `<img class="portrait-photo" id="profile-photo"` element in `index.html` and change its `src` to `./assets/portrait.webp`.
+3. Find the sidebar image in `full-resume.html` and also change its `src` to `./assets/portrait.webp`.
+4. Use appropriate `alt` text and adjust cropping in `hero.css` under `.portrait-photo`.
+5. Avoid uploading private metadata with photos.
 
 For better social previews, you may replace `social-card.svg` with your own graphic. Update the corresponding `og:image` tag in `index.html`.
 
