@@ -13,38 +13,38 @@ This guide assumes that the repository is **https://github.com/mehrdadsk/portfol
 
 ## 2. The fastest way to change your information
 
-1. Open \`content.js\` in your repository.
+1. Open `content.js` in your repository.
 2. Click the pencil icon (**Edit this file**).
 3. Change only the intended text, preserving quotes, commas, braces and brackets.
 4. Choose **Commit changes**.
 5. Refresh the live website after GitHub Pages has deployed the change (hard refresh with Ctrl+F5 if needed).
 
-Content uses ordinary JavaScript objects. A string is in quotes, objects use braces \`{ }\`, arrays use brackets \`[ ]\`, and adjacent items need commas.
+Content uses ordinary JavaScript objects. A string is in quotes, objects use braces `{ }`, arrays use brackets `[ ]`, and adjacent items need commas.
 
 Example — update your summary:
 
-\`\`\`js
+```js
 description: "I design reliable data pipelines and turn complex research data into clear decisions.",
-\`\`\`
+```
 
 Example — set the email button once you decide which address you want public:
 
-\`\`\`js
+```js
 contact: {
   email: "your-public-address@example.com",
   linkedin: "https://www.linkedin.com/in/mehrdadshoaekazemi/",
   github: "https://github.com/mehrdadsk",
   cv: "./cv.html"
 },
-\`\`\`
+```
 
-An empty \`email: ""\` suppresses the Email button so no unconfirmed contact address is exposed.
+An empty `email: ""` suppresses the Email button so no unconfirmed contact address is exposed.
 
 ## 3. Add a new project
 
-In \`content.js\`, find \`projects: [\` and copy one existing project object within the array. Replace the fields. For example:
+In `content.js`, find `projects: [` and copy one existing project object within the array. Replace the fields. For example:
 
-\`\`\`js
+```js
 {
   id: "synthetic-data-quality-demo",
   category: "Data Engineering",
@@ -66,101 +66,101 @@ In \`content.js\`, find \`projects: [\` and copy one existing project object wit
   tools: ["Python", "pandas", "Quality control"],
   confidentiality: "All example data are synthetic."
 },
-\`\`\`
+```
 
-**Allowed category values** (to make the filters work): \`Data Engineering\`, \`Clinical Research\`, \`Data Science\`, \`Bioinformatics\`.
+**Allowed category values** (to make the filters work): `Data Engineering`, `Clinical Research`, `Data Science`, `Bioinformatics`.
 
-**Allowed art values:** \`green\`, \`violet\`, \`blue\`, \`amber\`.
+**Allowed art values:** `green`, `violet`, `blue`, `amber`.
 
-When adding a project, ensure there is a comma separating it from the previous/next project object. Every new project's \`id\` should be unique. Do not claim a GitHub demo exists until it is actually available.
+When adding a project, ensure there is a comma separating it from the previous/next project object. Every new project's `id` should be unique. Do not claim a GitHub demo exists until it is actually available.
 
 ## 4. Change an impact statistic
 
-Within \`impact: [\`, use a record like:
+Within `impact: [`, use a record like:
 
-\`\`\`js
+```js
 { label: "REGISTRIES", value: "19", suffix: "", description: "European registries", icon: "✳" },
-\`\`\`
+```
 
-\`value\` and \`suffix\` are displayed together. The project cards, CV and biography are separate sections: update all relevant claims when the underlying number changes.
+`value` and `suffix` are displayed together. The project cards, CV and biography are separate sections: update all relevant claims when the underlying number changes.
 
 ## 5. Update expertise and technology keywords
 
-- Edit \`expertise\` to change the four clickable skill areas.
-- Edit \`tools\` for the technology tag cloud.
-- The résumé automatically reuses the same \`tools\` list.
+- Edit `expertise` to change the four clickable skill areas.
+- Edit `tools` for the technology tag cloud.
+- The résumé automatically reuses the same `tools` list.
 - Make a distinction between production experience and training, e.g. **Databricks fundamentals (training)**.
 
 ## 6. Update career timeline / degrees / publications
 
-- \`timeline\`: position title, organization, dates, summary and bullet points.
-- \`education\`: degree, school, dates and research notes.
-- \`publications\`: publication year, title, journal and optional verified public \`link\` URL.
+- `timeline`: position title, organization, dates, summary and bullet points.
+- `education`: degree, school, dates and research notes.
+- `publications`: publication year, title, journal and optional verified public `link` URL.
 
-Leave \`link: ""\` when you have not verified a public publication URL.
+Leave `link: ""` when you have not verified a public publication URL.
 
-## 7. Download your CV as PDF
+## 7. Download your brief or full résumé as PDF
 
-1. Open **https://mehrdadsk.github.io/portfolio/cv.html** once publishing is enabled.
+1. Open **https://mehrdadsk.github.io/portfolio/cv.html** for the brief résumé or **https://mehrdadsk.github.io/portfolio/full-resume.html** for the full résumé once publishing is enabled.
 2. Click **Print / Save as PDF**.
 3. Select **Save as PDF** as the printer destination.
 4. Check pagination and save the file.
 
-The résumé page is a concise online professional profile, not an automatically tailored job application. You can tailor a separate CV for each vacancy.
+The brief résumé is a concise recruiter-focused overview; the full résumé provides detailed experience, projects, bioinformatics toolchain and publications. Neither is an automatically tailored job application. You can tailor a separate CV for each vacancy.
 
 ## 8. Change the visual style
 
-In \`styles.css\`, the first \`:root\` block sets the dark theme. The \`:root[data-theme="light"]\` block sets the light theme.
+In `styles.css`, the first `:root` block sets the dark theme. The `:root[data-theme="light"]` block sets the light theme.
 
 Useful variables:
-- \`--bg\`: background
-- \`--panel\`: card backgrounds
-- \`--fg\`: main text
-- \`--text\`: muted body text
-- \`--accent\`: primary green accent
-- \`--border\`: card/divider borders
+- `--bg`: background
+- `--panel`: card backgrounds
+- `--fg`: main text
+- `--text`: muted body text
+- `--accent`: primary green accent
+- `--border`: card/divider borders
 
-The headline is in \`index.html\`. To change its wording, edit the text inside \`<h1 id="hero-title">...\`.
+The headline is in `index.html`. To change its wording, edit the text inside `<h1 id="hero-title">...`.
 
 ## 9. Add a professional photograph
 
-This version deliberately uses a custom data/network illustration instead of a stock portrait. To add a photo:
-1. Add a photo you own (for example \`assets/portrait.webp\`) to the repository.
-2. Insert an image element in \`index.html\` where desired.
-3. Use descriptive \`alt\` text and style it in \`styles.css\`.
+The homepage now shows an animated portrait frame using your public GitHub avatar. To replace it with a preferred professional photo:
+1. Add a photo you own (for example `assets/portrait.webp`) to the repository.
+2. Insert an image element in `index.html` where desired.
+3. Use descriptive `alt` text and style it in `styles.css`.
 4. Avoid uploading private metadata with photos.
 
-For better social previews, you may replace \`social-card.svg\` with your own graphic. Update the corresponding \`og:image\` tag in \`index.html\`.
+For better social previews, you may replace `social-card.svg` with your own graphic. Update the corresponding `og:image` tag in `index.html`.
 
 ## 10. Work with Git locally
 
-\`\`\`bash
+```bash
 git clone https://github.com/mehrdadsk/portfolio.git
 cd portfolio
 python -m http.server 8000
-\`\`\`
+```
 
 Edit in VS Code, then publish with:
 
-\`\`\`bash
+```bash
 git add .
 git commit -m "Update portfolio content"
 git push origin main
-\`\`\`
+```
 
 For substantial design or code changes, create a separate branch and open a pull request before merging.
 
 ## 11. Troubleshooting
 
-**Blank cards / missing sections:** There may be a JavaScript syntax error in \`content.js\`. Open the browser Developer Tools (F12) and inspect **Console**. Check commas and quotes.
+**Blank cards / missing sections:** There may be a JavaScript syntax error in `content.js`. Open the browser Developer Tools (F12) and inspect **Console**. Check commas and quotes.
 
-**Changes not visible:** Confirm the commit is on \`main\`, check Pages deployment, then refresh with Ctrl+F5.
+**Changes not visible:** Confirm the commit is on `main`, check Pages deployment, then refresh with Ctrl+F5.
 
 **Github Pages 404:** In Settings → Pages, confirm main / root is selected and allow time for deployment.
 
-**Email button absent:** This is intentional while \`contact.email\` is blank.
+**Email button absent:** This is intentional while `contact.email` is blank.
 
-**Projects filter incorrectly:** Check that every project's \`category\` matches one of the values in \`filters\`.
+**Projects filter incorrectly:** Check that every project's `category` matches one of the values in `filters`.
 
 **PDF looks different:** Use Chrome or Edge's print preview; enable background graphics if you want decorative background colors.
 
@@ -180,3 +180,32 @@ For substantial design or code changes, create a separate branch and open a pull
 - GitHub-backed case studies with runnable examples
 - Custom domain and basic search engine performance review
 - Validated PDF version of a selected master CV
+
+
+## 13. Maintaining both résumé versions
+
+**Brief résumé:**
+- Page: `cv.html`
+- Main content source: `content.js`
+- Short career highlights and summary: `cv.js`
+- CSS: embedded in `cv.html`
+- Designed to be easy to scan or print as a short CV.
+
+**Full résumé:**
+- Page: `full-resume.html`
+- Career content source: `full-resume-data.js`
+- Layout and print design: `full-resume.css`
+- Interaction and print expansion: `full-resume.js`
+- All work roles are expandable on screen and expand automatically when printing.
+
+Update `content.js`, `cv.js` and `full-resume-data.js` consistently when you revise job dates, metrics or research accomplishments.
+
+## 14. Changing the animated introduction
+
+- The short summary on the homepage is in `content.js` under `description`.
+- The hero title, portrait, primary navigation and buttons live in `index.html`.
+- Portrait frame design, orbit movement, floating stat tags and mobile layout are in `hero.css`.
+- Cursor tilt and scroll reveals live in `hero.js`.
+- The website honours the user's **Reduce motion** preference.
+
+To change the photo, upload an image you own and modify both image `src` references. The public GitHub avatar is the default only until you choose a preferred picture.
