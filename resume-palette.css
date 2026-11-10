@@ -1,0 +1,177 @@
+/* Screen-only palette for the brief and full résumé pages.
+   The existing print styles remain light for readable, ink-efficient PDFs.
+*/
+@media screen {
+  body.full-resume {
+    --base:#09070d;
+    --side:#140b19;
+    --panel:#1c1022;
+    --fg:#ffe7f1;
+    --text:#dfbdd5;
+    --muted:#ae8cad;
+    --green:#ff9e55;
+    --border:#4c3054;
+    --accent-dark:#1d0b15;
+    background:
+      radial-gradient(ellipse 52% 22% at 95% 0%,rgba(158,75,182,.14),transparent),
+      #09070d;
+    color:var(--fg);
+  }
+  body.full-resume .topbar {
+    background:rgba(9,7,13,.93);
+    border-bottom-color:#523052;
+  }
+  body.full-resume .topbar-actions a { color:#fba6d6; }
+  body.full-resume .topbar-actions a:hover { color:#ffb373; }
+  body.full-resume .topbar-actions button {
+    color:#220d19;
+    background:linear-gradient(120deg,#ffad63,#f77db9);
+    border-color:#ff9d76;
+  }
+  body.full-resume .back-link,
+  body.full-resume .back-link span { color:#ffb36b; }
+  body.full-resume .resume-sidebar { background:transparent; }
+  body.full-resume .sidebar-photo { border-color:#ff98c7; }
+  body.full-resume .resume-sidebar h2 { color:#ffccdf; }
+  body.full-resume .resume-sidebar p { color:#dcadd6; }
+  body.full-resume .side-label { color:#d19aff; }
+  body.full-resume .sidebar-links a:first-child { color:#ffaf70; }
+  body.full-resume .sidebar-links a:last-child { color:#f48bc8; }
+  body.full-resume .resume-nav a { color:#d9b1ce; }
+  body.full-resume .resume-nav a:hover,
+  body.full-resume .resume-nav a[aria-current="true"] {
+    color:#ffac75;
+    border-left-color:#f38cc6;
+    background:rgba(233,114,197,.075);
+  }
+  body.full-resume .small-cap { color:#fb8ac3; }
+  body.full-resume .resume-intro h1 { color:#ffdec6; }
+  body.full-resume .resume-intro h1 em {
+    color:transparent;
+    background:linear-gradient(110deg,#ffa152,#f67abc 58%,#bf98ff);
+    background-clip:text;
+    -webkit-background-clip:text;
+  }
+  body.full-resume .intro-blurb { color:#e3b9d9; }
+  body.full-resume .metric {
+    background:linear-gradient(145deg,#261327,#170d1c);
+    border-color:#5a3560;
+  }
+  body.full-resume .metric strong { color:#ffae67; }
+  body.full-resume .metric:nth-child(2) strong { color:#f98bc9; }
+  body.full-resume .metric:nth-child(3) strong { color:#c4a0ff; }
+  body.full-resume .metric:nth-child(4) strong { color:#db854b; }
+  body.full-resume .metric small { color:#cc9fbf; }
+  body.full-resume .section-title>span { color:#fb8cba; }
+  body.full-resume .section-title h2 { color:#ffd3e9; }
+  body.full-resume .summary-copy p,
+  body.full-resume .job-body p,
+  body.full-resume .job-body li,
+  body.full-resume .project p,
+  body.full-resume .skill-group li,
+  body.full-resume .edu li,
+  body.full-resume .academic p,
+  body.full-resume .publication p,
+  body.full-resume .extras li,
+  body.full-resume .toolchain-row p { color:#dbb6d3; }
+  body.full-resume .strength-card,
+  body.full-resume .job-detail,
+  body.full-resume .project,
+  body.full-resume .toolchain {
+    background:#1d1023;
+    border-color:#54355c;
+  }
+  body.full-resume .strength-card h3,
+  body.full-resume .job-detail h3,
+  body.full-resume .skill-group h3,
+  body.full-resume .project h3,
+  body.full-resume .edu h3,
+  body.full-resume .academic h3 { color:#ffcfe1; }
+  body.full-resume .job-date { color:#ffac64; }
+  body.full-resume .job-detail summary:after { color:#f68bcc; }
+  body.full-resume .job-organisation { color:#d8a7d2; }
+  body.full-resume .tag {
+    background:#2b162e;
+    color:#e7b2db;
+    border-color:#69416b;
+  }
+  body.full-resume .tag:nth-child(3n+1) { color:#ffb77c; }
+  body.full-resume .tag:nth-child(3n+2) { color:#faa3d3; }
+  body.full-resume .tag:nth-child(3n+3) { color:#c6a4fc; }
+  body.full-resume .edu { border-left-color:#e879b5; }
+  body.full-resume .edu small,
+  body.full-resume .academic span,
+  body.full-resume .publication span { color:#f992c7; }
+  body.full-resume .edu .education-note { color:#ffb677; }
+  body.full-resume .toolchain summary { color:#eeb1db; }
+  body.full-resume .toolchain summary span { color:#c39dfd; }
+  body.full-resume .resume-footer a { color:#ffae6c; }
+  body.full-resume .resume-footer { color:#b591b2; }
+
+  body.brief-resume {
+    --accent:#ff9e55;
+    --ink:#ffe2ee;
+    --text:#d9b3d1;
+    --soft:#26142b;
+    --line:#56355f;
+    background:#09070d;
+    color:var(--ink);
+  }
+  body.brief-resume .toolbar a {
+    background:#211229;
+    border-color:#62416c;
+    color:#efa7d4;
+  }
+  body.brief-resume .toolbar button {
+    background:linear-gradient(115deg,#ffad5b,#f47db7);
+    border-color:#ffa265;
+    color:#24101a;
+  }
+  body.brief-resume .paper {
+    background:
+      radial-gradient(ellipse 60% 26% at 93% 1%,rgba(142,60,162,.09),transparent),
+      #180e1d;
+    box-shadow:0 20px 62px rgba(0,0,0,.44);
+    border:1px solid #4c2e52;
+  }
+  body.brief-resume .headerline {
+    border-bottom-color:#a75e80;
+  }
+  body.brief-resume .kicker { color:#ffb470; }
+  body.brief-resume .headerline h1 { color:#ffceea; }
+  body.brief-resume .headline { color:#f1abd8; }
+  body.brief-resume .contact { color:#d5accd; }
+  body.brief-resume .contact a:nth-of-type(1) { color:#ffb06a; }
+  body.brief-resume .contact a:nth-of-type(2) { color:#cda9ff; }
+  body.brief-resume .summary { color:#e5bfdc; }
+  body.brief-resume .metric { background:#29152e; }
+  body.brief-resume .metric strong { color:#ffad68; }
+  body.brief-resume .metric:nth-child(2) strong { color:#f999ce; }
+  body.brief-resume .metric:nth-child(3) strong { color:#c29dff; }
+  body.brief-resume .metric:nth-child(4) strong { color:#db8144; }
+  body.brief-resume .metric small { color:#d1abca; }
+  body.brief-resume .section-label {
+    color:#f78dc6;
+    border-bottom-color:#543358;
+  }
+  body.brief-resume .job h3,
+  body.brief-resume .skill-group h3,
+  body.brief-resume .education strong { color:#ffd4e7; }
+  body.brief-resume .job .date { color:#bd91b9; }
+  body.brief-resume .job li,
+  body.brief-resume .job p,
+  body.brief-resume .skill-group p,
+  body.brief-resume .education,
+  body.brief-resume .pub { color:#dab5d3; }
+  body.brief-resume .pub:before { color:#ffa761; }
+  body.brief-resume .footer {
+    border-top-color:#56385d;
+    color:#bb99ba;
+  }
+  body.brief-resume .footer strong { color:#ffad68; }
+}
+@media print {
+  /* The two résumé pages print with a white paper background and dark text. */
+  body.full-resume { --green:#a33d71; }
+  body.brief-resume { --accent:#8b3960; }
+}
