@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="./hero.css">
   <link rel="stylesheet" href="./palette.css">
   <link rel="stylesheet" href="./hero-fit.css">
-  <link rel="stylesheet" href="./portrait-integrated.css">
   <title>Mehrdad Shoae Kazemi — Data Engineer & Analyst</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -65,7 +64,7 @@
             <span class="hero-city">COPENHAGEN AREA, DENMARK</span>
           </div>
         </div>
-        <div class="hero-portrait-stage hero-portrait-integrated" id="portrait-stage">
+        <div class="hero-portrait-stage" id="portrait-stage">
           <div class="portrait-aura" aria-hidden="true"></div>
           <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
           <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
@@ -73,11 +72,24 @@
           <div class="portrait-signal signal-two" aria-hidden="true"></div>
           <div class="portrait-signal signal-three" aria-hidden="true"></div>
           <div class="portrait-signal signal-four" aria-hidden="true"></div>
-          <div class="portrait-ambient-label ambient-top" aria-hidden="true"><span class="signal-pip"></span> HUMAN-CENTERED ENGINEERING</div>
-          <div class="portrait-display" id="portrait-card">
-            <img class="portrait-photo" id="profile-photo" src="./portrait.webp" alt="Mehrdad Shoae Kazemi, professional portrait" fetchpriority="high" decoding="async">
+          <div class="portrait-ticker ticker-top" aria-hidden="true"><span class="signal-pip"></span> HUMAN-CENTERED ENGINEERING</div>
+          <div class="portrait-card" id="portrait-card">
+            <div class="portrait-photo-wrap">
+              <img class="portrait-photo" id="profile-photo" src="https://avatars.githubusercontent.com/u/67460215?v=4" alt="Profile picture from Mehrdad's GitHub account" fetchpriority="high" decoding="async">
+              <div class="portrait-image-wash" aria-hidden="true"></div>
+              <div class="portrait-corner corner-top" aria-hidden="true"></div>
+              <div class="portrait-corner corner-bottom" aria-hidden="true"></div>
+            </div>
+            <div class="portrait-caption">
+              <div><span class="portrait-caption-top">ABOUT ME</span><strong>Mehrdad Shoae Kazemi</strong></div>
+              <span class="portrait-caption-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
-          <div class="portrait-ambient-label ambient-bottom" aria-hidden="true">DATA <span>↗</span> IMPACT</div>
+          <div class="portrait-stats" aria-label="Selected achievements">
+            <div class="portrait-metric metric-top"><span class="metric-spark" aria-hidden="true">✳</span><div><strong>19 registries</strong><small>European research data</small></div></div>
+            <div class="portrait-metric metric-bottom"><span class="metric-spark" aria-hidden="true">↗</span><div><strong>10–20× faster</strong><small>Scientific pipelines</small></div></div>
+          </div>
+          <div class="portrait-ticker ticker-bottom" aria-hidden="true">DATA <span>→</span> MEANING <span>→</span> IMPACT</div>
         </div>
         <a class="hero-scroll-cue" href="#portfolio-paths"><span class="scroll-cue-line" aria-hidden="true"></span> SCROLL TO EXPLORE</a>
       </section>
