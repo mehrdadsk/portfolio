@@ -9,15 +9,15 @@
   .recruiter-home .hero-v2.recruiter-hero .hero-denmark-backdrop {
     position: absolute;
     z-index: 0;
-    top: -8%;
-    right: -16%;
-    width: 79%;
-    height: 117%;
+    top: 0;
+    right: 0;
+    width: 82%;
+    height: 100%;
     pointer-events: none;
     background: url("./denmark-soft-map.svg") center center / contain no-repeat;
     filter: blur(3.4px);
     opacity: .50;
-    transform: rotate(-3deg);
+    transform: none;
   }
   .recruiter-home .hero-v2.recruiter-hero .hero-copy {
     position: relative;
@@ -29,21 +29,21 @@
   }
   @media (max-width: 820px) {
     .recruiter-home .hero-v2.recruiter-hero .hero-denmark-backdrop {
-      top: 20%;
-      right: -10%;
-      width: 105%;
-      height: 79%;
+      top: 18%;
+      right: 0;
+      width: 100%;
+      height: 80%;
       filter: blur(4px);
       opacity: .29;
-      transform: rotate(-2deg);
+      transform: none;
     }
   }
   @media (max-width: 480px) {
     .recruiter-home .hero-v2.recruiter-hero .hero-denmark-backdrop {
-      top: 29%;
-      right: -14%;
-      width: 125%;
-      height: 67%;
+      top: 27%;
+      right: 0;
+      width: 100%;
+      height: 69%;
       opacity: .23;
     }
   }
