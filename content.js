@@ -35,7 +35,7 @@ window.PORTFOLIO = {
       symbol: "BI",
       art: "amber",
       featured: true,
-      role: "Independent prototype",
+      role: "Developer · Power BI reporting prototype using synthetic data",
       demoUrl: "./projects/eurospa-powerbi/index.html",
       plotsUrl: "./projects/eurospa-powerbi/index.html#visuals",
       tableUrl: "./projects/eurospa-powerbi/index.html#data-table",
