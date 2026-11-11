@@ -29,7 +29,7 @@
     ["#home-experience", jobs.map(item =>
       item.date + " — " + item.title + ", " + item.company
     )],
-    ["#home-projects", data.projects.slice(0, 5).map(item => item.title)],
+    ["#home-projects", data.projects.slice(0, 5).map(item => (item.year || "") + " — " + item.title)],
     ["#home-achievements", data.impact.map(item =>
       item.value + (item.suffix || "") + " — " + item.label.toLowerCase()
     )]
@@ -92,6 +92,7 @@
     const projects=data.projects.filter(p=>active==="All"||p.category===active);
     for(const p of projects){
       const article=el("article","project-card recruiter-project-card");
+      article.id="project-"+p.id;
       if(p.featured)article.classList.add("featured-case-study");
       const open=el("button","project-open-button");
       open.type="button";
