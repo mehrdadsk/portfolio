@@ -200,5 +200,9 @@
   $("#contribution-metric").addEventListener("change",render);
   country.addEventListener("change",render);
   render();
-  selectTab(tabFromHash());
+  const initialTab=tabFromHash();
+  selectTab(initialTab);
+  if(window.location.hash && ["#overview","#treatments","#contribution","#completeness","#data-table"].includes(window.location.hash)){
+    window.requestAnimationFrame(()=>document.getElementById("visuals").scrollIntoView({block:"start"}));
+  }
 })();
