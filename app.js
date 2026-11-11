@@ -13,6 +13,7 @@
   const set=(selector,value)=>{const node=$(selector);if(node)node.textContent=String(value ?? "");};
   const append=(parent,...nodes)=>{parent.append(...nodes);return parent;};
   set("#hero-description",data.description);
+  if(data.personalStory)set("#personal-story",data.personalStory);
   set("#updated-year",new Date().getFullYear());
 
   // Results: the only metric summary on the homepage. Each number has a full label.
