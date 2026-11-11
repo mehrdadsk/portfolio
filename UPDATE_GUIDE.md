@@ -258,7 +258,7 @@ When replacing the portrait with a truly transparent photo, remove the `mask-ima
 
 ## Homepage with separate detailed pages (November 2026)
 
-The homepage is intentionally brief: only the profile introduction, portrait, and four title-only overview cards. These cards link to `skills.html`, `experience.html`, `projects.html`, and `achievements.html`. The top navigation links to these pages plus `about.html` and `education.html`.
+The homepage is intentionally brief: the profile introduction, portrait, and four simple **non-clickable lists** of skills, positions, project titles and achievements. The existing top navigation links to `skills.html`, `experience.html`, `projects.html`, `achievements.html`, `about.html` and `education.html` for full details.
 
 **To update the professional details**, edit `content.js` as usual. The same data populates the dedicated pages automatically:
 
@@ -269,6 +269,6 @@ The homepage is intentionally brief: only the profile introduction, portrait, an
 - Education and publications: `education` and `publications` → `education.html`
 - Personal background: `personalStory` → `about.html`
 
-**To update the homepage link cards**, edit `index.html` inside the `overview-grid` container. Keep their `href` destinations as real page URLs, not section anchors, so clicking a title opens the detailed page. To change their appearance, edit `portfolio-pages.css`.
+**To update the homepage summary lists**, edit `content.js` under `expertise`, `timeline`, `projects` or `impact`. `app.js` automatically fills the four plain `ul` lists in the `overview-grid` container of `index.html`. The lists are not clickable; leave the navigation links in the page header unchanged. To change list appearance, edit `portfolio-pages.css`.
 
 The two résumé pages (`cv.html` and `full-resume.html`) remain independent of the six detail pages. Contact links are displayed in the header and brief homepage contact row.
