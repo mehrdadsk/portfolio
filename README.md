@@ -10,8 +10,8 @@ A custom-built, responsive professional portfolio for data engineering, clinical
 
 - Black-first Noir / Ember / Orchid identity with orange, burnt orange, pink and purple accents
 - Portrait-first homepage with interactive hover depth, ambient movement, and scroll reveals
-- Four title-only overview cards on the homepage; achievements are detailed on a separate page
-- Filterable project cards and accessible case-study dialogs on the dedicated Projects page
+- Four short, non-clickable summary lists on the homepage; detailed information on separate pages
+- Year-labeled projects with featured 2026 synthetic Power BI demo, visible GitHub/plot/table links, and accessible case-study dialogs
 - Skills and career-history detail available only on their own pages
 - Dedicated pages for About me, Education, Skills, Experience, Projects and Achievements
 - Both a concise brief résumé and an expandable full résumé, printable to PDF
@@ -153,3 +153,11 @@ The homepage (`index.html`) has your portrait, short professional introduction a
 | Achievements | `achievements.html` | `content.js` → `impact` |
 
 The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **homepage list headings**, edit `index.html` under `portfolio-overview`; the list items themselves are derived automatically by `app.js` from `content.js`. For visual spacing, use `portfolio-pages.css`. The lists deliberately have no links; for top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
+
+## Featured project: Synthetic EuroSpA Power BI reporting (2026)
+
+The top project on `projects.html` is a Power BI reporting prototype built on synthetic pooled EuroSpA data. The portfolio includes an [interactive browser demo](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/), a [looping treatment-line preview](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/animated-preview.svg), reproducible public demonstration code and a country summary table. These examples are synthesized from the project's aggregated synthetic workbook, not screenshots or a public Power BI embed.
+
+[Demo code and provenance](./projects/eurospa-powerbi/README.md). The original local Power BI `.pbip` project and Python/R pipeline are **not** yet published; the code link refers only to this openly viewable demonstration. To publish original code later, first remove all sensitive or internal content, and update the project URLs in `content.js`.
+
+All project objects in `content.js` now have a `year`. Optional `demoUrl`, `plotsUrl`, `tableUrl`, `codeUrl`, `previewUrl` and `codeNote` fields allow screenshots, small animations and GitHub source references to be added incrementally. Empty URLs are shown as a neutral status, **not** fake links. See `UPDATE_GUIDE.md` for instructions.
