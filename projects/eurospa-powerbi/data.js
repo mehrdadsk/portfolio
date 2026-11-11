@@ -36,6 +36,29 @@ window.EUROSPA_SYNTHETIC = {
     TR:[[57,20,28],[18,7,13],[7,2,2],[2,1,0]],
     UK:[[102,38,47],[31,13,14],[11,2,1],[1,1,1]]
   },
+  /* Visit-checkpoint presence summed from synthetic VisitByTreatment rows.
+     Format: [treatment rows, baseline, 6m, 12m, 24m, 36m, 60m].
+     These are NOT variable-level completeness rates or true follow-up eligibility. */
+  checkpointLabels:["Baseline","6 months","12 months","24 months","36 months","60 months"],
+  visitCoverage: {
+    CH:[166,146,112,81,53,25,10],
+    DE:[198,184,146,106,59,32,10],
+    DK:[200,171,147,111,63,42,15],
+    EE:[219,194,163,124,69,31,8],
+    ES:[246,225,179,120,79,34,10],
+    IS:[231,208,160,109,73,37,12],
+    IT:[233,205,168,114,74,30,6],
+    NL:[294,266,219,137,89,50,14],
+    NO:[252,227,176,122,77,37,5],
+    PL:[205,184,141,98,63,27,5],
+    PT:[185,167,124,102,57,31,8],
+    RO:[197,177,144,99,56,31,12],
+    SE:[194,175,136,91,62,29,6],
+    SF:[243,226,175,119,77,36,7],
+    SI:[155,139,109,95,56,20,8],
+    TR:[157,142,114,79,43,22,10],
+    UK:[262,238,174,121,78,39,8]
+  },
   lineLabels:["First line","Second line","Third line","Fourth line+"],
   classes:["TNFi","IL-17i","Other targeted therapies"]
 };
