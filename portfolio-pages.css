@@ -242,3 +242,19 @@
   .portfolio-detail .project-open-button {padding:20px}
   .portfolio-detail .project-resources {padding:12px 20px 18px}
 }
+
+/* Homepage project titles: links to their real case-study pages.
+   Other homepage overview lists remain non-interactive. */
+.portfolio-landing .overview-summary-list .home-project-link {
+  color: #d9f5fb;
+  text-decoration: underline;
+  text-decoration-color: rgba(72,216,205,.4);
+  text-underline-offset: 4px;
+  font-weight: 650;
+  transition: color .2s,text-decoration-color .2s;
+}
+.portfolio-landing .overview-summary-list .home-project-link:hover,
+.portfolio-landing .overview-summary-list .home-project-link:focus-visible {
+  color: #48d8cd;
+  text-decoration-color: #48d8cd;
+}
