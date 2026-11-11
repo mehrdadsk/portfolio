@@ -7,7 +7,7 @@ window.FULL_RESUME = {
   summary: [
     "Data Engineer & Analyst with approximately 12 years of data work spanning hospital and university operations, clinical real-world evidence and bioinformatics. I turn inconsistent data into validated, analysis-ready datasets that teams can use to answer difficult questions.",
     "Since 2023, I have supported international rheumatology studies at COPECARE, Rigshospitalet, including EuroSpA data from 19 European registries. My work combines reproducible R/Python pipelines, data quality and treatment-history reconstruction with scientific reporting and cross-country collaboration.",
-    "My background includes an MSc in Engineering, Bioinformatics and Systems Biology from DTU and both an MSc and a BSc in Nutritional Sciences."
+    "My background includes an MSc in Engineering – Bioinformatics (DTU), and both an MSc and a BSc in Nutritional Sciences."
   ],
   strengths: [
     {title:"Finding what others miss", detail:"Root-cause QC investigations restored approximately 1,700 eligible patients and improved usable data by 7–10% in affected workflows."},
@@ -52,7 +52,7 @@ window.FULL_RESUME = {
       items:[
         "Danish language studies during 2015–2017.",
         "Worked as a courier during 2017–2019 while financing further education.",
-        "Started the DTU MSc in Bioinformatics and Systems Biology in 2020."
+        "Started the MSc in Engineering – Bioinformatics at DTU in 2020."
       ],
       tags:["Language learning","Career transition"]
     },
@@ -99,7 +99,7 @@ window.FULL_RESUME = {
   education: [
     {
       date:"FEB 2020 — DEC 2022",
-      degree:"MSc in Engineering · Bioinformatics and Systems Biology",
+      degree:"MSc in Engineering – Bioinformatics (DTU)",
       institution:"Technical University of Denmark (DTU)",
       note:"120 ECTS · GPA 9.45/12",
       bullets:[
