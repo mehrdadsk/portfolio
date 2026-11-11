@@ -1,5 +1,5 @@
 /* Frame-free hero portrait, 11 November 2026.
-   A portrait silhouette rather than a rectangular image card.
+   Use the full original transparent PNG, with no extra image mask or frame.
    Loads after the main homepage layout, and is kept separate to avoid stale CSS.
 */
 @media screen {
@@ -48,15 +48,11 @@
     filter: none !important;
     transform: none !important;
     transition: none;
-    /* Existing traced silhouette removes the baked-in photo background. */
-    -webkit-mask-image: url("./portrait-integrated-mask.svg");
-    mask-image: url("./portrait-integrated-mask.svg");
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    /* The original p2.png already has a transparent alpha channel.
+       Do not mask it: a mask traced for another portrait cuts this photo. */
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    clip-path: none !important;
   }
   .recruiter-home #portrait-stage .portrait-orbit,
   .recruiter-home #portrait-stage .portrait-aura,
