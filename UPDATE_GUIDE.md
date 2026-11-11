@@ -47,6 +47,7 @@ In `content.js`, find `projects: [` and copy one existing project object within 
 ```js
 {
   id: "synthetic-data-quality-demo",
+  year: "2026",
   category: "Data Engineering",
   badge: "PUBLIC DEMO",
   title: "Quality control in a synthetic registry",
@@ -55,6 +56,11 @@ In `content.js`, find `projects: [` and copy one existing project object within 
   symbol: "QC",
   art: "blue",
   role: "Personal project",
+  demoUrl: "",
+  plotsUrl: "",
+  tableUrl: "",
+  codeUrl: "",
+  previewUrl: "",
   period: "2026",
   challenge: "Demonstrating consistent rules across messy input formats.",
   approach: [
@@ -272,3 +278,34 @@ The homepage is intentionally brief: the profile introduction, portrait, and fou
 **To update the homepage summary lists**, edit `content.js` under `expertise`, `timeline`, `projects` or `impact`. `app.js` automatically fills the four plain `ul` lists in the `overview-grid` container of `index.html`. The lists are not clickable; leave the navigation links in the page header unchanged. To change list appearance, edit `portfolio-pages.css`.
 
 The two résumé pages (`cv.html` and `full-resume.html`) remain independent of the six detail pages. Contact links are displayed in the header and brief homepage contact row.
+
+## 19. Add code links, plots, tables and animated previews to projects
+
+All projects are listed in `content.js` under `projects: [`. Each object should have a meaningful `year` (a range such as `"2023–present"` is acceptable when the project spans multiple years). The year is displayed in the Projects page cards and case-study dialog.
+
+The **2026 EuroSpA synthetic Power BI** project is the current example. Open:
+- [Projects page](https://mehrdadsk.github.io/portfolio/projects.html#project-eurospa-dashboard)
+- [Public interactive charts and table](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/)
+- [Demo code and notes](./projects/eurospa-powerbi/README.md)
+
+To add resources to a project, edit the corresponding object in `content.js`:
+
+```js
+year: "2026",
+demoUrl: "./projects/my-project/index.html",
+plotsUrl: "./projects/my-project/index.html#visuals",
+tableUrl: "./projects/my-project/index.html#data-table",
+codeUrl: "https://github.com/YOUR_USERNAME/your-public-repository",
+codeLabel: "GitHub source code",
+previewUrl: "./projects/my-project/preview.svg",
+codeNote: "This example uses synthetic data only.",
+```
+
+- Use actual, working public URLs only. Leave missing links as `""`. Projects without public code or plots display a status instead of a dead link.
+- For a true Power BI source project, link the sanitized `.pbip` project folder or a new GitHub repository once it is public. **Do not call the browser demo the original Power BI code.**
+- Add screenshots, animated SVGs, short GIFs or figures within `projects/my-project/`. Link the relative path in `previewUrl` (the preview is displayed on the featured project card and inside its detail dialog).
+- To feature a project at full width, set `featured: true` on that project and move it to the first position in `projects`.
+- The browser demo for EuroSpA relies on summarized synthetic counts only. The public source is `projects/eurospa-powerbi/data.js`, with visual code in `demo.js`. The original local pipeline and `.pbip` are not published yet.
+- Verify that externally shared screenshots, data and code contain no real patient records or confidential hospital URLs, filenames, passwords or credentials.
+
+The homepage displays a small static list of the first five projects even if JavaScript is disabled. When reordering or renaming projects, also update the five fallback `<li>` items under `id="home-projects"` in `index.html`, or the old text may remain visible when scripts fail to load. The live JavaScript updates those items when available.
