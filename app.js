@@ -18,7 +18,7 @@
 
   // Results: the only metric summary on the homepage. Each number has a full label.
   const resultList=$("#impact-grid");
-  for(const item of data.impact){
+  if(resultList)for(const item of data.impact){
     const article=el("article","recruiter-result");
     const metric=append(el("strong","recruiter-result-value"),document.createTextNode(item.value),el("span","",item.suffix||""));
     const copy=append(el("div","recruiter-result-copy"),el("h3","",item.label),el("p","",item.description));
@@ -28,6 +28,7 @@
 
   // Project cards describe the subject only; outcomes are described in case study details.
   const filterRoot=$("#project-filters"),grid=$("#project-grid"),dialog=$("#project-dialog");
+  if(filterRoot && grid && dialog){
   let active="All";
   const btnFilters=data.filters||["All"];
   for(const name of btnFilters){
@@ -87,9 +88,11 @@
   dialog.addEventListener("click",event=>{if(event.target===dialog)closeDialog();});
   dialog.addEventListener("close",()=>document.body.classList.remove("dialog-open"));
 
+  }
+
   // Skills are visible together, never hidden behind tabs or repeated in a tool cloud.
   const skills=$("#skill-cards");
-  for(const s of data.expertise){
+  if(skills)for(const s of data.expertise){
     const card=el("article","recruiter-skill-card");
     const heading=el("h3","",s.name);
     const desc=el("p","",s.description);
@@ -101,7 +104,7 @@
 
   // Employment only; education is displayed solely in the education section.
   const career=$("#career-list");
-  for(const e of data.timeline.filter(item=>item.title!=="Nutritional Sciences" && !item.title.startsWith("MSc"))){
+  if(career)for(const e of data.timeline.filter(item=>item.title!=="Nutritional Sciences" && !item.title.startsWith("MSc"))){
     const entry=el("article","recruiter-career-entry");
     const meta=el("div","recruiter-career-meta");
     meta.append(el("span","timeline-date",e.date),el("h3","",e.title),el("p","",e.company));
@@ -112,6 +115,7 @@
   }
 
   const education=$("#education-panel");
+  if(education){
   education.append(el("div","mini-heading","DEGREES"));
   for(const e of data.education){
     const item=el("article","edu-item");
@@ -119,8 +123,9 @@
     if(e.note)item.append(el("p","recruiter-edu-note",e.note));
     education.append(item);
   }
+  }
   const publications=$("#publication-list");
-  for(const pub of data.publications){
+  if(publications)for(const pub of data.publications){
     const item=el("article","pub-item");
     const details=el("div");
     details.append(el("h3","",pub.title),el("p","",pub.journal+" · "+pub.year));
@@ -134,6 +139,7 @@
   }
 
   const contacts=$("#contact-links");
+  if(contacts){
   if(data.contact.email){
     const email=el("a","button button-primary","Email ↗");
     email.href="mailto:"+data.contact.email;
@@ -145,7 +151,9 @@
     a.href=url;a.target="_blank";a.rel="noopener noreferrer";
     contacts.append(a);
   }
+  }
   const mobile=$("#mobile-menu"),menu=$(".menu-toggle");
+  if(mobile && menu){
   menu.addEventListener("click",()=>{
     const wasOpen=menu.getAttribute("aria-expanded")==="true";
     menu.setAttribute("aria-expanded",String(!wasOpen));
@@ -155,4 +163,5 @@
   mobile.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
     mobile.hidden=true;menu.setAttribute("aria-expanded","false");menu.setAttribute("aria-label","Open menu");
   }));
+  }
 })();
