@@ -66,40 +66,84 @@
     });
     filterRoot.append(button);
   }
+  // Every project has an explicit year. Real public resource URLs appear only
+  // when provided; other projects use a truthful "not yet published" status.
+  function resourceLink(url,label){
+    const a=el("a","project-resource-link",label+" ↗");
+    a.href=url;
+    if(/^https?:\/\//.test(url)){
+      a.target="_blank";a.rel="noopener noreferrer";
+    }
+    return a;
+  }
+  function addResources(parent,p){
+    const panel=el("div","project-resources");
+    if(p.demoUrl)panel.append(resourceLink(p.demoUrl,"Interactive demo"));
+    if(p.plotsUrl)panel.append(resourceLink(p.plotsUrl,"Plots"));
+    if(p.tableUrl)panel.append(resourceLink(p.tableUrl,"Data table"));
+    if(p.codeUrl)panel.append(resourceLink(p.codeUrl,p.codeLabel||"GitHub code"));
+    if(!panel.children.length){
+      panel.append(el("span","project-resource-note","Code & visual examples not public yet"));
+    }
+    parent.append(panel);
+  }
   function renderProjects(){
     grid.replaceChildren();
     const projects=data.projects.filter(p=>active==="All"||p.category===active);
     for(const p of projects){
-      const button=el("button","project-card recruiter-project-card");
-      button.type="button";
-      button.setAttribute("aria-label","View project: "+p.title);
-      button.append(
+      const article=el("article","project-card recruiter-project-card");
+      if(p.featured)article.classList.add("featured-case-study");
+      const open=el("button","project-open-button");
+      open.type="button";
+      open.setAttribute("aria-label","Read "+(p.year||"")+" project: "+p.title);
+      open.append(
         el("span","project-meta",p.category),
+        el("span","project-year",p.year||p.period||"Year to confirm"),
         el("h3","project-title",p.title),
         el("p","project-blurb",p.summary),
-        el("span","recruiter-project-link","View project details ↗")
+        el("span","recruiter-project-link","Read case study ↗")
       );
-      button.addEventListener("click",()=>showProject(p));
-      grid.append(button);
+      open.addEventListener("click",()=>showProject(p));
+      article.append(open);
+      if(p.previewUrl){
+        const img=el("img","project-animated-preview");
+        img.src=p.previewUrl;img.loading="lazy";
+        img.alt="Animated synthetic-data treatment-line charts, recreated as a public illustrative preview";
+        article.append(img);
+      }
+      addResources(article,p);
+      grid.append(article);
     }
   }
   renderProjects();
   function showProject(p){
     const content=$("#dialog-content");content.replaceChildren();
-    content.append(el("div","dialog-kicker",p.category),el("h2","",p.title));
+    content.append(el("div","dialog-kicker",(p.year||"")+" · "+p.category),el("h2","",p.title));
     const context=el("p","dialog-lede",p.role+" · "+p.period);
     content.append(context);
+    if(p.previewUrl){
+      const pic=el("img","case-study-preview");
+      pic.src=p.previewUrl;
+      pic.alt="Animated chart preview using synthetic registry treatment-line counts";
+      content.append(pic);
+    }
     const section=(title,body)=>{
-      const s=el("section","dialog-section");
-      s.append(el("h3","",title),el("p","",body));
-      content.append(s);
+      const panel=el("section","dialog-section");
+      panel.append(el("h3","",title),el("p","",body));
+      content.append(panel);
     };
     section("Context",p.challenge);
     const approach=el("section","dialog-section");
     const list=el("ul");
     for(const item of p.approach)list.append(el("li","",item));
-    approach.append(el("h3","","Work performed"),list);content.append(approach);
+    approach.append(el("h3","","Work performed"),list);
+    content.append(approach);
     section("Result",p.result);
+    const sources=el("section","dialog-section");
+    sources.append(el("h3","","Code, plots & tables"));
+    if(p.codeNote)sources.append(el("p","",p.codeNote));
+    addResources(sources,p);
+    content.append(sources);
     const tools=el("div","dialog-tags");
     for(const tool of p.tools)tools.append(el("span","dialog-tag",tool));
     content.append(tools);
