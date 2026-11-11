@@ -29,7 +29,7 @@
     ["#home-experience", jobs.map(item =>
       item.date + " — " + item.title + ", " + item.company
     )],
-    ["#home-projects", data.projects.slice(0, 5).map(item => (item.year || "") + " — " + item.title)],
+    ["#home-projects", data.projects.slice(0, 5)],
     ["#home-achievements", data.impact.map(item =>
       item.value + (item.suffix || "") + " — " + item.label.toLowerCase()
     )]
@@ -37,7 +37,15 @@
   for (const [selector, titles] of homeSummaries) {
     const list = $(selector);
     if (!list || !titles.length) continue;
-    list.replaceChildren(...titles.map(title => el("li", "", title)));
+    list.replaceChildren(...titles.map(entry => {
+      if(selector!=="#home-projects") return el("li", "", entry);
+      const item=el("li","");
+      item.append(el("strong","",(entry.year || "Year to confirm")+" — "));
+      const link=el("a","home-project-link",entry.title);
+      link.href=entry.demoUrl || "./project.html?id="+encodeURIComponent(entry.id);
+      item.append(link);
+      return item;
+    }));
   }
 
   // Results: the only metric summary on the homepage. Each number has a full label.
@@ -80,6 +88,8 @@
     const panel=el("div","project-resources");
     if(p.demoUrl)panel.append(resourceLink(p.demoUrl,"Interactive demo"));
     if(p.plotsUrl)panel.append(resourceLink(p.plotsUrl,"Plots"));
+    if(p.contributionUrl)panel.append(resourceLink(p.contributionUrl,"Pooled contribution"));
+    if(p.completenessUrl)panel.append(resourceLink(p.completenessUrl,"Completeness report"));
     if(p.tableUrl)panel.append(resourceLink(p.tableUrl,"Data table"));
     if(p.codeUrl)panel.append(resourceLink(p.codeUrl,p.codeLabel||"GitHub code"));
     if(!panel.children.length){
