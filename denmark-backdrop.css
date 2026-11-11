@@ -1,6 +1,6 @@
 /* Denmark map/flag watermark for the introductory text only.
    No animated strip and no decoration over the portrait.
-   Edit the opacity below to change strength (0.10 = 10%). */
+   Edit the opacity below to change strength (0.50 = 50%). */
 @media screen {
   .recruiter-home .recruiter-hero .hero-copy {
     position: relative;
@@ -17,7 +17,7 @@
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.10;
+    opacity: 0.50;
     pointer-events: none;
     user-select: none;
   }
