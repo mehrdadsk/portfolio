@@ -141,7 +141,7 @@ The homepage picture now floats directly on the dark theme, with **no rectangula
 
 ## Landing page vs detailed pages (November 2026)
 
-The homepage (`index.html`) has your portrait, short professional introduction and **four non-clickable summary lists**: Skills, Experience, Projects and Achievements. Each list contains only names/titles or brief numerical headlines—**no detailed descriptions and no duplicated links**. The existing top navigation opens the dedicated **About me**, **Education**, **Skills**, **Experience**, **Projects** and **Achievements** pages. Each detailed section has its own shareable HTML file.
+The homepage (`index.html`) has your portrait, short professional introduction and **four concise summary lists**: Skills, Experience, Projects and Achievements. Each list contains only names/titles or brief numerical headlines—**no detailed descriptions**; only project titles link directly to case-study pages. The existing top navigation opens the dedicated **About me**, **Education**, **Skills**, **Experience**, **Projects** and **Achievements** pages. Each detailed section has its own shareable HTML file.
 
 | Navigation | Detailed page | Where to edit the content |
 |---|---|---|
@@ -152,12 +152,20 @@ The homepage (`index.html`) has your portrait, short professional introduction a
 | Projects | `projects.html` | `content.js` → `projects`, `filters` |
 | Achievements | `achievements.html` | `content.js` → `impact` |
 
-The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **homepage list headings**, edit `index.html` under `portfolio-overview`; the list items themselves are derived automatically by `app.js` from `content.js`. For visual spacing, use `portfolio-pages.css`. The lists deliberately have no links; for top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
+The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **homepage list headings**, edit `index.html` under `portfolio-overview`; the list items themselves are derived automatically by `app.js` from `content.js`. For visual spacing, use `portfolio-pages.css`. Only the project titles link to project-specific pages; the skills, experience and achievements remain plain text. For top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
 
 ## Featured project: Synthetic EuroSpA Power BI reporting (2026)
 
-The top project on `projects.html` is a Power BI reporting prototype built on synthetic pooled EuroSpA data. The portfolio includes an [interactive browser demo](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/), a [looping treatment-line preview](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/animated-preview.svg), reproducible public demonstration code and a country summary table. These examples are synthesized from the project's aggregated synthetic workbook, not screenshots or a public Power BI embed.
+The top project on `projects.html` is a Power BI reporting prototype built on synthetic pooled EuroSpA data. The portfolio includes a [four-dashboard interactive browser demo](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/) (Registry Overview, Treatment Lines, Contribution to Pooled Data, and synthetic Visit Coverage), a [looping treatment-line preview](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/animated-preview.svg), reproducible public demonstration code and a country summary table. These examples are synthesized from the project's aggregated synthetic workbook, not screenshots or a public Power BI embed.
 
 [Demo code and provenance](./projects/eurospa-powerbi/README.md). The original local Power BI `.pbip` project and Python/R pipeline are **not** yet published; the code link refers only to this openly viewable demonstration. To publish original code later, first remove all sensitive or internal content, and update the project URLs in `content.js`.
 
 All project objects in `content.js` now have a `year`. Optional `demoUrl`, `plotsUrl`, `tableUrl`, `codeUrl`, `previewUrl` and `codeNote` fields allow screenshots, small animations and GitHub source references to be added incrementally. Empty URLs are shown as a neutral status, **not** fake links. See `UPDATE_GUIDE.md` for instructions.
+
+## Direct project links from the homepage
+
+The five project titles shown in the homepage overview are clickable. The featured Power BI project opens `projects/eurospa-powerbi/index.html`, where visitors can switch among **all four dashboard tabs**. Other projects open `project.html?id=<project-id>`, a shareable single-project case study rendered from the same `content.js` project data. The Projects navigation item still opens the full project listing.
+
+When adding a new project, include a unique `id`, `year`, context, contribution, outcome and optional verified code/plot links in `content.js`. The homepage shows the first five entries. Keep the static five-item fallback in `index.html` consistent with those entries for visitors whose JavaScript is disabled.
+
+**Completeness scope:** the new public completeness panel is an *illustrative visit-checkpoint coverage example* based on synthetic `VisitByTreatment` flags. It does not represent missingness of specific EuroSpA clinical variables or imply that every later visit should exist. The original private completeness dashboard is not published.
