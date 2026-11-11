@@ -640,4 +640,81 @@
     .recruiter-home .hero-residence-compact {padding-left:0;border-left:0;}
   }
 
+  /* Frameless portrait: remove card edges and blend the original photograph
+     into the hero. The project already contains a traced subject mask for p2.png. */
+  .recruiter-home .recruiter-portrait-stage .portrait-orbit,
+  .recruiter-home .recruiter-portrait-stage .portrait-signal {
+    display:none;
+  }
+  .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card,
+  .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card:hover {
+    width:min(385px,90%);
+    height:auto;
+    flex:0 0 auto;
+    border:0;
+    border-radius:0;
+    outline:0;
+    box-shadow:none;
+    background:transparent;
+    overflow:visible;
+  }
+  .recruiter-home .recruiter-portrait-card .portrait-photo-wrap {
+    width:100%;
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    display:block;
+  }
+  .recruiter-home .recruiter-portrait-card .portrait-photo-wrap::after {
+    content:none;
+    display:none;
+  }
+  .recruiter-home .recruiter-portrait-card .portrait-photo,
+  .recruiter-home .recruiter-portrait-card:hover .portrait-photo {
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    object-position:center;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    -webkit-mask-image:url("./portrait-integrated-mask.svg");
+    mask-image:url("./portrait-integrated-mask.svg");
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+    -webkit-mask-size:100% 100%;
+    mask-size:100% 100%;
+    -webkit-mask-position:center;
+    mask-position:center;
+    filter:none;
+    transform:none;
+  }
+  @media (max-width:1120px) {
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card,
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card:hover {
+      width:min(340px,86%);
+      height:auto;
+    }
+  }
+  @media (max-width:820px) {
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card,
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card:hover {
+      width:min(325px,83%);
+      height:auto;
+    }
+  }
+  @media (max-width:600px) {
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card,
+    .recruiter-home .recruiter-portrait-stage .recruiter-portrait-card:hover {
+      width:min(270px,78%);
+      height:auto;
+    }
+  }
+
 }
