@@ -13,9 +13,9 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("./denmark-soft-map.svg");
-    background-position: center center;
-    background-size: contain;
+    background-image: url("./denmark-soft-map.svg?v=map-50-20261111");
+    background-position: 48% 50%;
+    background-size: 118% auto;
     background-repeat: no-repeat;
     opacity: 0.50;
     pointer-events: none;
@@ -31,7 +31,7 @@
   @media (max-width: 620px) {
     .recruiter-home .recruiter-hero .hero-copy::before {
       background-position: 50% 50%;
-      background-size: 92% auto;
+      background-size: 106% auto;
     }
   }
 }
