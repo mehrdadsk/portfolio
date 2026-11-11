@@ -255,3 +255,15 @@ Your original `portrait.webp` was created from a photo with a **visible gray/whi
 The homepage no longer shows a rectangular picture card, name caption, or metrics floating over the image. Instead the portrait appears directly in the right side of the hero, with a natural gradient fade toward the bottom. Its position and size are defined in **`portrait-integrated.css`**, loaded last so it overrides the older card styling. The visual cutout uses **`portrait-integrated-mask.svg`** because the current `portrait.webp` contains checkerboard squares embedded in the image. This is a display mask; the source photograph itself is unchanged.
 
 When replacing the portrait with a truly transparent photo, remove the `mask-image` and `-webkit-mask-image` URL rules in `portrait-integrated.css`, retaining or adding only a bottom gradient fade if desired. For a different photo with an opaque background, the silhouette mask must be replaced to match its outline. The matching small profile image in the full résumé uses the same style; the brief résumé is intentionally text-only.
+
+## Denmark map watermark in the introduction (November 2026)
+
+The homepage uses the **red-and-white Denmark map** from `denmark-soft-map.svg` as a **static, 10%-opacity** decoration *behind the name and profile text only*. It does not extend to the portrait, and the previous waving Danish-flag strip has been removed.
+
+- To adjust its transparency: open `denmark-backdrop.css`, locate `opacity: 0.10;` and choose a new value (e.g. `0.07` for subtler or `0.15` for stronger).
+- To change the size or position: edit `background-size` and `background-position` in the same CSS file.
+- To replace the graphic: replace `denmark-soft-map.svg` with a new SVG of the same filename, or update the CSS `background-image` URL to your preferred image. Keep it a decorative, non-interactive image.
+- The map is limited to `.recruiter-hero .hero-copy`. Do not place it on `.recruiter-portrait-stage` or on the entire `.hero` section if you want the portrait to remain unaffected.
+- The homepage loads `denmark-backdrop.css` after the other theme styles in `index.html`. No JavaScript or animation is needed.
+
+To see changes on GitHub Pages, commit the updated file to `main` and refresh the page, using a hard reload (Ctrl+F5) if your browser has cached the old CSS.
