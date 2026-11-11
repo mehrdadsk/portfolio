@@ -16,22 +16,27 @@
   if(data.personalStory)set("#personal-story",data.personalStory);
   set("#updated-year",new Date().getFullYear());
 
-  // Homepage overview: short non-clickable lists only. Edit content.js to
-  // update the titles; full descriptions are rendered on their detail pages.
+  // The homepage includes real static <li> elements for reliable first paint,
+  // even if JavaScript fails or gets blocked. Refresh them from content.js when
+  // available, keeping only concise summaries (never full descriptions).
   const jobs = data.timeline.filter(item =>
     item.title !== "Nutritional Sciences" && !item.title.startsWith("MSc")
   );
   const homeSummaries = [
-    ["#home-skills", data.expertise.map(item => item.name)],
-    ["#home-experience", jobs.map(item => item.title + " — " + item.company)],
-    ["#home-projects", data.projects.map(item => item.title)],
+    ["#home-skills", data.expertise.map(item =>
+      item.name + " — " + item.skills.slice(0, 3).join(", ")
+    )],
+    ["#home-experience", jobs.map(item =>
+      item.date + " — " + item.title + ", " + item.company
+    )],
+    ["#home-projects", data.projects.slice(0, 5).map(item => item.title)],
     ["#home-achievements", data.impact.map(item =>
-      item.value + (item.suffix || "") + " " + item.label.toLowerCase()
+      item.value + (item.suffix || "") + " — " + item.label.toLowerCase()
     )]
   ];
   for (const [selector, titles] of homeSummaries) {
     const list = $(selector);
-    if (!list) continue;
+    if (!list || !titles.length) continue;
     list.replaceChildren(...titles.map(title => el("li", "", title)));
   }
 
