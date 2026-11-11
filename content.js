@@ -7,7 +7,7 @@ window.PORTFOLIO = {
   headline: "Data Engineering | Data Science | Post-Marketing RWE Data Management | AI / ML / Deep Learning",
   location: "Copenhagen area, Denmark",
   personalStory: "I moved from Iran to Denmark in 2015. Denmark is now home to my family and me. Moving countries has been an important part of my life, both personally and professionally.",
-  description: "MSc in Bioinformatics & Systems Biology (DTU), with BSc and MSc degrees in Nutritional Sciences.",
+  description: "MSc in Engineering – Bioinformatics (DTU), with BSc and MSc degrees in Nutritional Sciences.",
   introduction: "Data Engineer & Analyst working with European clinical registries, reproducible analysis and data quality.",
   principle: "The most useful insight is one you can explain, reproduce and trust.",
   contact: {
@@ -153,13 +153,13 @@ window.PORTFOLIO = {
   tools: ["Python", "R", "SQL", "pandas", "NumPy", "scikit-learn", "PyTorch", "Power BI", "Linux", "Git", "GitLab", "R Markdown", "Databricks fundamentals (training)", "ETL", "Quality control", "Longitudinal modelling"],
   timeline: [
     { date:"2023 — PRESENT",title:"Data Engineer & Analyst",company:"COPECARE · Rigshospitalet, Denmark",description:"Building analysis-ready assets and scientific workflows for the EuroSpA international registry collaboration. My responsibilities also include senior-level data-management coordination.",points:["Harmonise patient, visit and treatment data for international clinical studies.","Develop reusable ETL, quality-control and research reporting workflows.","Work with clinical experts, statisticians and registry managers.","Improve robustness, runtime and reproducibility of inherited code."] },
-    { date:"2020 — 2022",title:"MSc · Bioinformatics",company:"Technical University of Denmark (DTU)",description:"MSc in Engineering, Bioinformatics and Systems Biology. Worked with biological data, computational modelling and immunology-related scientific questions.",points:["Master's thesis on neuro-immune regulation in food allergy.","BRB-seq / RNA-seq workflow on Linux with STAR and R.","Machine-learning coursework, including TCR–pMHC binding prediction."] },
+    { date:"2020 — 2022",title:"MSc in Engineering – Bioinformatics",company:"Technical University of Denmark (DTU)",description:"MSc in Engineering – Bioinformatics (DTU). Worked with biological data, computational modelling and immunology-related scientific questions.",points:["Master's thesis on neuro-immune regulation in food allergy.","BRB-seq / RNA-seq workflow on Linux with STAR and R.","Machine-learning coursework, including TCR–pMHC binding prediction."] },
     { date:"2008 — 2015",title:"Data Analyst",company:"Mashhad University of Medical Sciences, Iran",description:"Worked across nutritional and health data, university reporting and operational systems.",points:["Developed web-based information and reporting tools.","Integrated nutrition, health, inventory and budget data.","Automated recurring reporting and replaced manual data processes."] },
     { date:"2006 — 2008",title:"Data Analyst",company:"Ghaem Hospital, Mashhad, Iran",description:"Supported clinical nutrition data analysis and operational reporting at a teaching hospital.",points:["Linked patient and ward-level information to operational datasets.","Contributed to web-based patient and food-service data-entry tools.","Improved recurring management reporting."] },
     { date:"1997 — 2005",title:"Nutritional Sciences",company:"Shahid Beheshti University of Medical Sciences, Tehran",description:"Completed BSc and MSc degrees in Nutritional Sciences, establishing a clinical and research foundation.",points:["Studied applied nutritional science and research methodology.","Published first-author research on L-carnitine, lactate and exercise performance."] }
   ],
   education: [
-    { date:"2020–2022", degree:"MSc, Bioinformatics and Systems Biology", school:"Technical University of Denmark (DTU)", note:"MSc in Engineering · Thesis: Neuro-immune regulation in food allergy" },
+    { date:"2020–2022", degree:"MSc in Engineering – Bioinformatics (DTU)", school:"Technical University of Denmark (DTU)", note:"Thesis: Neuro-immune regulation in food allergy" },
     { date:"1997–2005", degree:"BSc & MSc, Nutritional Sciences", school:"Shahid Beheshti University of Medical Sciences", note:"" }
   ],
   publications: [
