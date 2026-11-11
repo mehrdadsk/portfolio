@@ -152,3 +152,93 @@
   .portfolio-detail .section-padding {padding-top: 34px; padding-bottom: 54px;}
   .portfolio-detail .detail-next {padding-bottom: 52px;}
 }
+
+/* Detailed project cards: year, verified source links and synthetic previews. */
+.portfolio-detail .recruiter-project-card {
+  cursor: default;
+  padding: 0;
+  overflow: hidden;
+  align-items: stretch;
+  gap: 0;
+}
+.portfolio-detail .project-open-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 25px 26px 17px;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.portfolio-detail .project-open-button:hover .project-title { color: #48d8cd; }
+.portfolio-detail .project-open-button:focus-visible {outline: 2px solid #48d8cd;outline-offset:-3px}
+.portfolio-detail .project-year {
+  font: 700 12px ui-monospace,monospace;
+  letter-spacing: .06em;
+  margin: 0 0 12px;
+  color: #a8c0d0;
+}
+.portfolio-detail .project-open-button .project-blurb {flex: 1}
+.portfolio-detail .project-resources {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px 15px;
+  border-top: 1px solid #375466;
+  margin-top: auto;
+  padding: 17px 24px 20px;
+}
+.portfolio-detail a.project-resource-link {
+  color: #48d8cd;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 6px 0;
+}
+.portfolio-detail a.project-resource-link:hover { text-decoration: underline; }
+.portfolio-detail .project-resource-note {
+  color: #93abb9;
+  font-size: 12px;
+  font-style: italic;
+}
+.portfolio-detail .recruiter-project-card.featured-case-study {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+.portfolio-detail .featured-case-study .project-open-button {grid-column: 1;grid-row:1;}
+.portfolio-detail .project-animated-preview {
+  grid-column: 2;
+  grid-row: 1;
+  display: block;
+  align-self: center;
+  width: calc(100% - 18px);
+  height: auto;
+  margin: 9px;
+  border: 1px solid #36566b;
+  border-radius: 9px;
+}
+.portfolio-detail .featured-case-study>.project-resources {grid-column:1/-1;grid-row:2}
+.portfolio-detail .case-study-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #375466;
+  margin: 18px 0 10px;
+}
+.portfolio-detail .dialog-section .project-resources {padding: 14px 0 0;margin: 12px 0 0}
+@media(max-width:690px){
+  .portfolio-detail .recruiter-project-card.featured-case-study {grid-template-columns:1fr}
+  .portfolio-detail .featured-case-study .project-open-button {grid-column:1;grid-row:1}
+  .portfolio-detail .project-animated-preview {grid-column:1;grid-row:2;width:calc(100% - 30px);margin:0 15px 15px}
+  .portfolio-detail .featured-case-study>.project-resources {grid-column:1;grid-row:3}
+  .portfolio-detail .project-open-button {padding:20px}
+  .portfolio-detail .project-resources {padding:12px 20px 18px}
+}
