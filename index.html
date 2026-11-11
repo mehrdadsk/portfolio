@@ -19,6 +19,23 @@
   <link rel="stylesheet" href="./noir-gold-orange-purple.css">
   <link rel="stylesheet" href="./recruiter-layout.css">
   <link rel="stylesheet" href="./portrait-no-frame.css?v=3">
+  <!-- flag-removal-guard: override any legacy cached flag/map styles and remove hero haze. -->
+  <style>
+    body.recruiter-home .denmark-flag-strip,
+    body.recruiter-home .flag-wave-canvas,
+    body.recruiter-home .recruiter-hero .hero-grid-haze,
+    body.recruiter-home .recruiter-hero .hero-copy::before,
+    body.recruiter-home .recruiter-hero .hero-copy::after {
+      display: none !important;
+      content: none !important;
+      background: none !important;
+      opacity: 0 !important;
+    }
+    body.recruiter-home .recruiter-hero .hero-copy,
+    body.recruiter-home .recruiter-hero {
+      background-image: none !important;
+    }
+  </style>
   <title>Mehrdad Shoae Kazemi — Data Engineer & Analyst</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -45,7 +62,6 @@
 
     <main id="main">
       <section class="hero section-shell hero-v2 recruiter-hero" aria-labelledby="hero-title">
-        <div class="hero-grid-haze" aria-hidden="true"></div>
         <div class="hero-copy">
           <h1 id="hero-title" class="recruiter-name">Mehrdad<br>Shoae Kazemi</h1>
           <div class="hero-profile-details hero-profile-compact">
