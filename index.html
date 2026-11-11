@@ -36,7 +36,7 @@
       background-image: none !important;
     }
   </style>
-  <link rel="stylesheet" href="./portfolio-pages.css?v=1">
+  <link rel="stylesheet" href="./portfolio-pages.css?v=overview-lists-2">
   <title>Mehrdad Shoae Kazemi — Data Engineer & Analyst</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -88,24 +88,32 @@
       <section class="section-shell portfolio-overview" id="explore" aria-labelledby="explore-title">
         <div class="overview-intro">
           <div>
-            <div class="section-kicker">EXPLORE MY PROFILE</div>
-            <h2 id="explore-title">Explore my background</h2>
+            <div class="section-kicker">AT A GLANCE</div>
+            <h2 id="explore-title">Professional overview</h2>
           </div>
-          <p>Select a topic to view the full details.</p>
+          <p>Brief highlights. Full details are available through the navigation above.</p>
         </div>
         <div class="overview-grid">
-          <a class="overview-tile" href="./skills.html">
-            <span class="tile-index">01 / EXPERTISE</span><h3>Skills</h3><span class="tile-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="overview-tile" href="./experience.html">
-            <span class="tile-index">02 / CAREER</span><h3>Experience</h3><span class="tile-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="overview-tile" href="./projects.html">
-            <span class="tile-index">03 / WORK</span><h3>Projects</h3><span class="tile-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="overview-tile" href="./achievements.html">
-            <span class="tile-index">04 / IMPACT</span><h3>Achievements</h3><span class="tile-arrow" aria-hidden="true">↗</span>
-          </a>
+          <article class="overview-summary" aria-labelledby="overview-skills-title">
+            <span class="tile-index">01 / EXPERTISE</span>
+            <h3 id="overview-skills-title">Skills</h3>
+            <ul class="overview-summary-list" id="home-skills"></ul>
+          </article>
+          <article class="overview-summary" aria-labelledby="overview-experience-title">
+            <span class="tile-index">02 / CAREER</span>
+            <h3 id="overview-experience-title">Experience</h3>
+            <ul class="overview-summary-list" id="home-experience"></ul>
+          </article>
+          <article class="overview-summary" aria-labelledby="overview-projects-title">
+            <span class="tile-index">03 / WORK</span>
+            <h3 id="overview-projects-title">Projects</h3>
+            <ul class="overview-summary-list" id="home-projects"></ul>
+          </article>
+          <article class="overview-summary" aria-labelledby="overview-achievements-title">
+            <span class="tile-index">04 / IMPACT</span>
+            <h3 id="overview-achievements-title">Achievements</h3>
+            <ul class="overview-summary-list" id="home-achievements"></ul>
+          </article>
         </div>
       </section>
 
