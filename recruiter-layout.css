@@ -559,4 +559,85 @@
     .recruiter-home .recruiter-about-copy p {font-size:15px;}
   }
 
+  /* Compact recruiter introduction: no repeated headings or lengthy qualifications. */
+  .recruiter-home .hero-profile-details.hero-profile-compact {
+    gap:0;
+    margin-top:19px;
+    max-width:610px;
+  }
+  .recruiter-home .hero-primary-field {
+    margin:0;
+    color:#f6fbff;
+    font-size:clamp(21px,2.15vw,29px);
+    font-weight:760;
+    line-height:1.28;
+    letter-spacing:-.035em;
+  }
+  .recruiter-home .hero-primary-field span {color:#48d8cd;}
+  .recruiter-home .hero-focus-list {
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:17px 0 0;
+    padding:0;
+  }
+  .recruiter-home .hero-focus-list li {
+    font-size:13px;
+    line-height:1.3;
+    font-weight:640;
+    padding:9px 12px;
+    border-radius:7px;
+    border:1px solid #37626d;
+    background:#12232d;
+    color:#48d8cd;
+  }
+  .recruiter-home .hero-focus-list li:nth-child(2) {
+    color:#a9c0ff;
+    border-color:#405a92;
+    background:#151f36;
+  }
+  .recruiter-home .hero-focus-list li:nth-child(3) {
+    color:#65d89b;
+    border-color:#3a6958;
+    background:#12271f;
+  }
+  .recruiter-home .hero-quick-facts {
+    margin-top:25px;
+    padding-top:17px;
+    border-top:1px solid #2c4352;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px 28px;
+  }
+  .recruiter-home .hero-quick-facts p {
+    margin:0;
+    font-size:13px;
+    line-height:1.45;
+    color:#c1d0da;
+  }
+  .recruiter-home .hero-quick-facts .hero-degree {color:#e5f0f7;font-weight:600;}
+  .recruiter-home .hero-degree span {
+    display:inline-block;
+    margin-left:5px;
+    color:#48d8cd;
+    font-weight:740;
+  }
+  .recruiter-home .hero-residence-compact {
+    padding-left:13px;
+    border-left:2px solid #426179;
+  }
+  @media (max-width:620px) {
+    .recruiter-home .hero-primary-field {font-size:23px;}
+    .recruiter-home .hero-focus-list {gap:7px;margin-top:15px;}
+    .recruiter-home .hero-focus-list li {font-size:12px;padding:8px 9px;}
+    .recruiter-home .hero-quick-facts {margin-top:19px;padding-top:15px;gap:9px 20px;}
+    .recruiter-home .hero-quick-facts p {font-size:12px;}
+  }
+  @media (max-width:400px) {
+    .recruiter-home .hero-residence-compact {padding-left:0;border-left:0;}
+  }
+
 }
