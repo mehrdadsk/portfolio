@@ -12,7 +12,6 @@
   };
   const set=(selector,value)=>{const node=$(selector);if(node)node.textContent=String(value ?? "");};
   const append=(parent,...nodes)=>{parent.append(...nodes);return parent;};
-  set("#hero-status",data.status);
   set("#hero-description",data.description);
   set("#updated-year",new Date().getFullYear());
 
