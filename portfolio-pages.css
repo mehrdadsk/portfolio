@@ -1,0 +1,151 @@
+/* Two-level portfolio: concise landing page and full dedicated detail pages.
+   This file is loaded last and does not affect the two printable résumé pages. */
+
+.portfolio-landing .recruiter-hero {
+  padding-bottom: 25px;
+}
+.portfolio-overview {
+  padding-top: 28px;
+  padding-bottom: 90px;
+  border-top: 1px solid var(--border);
+}
+.portfolio-overview .overview-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.portfolio-overview .overview-intro h2 {
+  font-size: clamp(30px, 3.3vw, 44px);
+  line-height: 1.2;
+  margin: 0;
+  color: #f6fbff;
+}
+.portfolio-overview .overview-intro p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+.overview-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 172px;
+  padding: 24px 23px 22px;
+  border: 1px solid #375466;
+  border-radius: 13px;
+  background: #14202b;
+  color: #f6fbff;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.overview-tile:hover, .overview-tile:focus-visible {
+  transform: translateY(-5px);
+  border-color: #48d8cd;
+  background: #192b38;
+}
+.overview-tile .tile-index {
+  color: #a1b8c6;
+  font: 700 11px ui-monospace, Consolas, monospace;
+  letter-spacing: .10em;
+}
+.overview-tile h3 {
+  color: #f6fbff;
+  font-size: clamp(24px, 2.3vw, 32px);
+  font-weight: 750;
+  letter-spacing: -.045em;
+  margin: 16px 0 7px;
+}
+.overview-tile .tile-arrow {
+  color: #48d8cd;
+  font-size: 22px;
+  position: absolute;
+  right: 22px;
+  bottom: 21px;
+}
+.overview-tile:nth-child(2) .tile-arrow { color: #6d96ff; }
+.overview-tile:nth-child(3) .tile-arrow { color: #65d89b; }
+.overview-tile:nth-child(4) .tile-arrow { color: #b9a1fd; }
+.home-contact {
+  padding: 18px 0 65px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+.home-contact p { margin: 0; color: var(--text); font-size: 13px; }
+.home-contact a { color: #48d8cd; font-size: 13px; font-weight: 800; }
+.home-contact a:hover { text-decoration: underline; }
+
+.portfolio-detail .detail-breadcrumb {
+  margin-top: 46px;
+  padding: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  font: 700 11px ui-monospace, Consolas, monospace;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.portfolio-detail .detail-breadcrumb a { color: #48d8cd; }
+.portfolio-detail .detail-breadcrumb a:hover { text-decoration: underline; }
+.portfolio-detail .section-padding { padding-top: 50px; padding-bottom: 80px; }
+.portfolio-detail .section-heading h2,
+.portfolio-detail .recruiter-about h2 { font-size: clamp(35px, 4vw, 54px); }
+.portfolio-detail .detail-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+  padding-top: 25px;
+  padding-bottom: 78px;
+}
+.portfolio-detail .detail-next > span {
+  font: 700 11px ui-monospace, Consolas, monospace;
+  color: var(--muted);
+  letter-spacing: .10em;
+}
+.portfolio-detail .detail-next a { color: #48d8cd; font-size: 18px; font-weight: 760; }
+.portfolio-detail .detail-next a:hover { text-decoration: underline; }
+.portfolio-detail .desktop-nav a[aria-current="page"],
+.portfolio-detail .mobile-nav a[aria-current="page"] {
+  color: #48d8cd;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.portfolio-detail .recruiter-about-grid { min-height: 210px; }
+.portfolio-detail .work-zone, .portfolio-detail .journey-zone {
+  background: transparent;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .overview-grid {grid-template-columns: repeat(2, minmax(0,1fr));}
+}
+@media (max-width: 600px) {
+  .portfolio-overview {padding-top: 25px; padding-bottom: 52px;}
+  .portfolio-overview .overview-intro {align-items: flex-start; flex-direction: column; gap: 8px;}
+  .overview-grid {gap: 10px;}
+  .overview-tile {min-height: 130px; padding: 18px 16px;}
+  .overview-tile h3 {font-size: 22px; margin-top: 11px;}
+  .overview-tile .tile-arrow {right: 15px; bottom: 13px; font-size: 18px;}
+  .home-contact {padding-bottom: 42px; align-items: flex-start; flex-direction: column;}
+  .portfolio-detail .detail-breadcrumb {margin-top: 24px;}
+  .portfolio-detail .section-padding {padding-top: 34px; padding-bottom: 54px;}
+  .portfolio-detail .detail-next {padding-bottom: 52px;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .overview-tile {transition: none;}
+}
