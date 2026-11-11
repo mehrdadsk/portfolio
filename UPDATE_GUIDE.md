@@ -264,7 +264,7 @@ When replacing the portrait with a truly transparent photo, remove the `mask-ima
 
 ## Homepage with separate detailed pages (November 2026)
 
-The homepage is intentionally brief: the profile introduction, portrait, and four simple **non-clickable lists** of skills, positions, project titles and achievements. The existing top navigation links to `skills.html`, `experience.html`, `projects.html`, `achievements.html`, `about.html` and `education.html` for full details.
+The homepage is intentionally brief: the profile introduction, portrait, and four short lists of skills, positions, project titles and achievements. **Only project titles are links** to their individual project pages. The existing top navigation links to `skills.html`, `experience.html`, `projects.html`, `achievements.html`, `about.html` and `education.html` for full details.
 
 **To update the professional details**, edit `content.js` as usual. The same data populates the dedicated pages automatically:
 
@@ -275,7 +275,7 @@ The homepage is intentionally brief: the profile introduction, portrait, and fou
 - Education and publications: `education` and `publications` → `education.html`
 - Personal background: `personalStory` → `about.html`
 
-**To update the homepage summary lists**, edit `content.js` under `expertise`, `timeline`, `projects` or `impact`. `app.js` automatically fills the four plain `ul` lists in the `overview-grid` container of `index.html`. The lists are not clickable; leave the navigation links in the page header unchanged. To change list appearance, edit `portfolio-pages.css`.
+**To update the homepage summary lists**, edit `content.js` under `expertise`, `timeline`, `projects` or `impact`. `app.js` automatically fills the four plain `ul` lists in the `overview-grid` container of `index.html`. Skills, experience and achievement list entries remain plain text. Project titles open either the dedicated EuroSpA dashboard suite or `project.html?id=<project-id>`. Keep the top navigation unchanged. To change list appearance, edit `portfolio-pages.css`.
 
 The two résumé pages (`cv.html` and `full-resume.html`) remain independent of the six detail pages. Contact links are displayed in the header and brief homepage contact row.
 
@@ -293,7 +293,9 @@ To add resources to a project, edit the corresponding object in `content.js`:
 ```js
 year: "2026",
 demoUrl: "./projects/my-project/index.html",
-plotsUrl: "./projects/my-project/index.html#visuals",
+plotsUrl: "./projects/my-project/index.html#treatments",
+contributionUrl: "./projects/my-project/index.html#contribution",
+completenessUrl: "./projects/my-project/index.html#completeness",
 tableUrl: "./projects/my-project/index.html#data-table",
 codeUrl: "https://github.com/YOUR_USERNAME/your-public-repository",
 codeLabel: "GitHub source code",
@@ -309,3 +311,23 @@ codeNote: "This example uses synthetic data only.",
 - Verify that externally shared screenshots, data and code contain no real patient records or confidential hospital URLs, filenames, passwords or credentials.
 
 The homepage displays a small static list of the first five projects even if JavaScript is disabled. When reordering or renaming projects, also update the five fallback `<li>` items under `id="home-projects"` in `index.html`, or the old text may remain visible when scripts fail to load. The live JavaScript updates those items when available.
+
+## 20. Project-title links and the four 2026 EuroSpA dashboards
+
+Homepage project titles are links, not navigation buttons replacing the content. The static list in `index.html` displays five entries and years. When JavaScript is available, `app.js` rebuilds those entries from `content.js` and uses:
+
+- `demoUrl` for projects with a dedicated interactive page (the 2026 Power BI project)
+- Otherwise `./project.html?id=<id>` for a reusable full case-study page (populated by `project-detail.js`)
+
+The top **Projects** navigation continues to open `projects.html`. All other homepage summary lists remain non-clickable.
+
+For the Power BI project, the public synthetic demonstration exposes four selectable dashboard tabs at `projects/eurospa-powerbi/index.html`:
+
+1. **Registry overview** — country totals, contributions relative to pooled counts, registry table
+2. **Treatment lines** — TNFi, IL-17i and Other drug class distribution by treatment line
+3. **Contribution to pooled data** — country ranking by patients, treatments or visits
+4. **Data completeness / visit coverage** — observed synthetic visits at baseline, 6, 12, 24, 36 and 60 months
+
+The fourth tab is intentionally labelled as *visit coverage*, not confirmed clinical-variable completeness. The source synthetic workbook contains `VisitByTreatment` indicators, but no dedicated variable-completeness worksheet. Rates are computed as the number of treatment rows with an observed visit (1) at the checkpoint divided by all treatment rows for the selected country. A zero may reflect treatment duration or unavailable follow-up, not a data error.
+
+If you later provide approved screenshots of the original completeness dashboard (or safely share its synthetic variable-level data), these can be integrated into the same project page and replace the illustrative visit-coverage panel. No private clinical data should be committed to GitHub.
