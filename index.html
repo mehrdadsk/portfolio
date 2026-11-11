@@ -36,19 +36,20 @@
       background-image: none !important;
     }
   </style>
+  <link rel="stylesheet" href="./portfolio-pages.css?v=1">
   <title>Mehrdad Shoae Kazemi — Data Engineer & Analyst</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
   <script src="./hero.js" defer></script>
 </head>
-<body class="recruiter-home">
+<body class="recruiter-home portfolio-landing">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <header class="site-header" id="top">
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="Mehrdad Shoae Kazemi, home"><span class="brand-symbol" aria-hidden="true">M<span class="brand-dot">.</span></span><span class="brand-caption">MEHRDAD <span>SHOAE KAZEMI</span></span></a>
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="#about-me">About me</a><a href="#research">Education</a><a href="#expertise">Skills</a><a href="#journey">Experience</a><a href="#work">Projects</a><a href="#results">Achievements</a><a href="./cv.html">Brief résumé</a><a href="./full-resume.html">Full résumé</a>
+          <a href="./about.html">About me</a><a href="./education.html">Education</a><a href="./skills.html">Skills</a><a href="./experience.html">Experience</a><a href="./projects.html">Projects</a><a href="./achievements.html">Achievements</a><a href="./cv.html">Brief résumé</a><a href="./full-resume.html">Full résumé</a>
         </nav>
         <div class="header-actions">
           <a href="https://www.linkedin.com/in/mehrdadshoaekazemi/" class="header-contact" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
@@ -56,7 +57,7 @@
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-menu" hidden aria-label="Mobile navigation">
-        <a href="#about-me">About me</a><a href="#research">Education</a><a href="#expertise">Skills</a><a href="#journey">Experience</a><a href="#work">Projects</a><a href="#results">Achievements</a><a href="./cv.html">Brief résumé</a><a href="./full-resume.html">Full résumé</a><a href="#contact">Contact</a>
+        <a href="./about.html">About me</a><a href="./education.html">Education</a><a href="./skills.html">Skills</a><a href="./experience.html">Experience</a><a href="./projects.html">Projects</a><a href="./achievements.html">Achievements</a><a href="./cv.html">Brief résumé</a><a href="./full-resume.html">Full résumé</a><a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -84,53 +85,34 @@
         </div>
       </section>
 
-      <section class="section-shell section-padding recruiter-about" id="about-me" aria-labelledby="about-me-title">
-        <div class="recruiter-about-grid">
+      <section class="section-shell portfolio-overview" id="explore" aria-labelledby="explore-title">
+        <div class="overview-intro">
           <div>
-            <div class="section-kicker">BEYOND THE RÉSUMÉ</div>
-            <h2 id="about-me-title">A little about me</h2>
+            <div class="section-kicker">EXPLORE MY PROFILE</div>
+            <h2 id="explore-title">Explore my background</h2>
           </div>
-          <div class="recruiter-about-copy">
-            <p id="personal-story">I moved from Iran to Denmark in 2015. Denmark is now home to my family and me. Moving countries has been an important part of my life, both personally and professionally.</p>
-          </div>
+          <p>Select a topic to view the full details.</p>
+        </div>
+        <div class="overview-grid">
+          <a class="overview-tile" href="./skills.html">
+            <span class="tile-index">01 / EXPERTISE</span><h3>Skills</h3><span class="tile-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="overview-tile" href="./experience.html">
+            <span class="tile-index">02 / CAREER</span><h3>Experience</h3><span class="tile-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="overview-tile" href="./projects.html">
+            <span class="tile-index">03 / WORK</span><h3>Projects</h3><span class="tile-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="overview-tile" href="./achievements.html">
+            <span class="tile-index">04 / IMPACT</span><h3>Achievements</h3><span class="tile-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </section>
 
-      <section class="section-shell section-padding research-zone" id="research" aria-labelledby="research-title">
-        <div class="section-heading"><div><div class="section-kicker">ACADEMIC BACKGROUND</div><h2 id="research-title">Education & publications</h2></div></div>
-        <div class="research-layout"><div class="education-panel" id="education-panel"></div><div class="publications-panel"><div class="mini-heading">PUBLICATIONS</div><div id="publication-list"></div></div></div>
+      <section class="section-shell home-contact" id="contact" aria-label="Contact">
+        <p>Interested in discussing a data challenge or professional opportunity?</p>
+        <a href="https://www.linkedin.com/in/mehrdadshoaekazemi/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
       </section>
-
-      <section class="section-shell section-padding" id="expertise" aria-labelledby="expertise-title">
-        <div class="section-heading"><div><div class="section-kicker">TECHNICAL EXPERIENCE</div><h2 id="expertise-title">Skills</h2></div></div>
-        <div class="recruiter-skills-grid" id="skill-cards" aria-label="Skills by field"></div>
-      </section>
-
-      <section class="journey-zone section-padding" id="journey" aria-labelledby="journey-title"><div class="section-shell">
-        <div class="section-heading"><div><div class="section-kicker">EMPLOYMENT HISTORY</div><h2 id="journey-title">Experience</h2></div></div>
-        <div class="recruiter-timeline" id="career-list"></div>
-        <p class="recruiter-more"><a class="text-link" href="./full-resume.html">Full employment history and responsibilities ↗</a></p>
-      </div></section>
-
-      <section class="work-zone section-padding" id="work" aria-labelledby="work-title"><div class="section-shell">
-        <div class="section-heading"><div><div class="section-kicker">PROFESSIONAL & ACADEMIC WORK</div><h2 id="work-title">Projects</h2><p>Select a project to see the methods and my contribution. No confidential patient data are shown.</p></div></div>
-        <div class="filters" id="project-filters" aria-label="Filter projects"></div>
-        <div class="project-grid recruiter-project-grid" id="project-grid"></div>
-      </div></section>
-
-      <section class="section-shell section-padding impact-section recruiter-results" id="results" aria-labelledby="results-title">
-        <div class="section-heading">
-          <div><div class="section-kicker">CAREER HIGHLIGHTS</div><h2 id="results-title">Achievements</h2></div>
-        </div>
-        <div class="result-list" id="impact-grid" aria-label="Selected professional achievements"></div>
-      </section>
-
-      <section class="contact-zone recruiter-contact" id="contact" aria-labelledby="contact-title"><div class="section-shell contact-inner">
-        <div class="section-kicker">CONTACT</div>
-        <h2 id="contact-title">Professional contact</h2>
-        <p>For recruitment enquiries, contact me through LinkedIn.</p>
-        <div class="contact-buttons" id="contact-links"></div>
-      </div></section>
     </main>
 
     <footer class="site-footer"><div class="section-shell footer-inner">
@@ -139,7 +121,6 @@
       <div class="footer-links"><a href="#top">Back to top ↑</a></div>
     </div></footer>
   </div>
-  <dialog id="project-dialog" class="project-dialog" aria-label="Project details"><div class="dialog-inner"><button type="button" class="dialog-close icon-button" aria-label="Close project details">×</button><div id="dialog-content"></div></div></dialog>
   <noscript><div class="no-script">Enable JavaScript to see projects, skills, career history and publications.</div></noscript>
 </body>
 </html>
