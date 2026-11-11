@@ -16,6 +16,25 @@
   if(data.personalStory)set("#personal-story",data.personalStory);
   set("#updated-year",new Date().getFullYear());
 
+  // Homepage overview: short non-clickable lists only. Edit content.js to
+  // update the titles; full descriptions are rendered on their detail pages.
+  const jobs = data.timeline.filter(item =>
+    item.title !== "Nutritional Sciences" && !item.title.startsWith("MSc")
+  );
+  const homeSummaries = [
+    ["#home-skills", data.expertise.map(item => item.name)],
+    ["#home-experience", jobs.map(item => item.title + " — " + item.company)],
+    ["#home-projects", data.projects.map(item => item.title)],
+    ["#home-achievements", data.impact.map(item =>
+      item.value + (item.suffix || "") + " " + item.label.toLowerCase()
+    )]
+  ];
+  for (const [selector, titles] of homeSummaries) {
+    const list = $(selector);
+    if (!list) continue;
+    list.replaceChildren(...titles.map(title => el("li", "", title)));
+  }
+
   // Results: the only metric summary on the homepage. Each number has a full label.
   const resultList=$("#impact-grid");
   if(resultList)for(const item of data.impact){
