@@ -255,3 +255,20 @@ Your original `portrait.webp` was created from a photo with a **visible gray/whi
 The homepage no longer shows a rectangular picture card, name caption, or metrics floating over the image. Instead the portrait appears directly in the right side of the hero, with a natural gradient fade toward the bottom. Its position and size are defined in **`portrait-integrated.css`**, loaded last so it overrides the older card styling. The visual cutout uses **`portrait-integrated-mask.svg`** because the current `portrait.webp` contains checkerboard squares embedded in the image. This is a display mask; the source photograph itself is unchanged.
 
 When replacing the portrait with a truly transparent photo, remove the `mask-image` and `-webkit-mask-image` URL rules in `portrait-integrated.css`, retaining or adding only a bottom gradient fade if desired. For a different photo with an opaque background, the silhouette mask must be replaced to match its outline. The matching small profile image in the full résumé uses the same style; the brief résumé is intentionally text-only.
+
+## Homepage with separate detailed pages (November 2026)
+
+The homepage is intentionally brief: only the profile introduction, portrait, and four title-only overview cards. These cards link to `skills.html`, `experience.html`, `projects.html`, and `achievements.html`. The top navigation links to these pages plus `about.html` and `education.html`.
+
+**To update the professional details**, edit `content.js` as usual. The same data populates the dedicated pages automatically:
+
+- Skills: `expertise` in `content.js` → `skills.html`
+- Employment: `timeline` → `experience.html`
+- Case studies: `projects` and `filters` → `projects.html`
+- Achievements: `impact` → `achievements.html`
+- Education and publications: `education` and `publications` → `education.html`
+- Personal background: `personalStory` → `about.html`
+
+**To update the homepage link cards**, edit `index.html` inside the `overview-grid` container. Keep their `href` destinations as real page URLs, not section anchors, so clicking a title opens the detailed page. To change their appearance, edit `portfolio-pages.css`.
+
+The two résumé pages (`cv.html` and `full-resume.html`) remain independent of the six detail pages. Contact links are displayed in the header and brief homepage contact row.
