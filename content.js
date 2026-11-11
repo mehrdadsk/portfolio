@@ -6,6 +6,7 @@ window.PORTFOLIO = {
   name: "Mehrdad Shoae Kazemi",
   headline: "Data Engineering | Data Science | Post-Marketing RWE Data Management | AI / ML / Deep Learning",
   location: "Copenhagen area, Denmark",
+  personalStory: "I moved from Iran to Denmark in 2015. Denmark is now home to my family and me. Moving countries has been an important part of my life, both personally and professionally.",
   description: "MSc in Bioinformatics & Systems Biology (DTU), with BSc and MSc degrees in Nutritional Sciences.",
   introduction: "Data Engineer & Analyst working with European clinical registries, reproducible analysis and data quality.",
   principle: "The most useful insight is one you can explain, reproduce and trust.",
