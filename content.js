@@ -4,9 +4,8 @@
 */
 window.PORTFOLIO = {
   name: "Mehrdad Shoae Kazemi",
-  headline: "Data Engineer & Analyst | Clinical Data | Data Science | Bioinformatics",
+  headline: "Data Engineering | Data Science | Post-Marketing RWE Data Management | AI / ML / Deep Learning",
   location: "Copenhagen area, Denmark",
-  status: "OPEN TO DATA ENGINEERING, ANALYTICS, BIOINFORMATICS & PHD POSITIONS",
   description: "MSc in Bioinformatics & Systems Biology (DTU), with BSc and MSc degrees in Nutritional Sciences.",
   introduction: "Data Engineer & Analyst working with European clinical registries, reproducible analysis and data quality.",
   principle: "The most useful insight is one you can explain, reproduce and trust.",
