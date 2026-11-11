@@ -131,3 +131,7 @@ The main home-page scale and spacing are now defined in `hero-fit.css` (loaded a
 ## Freestanding portrait (November 2026)
 
 The homepage picture now floats directly on the dark theme, with **no rectangular frame, card, or caption box**. Achievement numbers remain in the separate About & Impact section instead of covering the photo. The visible portrait is still the original uploaded `portrait.webp`. Because its checkerboard pattern was baked into the bitmap, `portrait-integrated-mask.svg` hides the patterned background and gradually fades the torso at the bottom; `portrait-integrated.css` controls the composition and responsiveness. The same CSS styles the small full résumé picture. Replacing the photograph may require updating the silhouette mask too. A truly transparent original PNG/WebP can be substituted later and the mask rule removed.
+
+## Denmark map behind the name
+
+The homepage has a static, softly rendered Danish map with flag colours **inside the left name/profile area only** (10% opacity). The portrait remains untouched. The old animated Danish-flag strip has been removed. Customize this by editing `denmark-backdrop.css` (opacity, size, position) or replacing `denmark-soft-map.svg`. See the corresponding section of `UPDATE_GUIDE.md`.
