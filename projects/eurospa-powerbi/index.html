@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive demo of EuroSpA synthetic pooled-data Power BI reporting: registry overview, treatment-line distributions, and country-level summary tables.">
+<meta name="theme-color" content="#0a111b">
+<title>EuroSpA Synthetic Power BI Dashboard Demo | Mehrdad Shoae Kazemi</title>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./demo.css?v=1">
+<script src="./data.js" defer></script><script src="./demo.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to dashboard</a>
+<header class="topbar">
+<a class="back" href="../../projects.html">← Portfolio projects</a>
+<span class="brand">M<span>.</span> / EUROSPA DEMO</span>
+<a href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">Public demo code ↗</a>
+</header>
+<main id="main" class="shell">
+<div class="hero-grid">
+  <div>
+    <p class="eyebrow">FEATURED PROJECT · 2026 · SYNTHETIC DATA ONLY</p>
+    <h1>Turning pooled clinical records into <em>clear reporting.</em></h1>
+    <p class="lede">An interactive browser-based recreation of selected <strong>EuroSpA Power BI prototype</strong> views. The source is an aggregated synthetic workbook; these are illustrative charts, not screenshots of a confidential reporting system or a hosted PBIX file.</p>
+    <div class="links"><a class="button primary" href="#visuals">Explore charts ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
+  </div>
+  <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
+</div>
+<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The original Power BI project and pipeline are not yet published in this repository.</p>
+
+<section id="visuals" aria-labelledby="visuals-heading" class="panel-area">
+  <div class="section-head"><div><p class="eyebrow">01 / INTERACTIVE VISUALS</p><h2 id="visuals-heading">Registry overview & treatment analysis</h2></div>
+    <label class="country-select">Select a registry
+      <select id="country" aria-label="Select registry"><option value="ALL">All registries</option></select>
+    </label>
+  </div>
+  <div class="stat-grid" id="stats" aria-live="polite"></div>
+  <div class="charts">
+    <section class="chart-panel" aria-labelledby="overview-heading">
+      <div class="chart-title"><h3 id="overview-heading">Share of the pooled total</h3><span id="selected-label">All registries</span></div>
+      <p class="helper">Colored segment = selected registry; grey segment = all other registries. The percentage refers to the global total.</p>
+      <div id="share-chart" class="share-chart" role="img" aria-label="Bar chart of selected registry share for patients treatments and visits"></div>
+    </section>
+    <section class="chart-panel" aria-labelledby="treatment-heading">
+      <div class="chart-title"><h3 id="treatment-heading">Drug class by treatment line</h3><span id="line-label">All registries</span></div>
+      <p class="helper">Within-line percentages. The light-grey group includes other biologic and targeted classes, not other registries.</p>
+      <div id="line-chart" role="img" aria-label="Stacked bars showing TNFi IL-17i and other treatment classes by treatment line"></div>
+      <div class="legend"><span><i class="key tnf"></i>TNFi</span><span><i class="key il17"></i>IL-17i</span><span><i class="key other"></i>Other classes</span></div>
+    </section>
+  </div>
+</section>
+<section id="data-table" class="table-section" aria-labelledby="table-heading">
+  <div class="section-head"><div><p class="eyebrow">02 / TABLE OUTPUT</p><h2 id="table-heading">Registry summary</h2></div><span class="helper">17 synthetic registries</span></div>
+  <div class="table-wrap"><table><caption>Country-level synthetic patient, treatment and visit counts</caption><thead><tr><th scope="col">Country</th><th scope="col">Registry code</th><th scope="col">Patients</th><th scope="col">Treatments</th><th scope="col">Visits</th></tr></thead><tbody id="registry-table"></tbody><tfoot id="registry-totals"></tfoot></table></div>
+</section>
+<section class="method" aria-labelledby="method-title"><p class="eyebrow">03 / METHOD & SOURCES</p><h2 id="method-title">What this example demonstrates</h2>
+<div class="method-grid"><div><h3>Approach</h3><p>Aggregated counts from a synthetic pooled registry dataset are linked to country filters. Treatment-line groupings are derived from the synthetic treatment summary, and shares are calculated against the correct denominator.</p></div><div><h3>What was prototyped</h3><p>Registry Overview, treatment line distributions and country filtering. The original Power BI workflow also separates report creation from any future authenticated country-specific portal.</p></div><div><h3>Privacy & provenance</h3><p>Only synthetic aggregated values are published. No real patient-level rows, private registry records, hospital access tokens, or internal Power BI links are included.</p></div></div>
+<div class="links"><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/data.js" target="_blank" rel="noopener noreferrer">Inspect synthetic aggregates ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">View demo source ↗</a></div>
+</section>
+</main>
+<footer><span>Mehrdad Shoae Kazemi · EuroSpA synthetic report demonstration · 2026</span><a href="../../projects.html">Return to Projects ↑</a></footer>
+</body></html>
