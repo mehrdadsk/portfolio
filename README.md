@@ -10,10 +10,10 @@ A custom-built, responsive professional portfolio for data engineering, clinical
 
 - Black-first Noir / Ember / Orchid identity with orange, burnt orange, pink and purple accents
 - Portrait-first homepage with interactive hover depth, ambient movement, and scroll reveals
-- Impact metrics grounded in career history
-- Filterable project cards with detailed, accessible case-study dialogs
-- Interactive expertise explorer and career timeline
-- Research, education and publications
+- Four title-only overview cards on the homepage; achievements are detailed on a separate page
+- Filterable project cards and accessible case-study dialogs on the dedicated Projects page
+- Skills and career-history detail available only on their own pages
+- Dedicated pages for About me, Education, Skills, Experience, Projects and Achievements
 - Both a concise brief résumé and an expandable full résumé, printable to PDF
 - Mobile-responsive design, reduced-motion support and keyboard interaction
 - No npm, external libraries, build tools, tracking scripts or paid hosting required
@@ -70,11 +70,18 @@ See **UPDATE_GUIDE.md** for illustrated-by-example editing instructions and trou
 
 ```text
 portfolio/
-├── index.html           # Homepage layout and accessible sections
+├── index.html           # Brief homepage with links to dedicated pages
+├── about.html           # Personal background
+├── education.html       # Education and publications
+├── skills.html          # Detailed expertise
+├── experience.html      # Employment history
+├── projects.html        # Projects, filters and case studies
+├── achievements.html    # Detailed professional achievements
+├── portfolio-pages.css  # Homepage tiles and detailed page layout
 ├── styles.css           # Original layout and responsive design
 ├── palette.css          # Black/orange/pink/purple main visual theme
 ├── content.js           # ALL editable professional content
-├── app.js               # Project filters, dialogs, expertise, timeline, animation
+├── app.js               # Renders full content on its dedicated page(s)
 ├── hero.css             # Animated portrait landing-page design
 ├── hero-fit.css         # Compact hero dimensions and overlap-safe layout
 ├── hero.js              # Portrait pointer motion and scroll reveals
@@ -130,4 +137,19 @@ The main home-page scale and spacing are now defined in `hero-fit.css` (loaded a
 
 ## Freestanding portrait (November 2026)
 
-The homepage picture now floats directly on the dark theme, with **no rectangular frame, card, or caption box**. Achievement numbers remain in the separate About & Impact section instead of covering the photo. The visible portrait is still the original uploaded `portrait.webp`. Because its checkerboard pattern was baked into the bitmap, `portrait-integrated-mask.svg` hides the patterned background and gradually fades the torso at the bottom; `portrait-integrated.css` controls the composition and responsiveness. The same CSS styles the small full résumé picture. Replacing the photograph may require updating the silhouette mask too. A truly transparent original PNG/WebP can be substituted later and the mask rule removed.
+The homepage picture now floats directly on the dark theme, with **no rectangular frame, card, or caption box**. Achievement numbers appear on the dedicated Achievements page instead of covering the photo. The visible portrait is still the original uploaded `portrait.webp`. Because its checkerboard pattern was baked into the bitmap, `portrait-integrated-mask.svg` hides the patterned background and gradually fades the torso at the bottom; `portrait-integrated.css` controls the composition and responsiveness. The same CSS styles the small full résumé picture. Replacing the photograph may require updating the silhouette mask too. A truly transparent original PNG/WebP can be substituted later and the mask rule removed.
+
+## Landing page vs detailed pages (November 2026)
+
+The homepage (`index.html`) deliberately contains **no detailed achievements, skills, work history or project descriptions**. It has a portrait, short professional introduction and four title-only links: **Skills → Experience → Projects → Achievements**. The top navigation also links to dedicated **About me** and **Education** pages. Each section has its own real HTML file so it can be bookmarked and shared with recruiters.
+
+| Navigation | Detailed page | Where to edit the content |
+|---|---|---|
+| About me | `about.html` | `content.js` → `personalStory` |
+| Education | `education.html` | `content.js` → `education`, `publications` |
+| Skills | `skills.html` | `content.js` → `expertise` |
+| Experience | `experience.html` | `content.js` → `timeline` |
+| Projects | `projects.html` | `content.js` → `projects`, `filters` |
+| Achievements | `achievements.html` | `content.js` → `impact` |
+
+The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **four homepage card titles or their URLs**, edit `index.html` under `portfolio-overview`. For visual spacing, use `portfolio-pages.css`. For top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
