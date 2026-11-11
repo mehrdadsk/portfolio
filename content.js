@@ -6,9 +6,9 @@ window.PORTFOLIO = {
   name: "Mehrdad Shoae Kazemi",
   headline: "Data Engineer & Analyst | Clinical Data | Data Science | Bioinformatics",
   location: "Copenhagen area, Denmark",
-  status: "OPEN TO MEANINGFUL DATA CHALLENGES",
-  description: "I build reliable data systems and turn complex scientific data into meaningful insights.",
-  introduction: "At COPECARE, Rigshospitalet, I help turn real-world clinical data from European registries into analysis-ready research assets. I enjoy investigating unexpected results, making inherited code faster and more reliable, and collaborating with researchers to answer the right question.",
+  status: "OPEN TO DATA ENGINEERING & ANALYTICS ROLES",
+  description: "At COPECARE, Rigshospitalet, I work with clinical registry data, R/Python pipelines and research quality control.",
+  introduction: "Data Engineer & Analyst working with European clinical registries, reproducible analysis and data quality.",
   principle: "The most useful insight is one you can explain, reproduce and trust.",
   contact: {
     // Confirm your preferred public email before publishing; left blank intentionally.
@@ -18,10 +18,9 @@ window.PORTFOLIO = {
     cv: "./cv.html"
   },
   impact: [
-    { label: "REGISTRY COLLABORATION", value: "19", suffix: "", description: "European rheumatology registries integrated into multi-country studies", icon: "✳" },
-    { label: "DATA QUALITY RECOVERY", value: "1,700", suffix: "+", description: "Eligible patients recovered after finding a pipeline defect", icon: "↗" },
-    { label: "PIPELINE MODERNISATION", value: "10–20", suffix: "×", description: "Faster runtime through refactoring, vectorisation and parallelisation", icon: "⌘" },
-    { label: "RESEARCH DELIVERABLES", value: "30", suffix: "+", description: "Analysis-ready pooled datasets prepared for research teams", icon: "◈" }
+    { label: "Eligible patients restored", value: "1,700", suffix: "+", description: "Identified and corrected a cohort-selection defect in a medicines study." },
+    { label: "Faster scientific processing", value: "10–20", suffix: "×", description: "Optimised inherited R workflows using vectorisation and parallel processing on Linux." },
+    { label: "Analysis-ready research datasets", value: "30", suffix: "+", description: "Prepared pooled study datasets using clinical information from 19 European registries." }
   ],
   filters: ["All", "Data Engineering", "Clinical Research", "Data Science", "Bioinformatics"],
   projects: [
@@ -29,7 +28,7 @@ window.PORTFOLIO = {
       id: "eurospa-harmonisation",
       category: "Data Engineering",
       badge: "REAL-WORLD EVIDENCE",
-      title: "One coherent picture from 19 registries",
+      title: "Harmonising longitudinal clinical registry data",
       summary: "Harmonising heterogeneous longitudinal healthcare data into reusable study datasets.",
       outcome: "19 registries · 30+ datasets",
       symbol: "19",
@@ -46,7 +45,7 @@ window.PORTFOLIO = {
       id: "quality-recovery",
       category: "Clinical Research",
       badge: "ROOT-CAUSE INVESTIGATION",
-      title: "Finding the error behind missing patients",
+      title: "Investigating a cohort-selection error",
       summary: "Following an unexpected cohort discrepancy back to its source rather than accepting the output.",
       outcome: "~1,700 patients recovered",
       symbol: "QC",
@@ -63,7 +62,7 @@ window.PORTFOLIO = {
       id: "workflow-acceleration",
       category: "Data Engineering",
       badge: "SCIENTIFIC COMPUTING",
-      title: "Making research pipelines 10–20× faster",
+      title: "Optimising an inherited R pipeline",
       summary: "Redesigning slow inherited processing into efficient, reproducible scientific code.",
       outcome: "10–20× faster execution",
       symbol: "×20",
@@ -80,7 +79,7 @@ window.PORTFOLIO = {
       id: "eurospa-dashboard",
       category: "Data Science",
       badge: "SYNTHETIC DATA DEMO",
-      title: "Interactive insight for multi-country studies",
+      title: "Building country-level study dashboards",
       summary: "Exploring how registry dashboards can communicate cohort composition, treatment lines and data quality.",
       outcome: "Interactive dashboard prototype",
       symbol: "BI",
@@ -97,7 +96,7 @@ window.PORTFOLIO = {
       id: "tcr-pmhc",
       category: "Bioinformatics",
       badge: "MACHINE LEARNING",
-      title: "Learning biological interactions from sequence",
+      title: "Predicting TCR–pMHC binding",
       summary: "Testing deep-learning architectures for T-cell receptor and peptide–MHC binding prediction.",
       outcome: "CNN · bi-LSTM · feed-forward",
       symbol: "AI",
@@ -114,7 +113,7 @@ window.PORTFOLIO = {
       id: "rnaseq-thesis",
       category: "Bioinformatics",
       badge: "TRANSCRIPTOMICS",
-      title: "Exploring the neuro-immune dialogue",
+      title: "Analysing BRB-seq transcriptomic data",
       summary: "Processing intestinal transcriptomic data for a master's thesis in food allergy research.",
       outcome: "BRB-seq → analysis pipeline",
       symbol: "RNA",
@@ -131,7 +130,7 @@ window.PORTFOLIO = {
       id: "clinical-operations",
       category: "Data Engineering",
       badge: "OPERATIONAL ANALYTICS",
-      title: "Moving healthcare reporting beyond paper",
+      title: "Healthcare data and reporting systems",
       summary: "Integrating hospital and university nutrition, inventory and budget information for practical management decisions.",
       outcome: "Web-based data workflows",
       symbol: "SQL",
@@ -146,10 +145,10 @@ window.PORTFOLIO = {
     }
   ],
   expertise: [
-    { id:"engineering", icon:"⌘", name:"Data Engineering", eyebrow:"BUILD RELIABLE FOUNDATIONS", heading:"From messy sources to trusted datasets.", description:"I design practical, reproducible data workflows: source mapping, ETL, quality controls, traceable transformations and longitudinal data models.", proof:"Example: integrating 19 European registries and delivering 30+ pooled research datasets.", skills:["Python & pandas","R & tidyverse","SQL","ETL / ELT","Data harmonisation","Metadata & lineage","Linux / Git","Parallel processing"] },
-    { id:"clinical", icon:"✳", name:"Clinical Data & RWE", eyebrow:"TRANSLATE COMPLEXITY", heading:"Make real-world evidence research-ready.", description:"My clinical data work covers longitudinal cohorts, treatment exposure histories, inclusion logic, quality investigations and study-specific definitions across international teams.", proof:"Example: investigating a data issue that excluded approximately 1,700 eligible patients.", skills:["Real-world evidence","Clinical registries","Patient / visit / treatment models","Cohort definitions","Kaplan–Meier","Quality assurance","Data interpretation","Registry collaboration"] },
-    { id:"science", icon:"↗", name:"Data Science & BI", eyebrow:"MOVE FROM DATA TO ACTION", heading:"Find the signal. Explain the meaning.", description:"I combine statistical and analytical thinking with practical reporting, visualisation, prediction modelling and thoughtful communication of uncertainty.", proof:"Example: synthetic-data Power BI prototype for study-specific, country-level visual reporting.", skills:["Python","R","scikit-learn","Statistics","Power BI","Exploratory analysis","ML models","Reproducible reporting"] },
-    { id:"bio", icon:"◎", name:"Bioinformatics & AI", eyebrow:"CONNECT COMPUTING & BIOLOGY", heading:"Computational methods for biological questions.", description:"My MSc in Bioinformatics and Systems Biology included sequencing workflows, biological data analysis and neural-network modelling of molecular interactions.", proof:"Example: BRB-seq transcriptomics and CNN / bi-LSTM models for TCR–pMHC binding.", skills:["Transcriptomics","RNA-seq / BRB-seq","STAR","PyTorch","CNN / bi-LSTM","Protein interactions","Biological statistics","Linux"] }
+    { id:"engineering", name:"Data Engineering", description:"ETL pipelines, source harmonisation and reproducible data processing.", skills:["Python / pandas","R / tidyverse","SQL","ETL / ELT","Data modelling","Linux","Git / GitLab","Parallel processing"] },
+    { id:"clinical", name:"Clinical Data & Real-World Evidence", description:"Longitudinal patient, visit and treatment data for multi-registry studies.", skills:["Clinical registries","Cohort definitions","Drug exposure histories","Treatment retention","Kaplan–Meier","Quality control","Data lineage"] },
+    { id:"science", name:"Data Science & Reporting", description:"Statistical analysis, prediction modelling and reporting prototypes.", skills:["Power BI","Statistics","scikit-learn","Data visualisation","Dashboard design","Reproducible reports"] },
+    { id:"bio", name:"Bioinformatics", description:"Computational analysis of biological sequences and gene expression.", skills:["RNA-seq / BRB-seq","STAR alignment","Differential expression","PyTorch","CNN / bi-LSTM","TCR–pMHC models"] }
   ],
   tools: ["Python", "R", "SQL", "pandas", "NumPy", "scikit-learn", "PyTorch", "Power BI", "Linux", "Git", "GitLab", "R Markdown", "Databricks fundamentals (training)", "ETL", "Quality control", "Longitudinal modelling"],
   timeline: [
@@ -161,7 +160,7 @@ window.PORTFOLIO = {
   ],
   education: [
     { date:"2020–2022", degree:"MSc, Bioinformatics and Systems Biology", school:"Technical University of Denmark (DTU)", note:"MSc in Engineering · Thesis: Neuro-immune regulation in food allergy" },
-    { date:"1997–2005", degree:"BSc & MSc, Nutritional Sciences", school:"Shahid Beheshti University of Medical Sciences", note:"Clinical research and nutritional sciences" }
+    { date:"1997–2005", degree:"BSc & MSc, Nutritional Sciences", school:"Shahid Beheshti University of Medical Sciences", note:"" }
   ],
   publications: [
     { year:"2026", title:"Predictors of secukinumab effectiveness in European patients with psoriatic arthritis", journal:"Journal of Rheumatology", link:"" },
