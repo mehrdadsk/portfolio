@@ -141,7 +141,7 @@ The homepage picture now floats directly on the dark theme, with **no rectangula
 
 ## Landing page vs detailed pages (November 2026)
 
-The homepage (`index.html`) deliberately contains **no detailed achievements, skills, work history or project descriptions**. It has a portrait, short professional introduction and four title-only links: **Skills → Experience → Projects → Achievements**. The top navigation also links to dedicated **About me** and **Education** pages. Each section has its own real HTML file so it can be bookmarked and shared with recruiters.
+The homepage (`index.html`) has your portrait, short professional introduction and **four non-clickable summary lists**: Skills, Experience, Projects and Achievements. Each list contains only names/titles or brief numerical headlines—**no detailed descriptions and no duplicated links**. The existing top navigation opens the dedicated **About me**, **Education**, **Skills**, **Experience**, **Projects** and **Achievements** pages. Each detailed section has its own shareable HTML file.
 
 | Navigation | Detailed page | Where to edit the content |
 |---|---|---|
@@ -152,4 +152,4 @@ The homepage (`index.html`) deliberately contains **no detailed achievements, sk
 | Projects | `projects.html` | `content.js` → `projects`, `filters` |
 | Achievements | `achievements.html` | `content.js` → `impact` |
 
-The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **four homepage card titles or their URLs**, edit `index.html` under `portfolio-overview`. For visual spacing, use `portfolio-pages.css`. For top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
+The detail pages reuse `app.js`; it renders only the content whose target containers are present on that page. To change the **homepage list headings**, edit `index.html` under `portfolio-overview`; the list items themselves are derived automatically by `app.js` from `content.js`. For visual spacing, use `portfolio-pages.css`. The lists deliberately have no links; for top navigation links, edit the header markup in each HTML page. The two résumé files remain separate and printable.
