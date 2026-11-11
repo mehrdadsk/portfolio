@@ -117,6 +117,12 @@
     }
   }
   renderProjects();
+  // Support direct links to a project card after dynamic cards are rendered.
+  const projectHash=window.location.hash.slice(1);
+  if(projectHash.startsWith("project-")){
+    const selectedCard=document.getElementById(projectHash);
+    if(selectedCard)window.requestAnimationFrame(()=>selectedCard.scrollIntoView({block:"start"}));
+  }
   function showProject(p){
     const content=$("#dialog-content");content.replaceChildren();
     content.append(el("div","dialog-kicker",(p.year||"")+" · "+p.category),el("h2","",p.title));
