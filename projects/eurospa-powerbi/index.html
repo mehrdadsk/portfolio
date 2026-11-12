@@ -22,11 +22,11 @@
     <p class="eyebrow">FEATURED PROJECT · 2026 · SYNTHETIC DATA ONLY</p>
     <h1>Turning pooled clinical records into <em>clear reporting.</em></h1>
     <p class="lede">An interactive browser-based recreation of selected <strong>EuroSpA Power BI prototype</strong> views. The source is an aggregated synthetic workbook; these are illustrative charts, not screenshots of a confidential reporting system or a hosted PBIX file.</p>
-    <div class="links"><a class="button primary" href="#visuals">Explore four dashboards ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/synthetic_eurospa_powerbi_dashboard" target="_blank" rel="noopener noreferrer">Power BI KPI project on GitHub ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
+    <div class="links"><a class="button primary" href="#visuals">Explore five dashboards ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/synthetic_eurospa_powerbi_dashboard" target="_blank" rel="noopener noreferrer">Power BI KPI project on GitHub ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
   </div>
   <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
 </div>
-<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo now includes calculated KPI cards and illustrative target-status indicators, but does not reproduce all Power BI slicers.</p>
+<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo includes a readable Executive KPI Scorecard snapshot alongside four interactive reporting views, but is not a Power BI embed.</p>
 <section class="method" aria-labelledby="kpi-title">
   <p class="eyebrow">KPI DESIGN · SYNTHETIC PROTOTYPE</p>
   <h2 id="kpi-title">KPI-driven Power BI reporting</h2>
@@ -36,24 +36,38 @@
     <div><h3>Treatment patterns</h3><p>Percentage of TNFi, IL-17i and other classes within treatment line. The evolving Power BI design supports diagnosis group, gender and age at drug baseline (&lt;30, 30–49, 50–70, &gt;70) as slicers.</p></div>
     <div><h3>Coverage and quality</h3><p>Observed visit checkpoint coverage, interpreted with appropriate follow-up denominators. The public preview is not equivalent to variable-level missingness or data-quality certification.</p></div>
   </div>
-  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo now calculates sample KPI status against explicitly labelled illustrative thresholds. These are not validated clinical performance targets, and the web demo does not reproduce every Power BI slicer.</p>
+  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo presents the Executive KPI Scorecard as a pooled synthetic snapshot, and calculates additional illustrative KPI cards for the other four report views. These are not validated clinical performance targets, and the web demo does not reproduce every Power BI slicer.</p>
 </section>
 
 <section id="visuals" class="panel-area" aria-labelledby="visuals-heading">
   <div class="section-head">
-    <div><p class="eyebrow">FOUR DASHBOARD VIEWS · 2026</p><h2 id="visuals-heading">Explore the synthetic reporting suite</h2></div>
+    <div><p class="eyebrow">FIVE DASHBOARD VIEWS · 2026</p><h2 id="visuals-heading">Explore the synthetic reporting suite</h2></div>
     <label class="country-select">Select a registry
       <select id="country" aria-label="Select registry"><option value="ALL">All registries</option></select>
     </label>
   </div>
   <div class="report-tabs" role="tablist" aria-label="Dashboard views">
-    <button type="button" class="report-tab" id="tab-overview" role="tab" aria-controls="overview" aria-selected="true" data-report="overview">01 / Registry overview</button>
-    <button type="button" class="report-tab" id="tab-treatment" role="tab" aria-controls="treatments" aria-selected="false" tabindex="-1" data-report="treatments">02 / Treatment lines</button>
-    <button type="button" class="report-tab" id="tab-contribution" role="tab" aria-controls="contribution" aria-selected="false" tabindex="-1" data-report="contribution">03 / Pooled contribution</button>
-    <button type="button" class="report-tab" id="tab-completeness" role="tab" aria-controls="completeness" aria-selected="false" tabindex="-1" data-report="completeness">04 / Data completeness</button>
+    <button type="button" class="report-tab" id="tab-scorecard" role="tab" aria-controls="scorecard" aria-selected="true" data-report="scorecard">01 / Executive KPI scorecard</button>
+    <button type="button" class="report-tab" id="tab-overview" role="tab" aria-controls="overview" aria-selected="false" tabindex="-1" data-report="overview">02 / Registry overview</button>
+    <button type="button" class="report-tab" id="tab-treatment" role="tab" aria-controls="treatments" aria-selected="false" tabindex="-1" data-report="treatments">03 / Treatment lines</button>
+    <button type="button" class="report-tab" id="tab-contribution" role="tab" aria-controls="contribution" aria-selected="false" tabindex="-1" data-report="contribution">04 / Pooled contribution</button>
+    <button type="button" class="report-tab" id="tab-completeness" role="tab" aria-controls="completeness" aria-selected="false" tabindex="-1" data-report="completeness">05 / Data completeness</button>
   </div>
 
-  <section id="overview" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-overview">
+  <section id="scorecard" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-scorecard">
+    <div class="report-heading"><h3>Executive KPI Scorecard</h3><p>Four independent data-quality measures with clearly defined illustrative thresholds — not clinical standards.</p></div>
+    <div class="scorecard-banner"><div><span class="scorecard-overline">QUALITY TARGETS ACHIEVED</span><strong>2 <small>/ 4</small></strong><p>Two of four illustrative quality targets were achieved in the synthetic pooled snapshot.</p></div><span class="scorecard-pill">SYNTHETIC DATA · ALL REGISTRIES</span></div>
+    <div class="scorecard-grid" aria-label="Four executive quality KPIs">
+      <article class="scorecard-tile"><h4>Visit data completeness</h4><div class="scorecard-main"><strong>60%</strong><span class="scorecard-status below">Below target</span></div><p class="scorecard-target">Target ≥ 80% of eligible recorded values</p><div class="scorecard-progress"><span style="width:60%"></span></div><small>Non-missing values ÷ eligible values for structurally available visit fields</small></article>
+      <article class="scorecard-tile"><h4>Structural availability</h4><div class="scorecard-main"><strong>91%</strong><span class="scorecard-status achieved">Achieved</span></div><p class="scorecard-target">Target ≥ 90% of expected variable/timepoint rows</p><div class="scorecard-progress"><span style="width:91%"></span></div><small>Available rows ÷ expected variable/timepoint rows</small></article>
+      <article class="scorecard-tile"><h4>Unmapped drug episodes</h4><div class="scorecard-main"><strong>1%</strong><span class="scorecard-status below">Action needed</span></div><p class="scorecard-target">Target ≤ 0.5% of treatment episodes</p><div class="scorecard-progress"><span style="width:1%"></span></div><small>Unmapped episodes ÷ all treatment episodes; lower is better</small></article>
+      <article class="scorecard-tile"><h4>Treatment line coverage</h4><div class="scorecard-main"><strong>100%</strong><span class="scorecard-status achieved">Achieved</span></div><p class="scorecard-target">Target ≥ 99% of treatment episodes</p><div class="scorecard-progress"><span style="width:100%"></span></div><small>Recognized treatment-line episodes ÷ all episodes</small></article>
+    </div>
+    <h4 class="scorecard-subhead">Volume / context</h4><div class="scorecard-volume"><div><span>Patients</span><strong>2,468</strong></div><div><span>Treatments</span><strong>3,637</strong></div><div><span>Visits</span><strong>9,524</strong></div><div><span>Registries</span><strong>17</strong></div></div>
+    <p class="notice scorecard-note"><strong>Snapshot, not a live Power BI embed:</strong> These four quality KPI values reproduce the pooled synthetic example shown on the Power BI Executive KPI Scorecard. The registry selector above controls the other four portfolio reports; this scorecard deliberately stays on the all-registry snapshot, because the required KPI source breakdowns and diagnosis/gender filters are not published in this browser demo. For fully interactive filtered metrics, use the linked Power BI project.</p>
+  </section>
+
+  <section id="overview" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-overview" hidden>
     <div class="report-heading"><h3>Registry overview</h3><p>Synthetic pooled totals, country-level shares and a detailed registry table.</p></div>
     <div class="stat-grid" id="stats" aria-live="polite"></div><div class="kpi-heading"><h4>Target-based KPIs</h4><p>Illustrative portfolio targets — not clinical benchmarks. Status recalculates when you select a registry.</p></div><div class="kpi-grid" id="overview-kpis" aria-live="polite"></div>
     <div class="chart-panel">
