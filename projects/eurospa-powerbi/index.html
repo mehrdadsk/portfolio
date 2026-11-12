@@ -22,21 +22,21 @@
     <p class="eyebrow">FEATURED PROJECT · 2026 · SYNTHETIC DATA ONLY</p>
     <h1>Turning pooled clinical records into <em>clear reporting.</em></h1>
     <p class="lede">An interactive browser-based recreation of selected <strong>EuroSpA Power BI prototype</strong> views. The source is an aggregated synthetic workbook; these are illustrative charts, not screenshots of a confidential reporting system or a hosted PBIX file.</p>
-    <div class="links"><a class="button primary" href="#visuals">Explore four dashboards ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
+    <div class="links"><a class="button primary" href="#visuals">Explore four dashboards ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/synthetic_eurospa_powerbi_dashboard" target="_blank" rel="noopener noreferrer">Power BI KPI project on GitHub ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
   </div>
   <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
 </div>
-<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The original Power BI project and pipeline are not yet published in this repository.</p>
+<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo is a simplified illustration and may not have all KPI cards, achievement-status indicators or Power BI slicers.</p>
 <section class="method" aria-labelledby="kpi-title">
   <p class="eyebrow">KPI DESIGN · SYNTHETIC PROTOTYPE</p>
-  <h2 id="kpi-title">From dashboards to measurable KPIs</h2>
-  <p>The Power BI prototype makes registry reporting measurable rather than purely visual. KPI definitions specify the numerator, denominator, relevant filters and interpretation, so each value can be inspected consistently across registries.</p>
+  <h2 id="kpi-title">KPI-driven Power BI reporting</h2>
+  <p>The Power BI project goes beyond visualising counts: it defines measurable indicators, compares results with configured thresholds when present and makes status interpretable. Each KPI has a defined numerator, denominator, filter context and interpretation, supporting consistent registry-level reporting.</p>
   <div class="method-grid">
     <div><h3>Scale and contribution</h3><p>Patient, treatment and visit counts; each registry's share of the pooled total. Country selection reveals which source contributes to each measure.</p></div>
     <div><h3>Treatment patterns</h3><p>Percentage of TNFi, IL-17i and other classes within treatment line. The evolving Power BI design supports diagnosis group, gender and age at drug baseline (&lt;30, 30–49, 50–70, &gt;70) as slicers.</p></div>
     <div><h3>Coverage and quality</h3><p>Observed visit checkpoint coverage, interpreted with appropriate follow-up denominators. The public preview is not equivalent to variable-level missingness or data-quality certification.</p></div>
   </div>
-  <p class="notice"><strong>KPI achievement:</strong> An observed value and an achieved target are different. The design can show achieved / not achieved against an explicitly configured threshold, but no real-world targets or achievement claims are assigned to this synthetic public demo. The public browser preview does not implement every slicer in the local Power BI prototype.</p>
+  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo uses synthetic data and does not reproduce every KPI card or slicer from the Power BI repository.</p>
 </section>
 
 <section id="visuals" class="panel-area" aria-labelledby="visuals-heading">
