@@ -30,8 +30,8 @@ window.PORTFOLIO = {
       category: "Data Science",
       badge: "SYNTHETIC DATA DEMO",
       title: "EuroSpA Power BI dashboards on synthetic pooled data",
-      summary: "Four synthetic-data reporting views: Registry Overview, Treatment Lines, Contribution to Pooled Data, and Data Completeness.",
-      outcome: "17 synthetic registries · 2,468 patients · 3,637 treatments · 9,524 visits",
+      summary: "Interactive Power BI KPI reporting on synthetic pooled data: registry performance, treatment-line mix, pooled contribution, and data completeness, with clear KPI definitions and filterable views.",
+      outcome: "Four dashboard views · KPI tracking and transparent denominators · 17 synthetic registries",
       symbol: "BI",
       art: "amber",
       featured: true,
@@ -47,9 +47,9 @@ window.PORTFOLIO = {
       codeNote: "The linked public code recreates selected charts from synthetic aggregate data. The original local Power BI .pbip and Python/R pipeline are not yet public.",
       period: "November 2026",
       challenge: "Researchers and registry teams need intuitive views of large multi-country study outputs while respecting access controls and data privacy.",
-      approach: ["Prototype registry overview and treatment-line reports using synthetic pooled data.", "Add country-level contribution reporting for patient, treatment and visit counts.", "Illustrate a data-completeness dashboard with synthetic visit checkpoint coverage, carefully distinguishing follow-up observations from variable-level missingness.", "Separate the public reporting demonstration from any proposed secure country-specific portal."],
-      result: "Developed synthetic EuroSpA reporting prototypes covering registry overview, treatment-line distribution, pooled contributions, and completeness reporting. A public companion demo presents four interactive views; the completeness preview shows visit-checkpoint coverage because the original clinical-variable completeness report is not available in the public synthetic summary workbook. The original local Power BI source and any secure country portal are not published.",
-      tools: ["Power BI", "Python", "R", "Synthetic data", "Dashboard design"],
+      approach: ["Define measurable KPIs for patient, treatment and visit volumes, registry shares of pooled totals, treatment-class distributions and checkpoint coverage with explicit denominators.", "Use Power BI dashboards and reusable reporting logic to compare registry contributions, highlight outliers and interpret KPI results at country or pooled level.", "Support treatment-line analysis by diagnosis group, gender and age at drug baseline (under 30, 30–49, 50–70, over 70) in the evolving Power BI prototype; filtering capabilities may differ in the public browser demo.", "Distinguish observed KPI values from target achievement: a KPI is only marked achieved when a specified target or threshold exists; the synthetic public demo does not establish real clinical performance targets.", "Keep public synthetic demonstrations separate from any future secure country-specific portal."],
+      result: "Developed a synthetic Power BI reporting prototype that turns pooled counts and quality indicators into interpretable KPIs: volumes, shares, treatment-class mix and visit coverage. The reporting design supports reviewing KPI values against defined targets where available, without presenting synthetic results as achieved clinical or operational targets. The public companion demo has four interactive views; its completeness preview reflects visit-checkpoint coverage rather than variable-level missingness. The local Power BI files and any secure country portal are not published.",
+      tools: ["Power BI", "DAX / KPI definitions", "Python", "R", "Synthetic data", "Dashboard design"],
       confidentiality: "Prototype examples use synthetic data only. A secure production portal is a separate proposed development."
     },
     {
