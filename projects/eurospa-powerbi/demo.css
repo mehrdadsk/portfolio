@@ -52,3 +52,32 @@
 .kpi-status.is-below{color:#ffd5a0;background:#4b3222;border-color:#98623d}
 .kpi-status.is-na{color:#d2dae2;background:#35414c;border-color:#60717e}
 .kpi-detail{font-size:11px;color:var(--muted);margin-top:13px}
+
+/* Executive KPI scorecard: readable page-specific layout, independent of browser demo metrics */
+.report-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.scorecard-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;border:1px solid #3a615d;border-radius:14px;padding:24px 28px;margin:20px 0 25px;background:linear-gradient(115deg,#173d3a,#142937)}
+.scorecard-overline{display:block;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.11em;color:#b5e4da}
+.scorecard-banner strong{display:block;font-size:clamp(42px,5vw,66px);color:#73e6c1;line-height:1.15;margin:8px 0}
+.scorecard-banner strong small{font-size:.46em;color:#b5d5ce}
+.scorecard-banner p{color:#d1e4e5;font-size:13px;margin:0}
+.scorecard-pill{display:inline-flex;border:1px solid #548780;border-radius:100px;color:#c4e8e5;font-size:11px;letter-spacing:.07em;font-weight:800;padding:7px 13px}
+.scorecard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;margin:25px 0 30px}
+.scorecard-tile{min-width:0;padding:27px 28px;border:1px solid var(--edge);border-radius:14px;background:var(--panel);display:flex;flex-direction:column}
+.scorecard-tile h4{margin:0 0 16px;font-size:16px;letter-spacing:.03em;text-transform:uppercase;color:#e1eff8;line-height:1.45}
+.scorecard-main{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.scorecard-main strong{font-size:clamp(36px,4vw,52px);line-height:1.1;letter-spacing:-.045em;color:#f5faff}
+.scorecard-status{border-radius:8px;font-size:12px;font-weight:850;padding:7px 11px}
+.scorecard-status.achieved{background:#1e4940;color:#a5f7d1;border:1px solid #438e70}
+.scorecard-status.below{background:#4d3026;color:#ffccaa;border:1px solid #936349}
+.scorecard-target{margin:0 0 13px;color:#d3e2ee;font-size:13px;font-weight:700;line-height:1.5}
+.scorecard-progress{height:8px;border-radius:99px;overflow:hidden;background:#374753;margin-bottom:11px}
+.scorecard-progress span{display:block;height:100%;min-width:3px;background:#60cdb9;border-radius:99px}
+.scorecard-tile small{font-size:12px;color:#a5bdc9;line-height:1.6}
+.scorecard-subhead{font-size:17px;text-transform:uppercase;letter-spacing:.08em;color:#c4d9e6;margin:30px 0 12px}
+.scorecard-volume{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.scorecard-volume>div{background:var(--panel);border:1px solid var(--edge);padding:18px 20px;border-radius:12px}
+.scorecard-volume span{display:block;text-transform:uppercase;letter-spacing:.06em;color:#acc2d2;font-size:12px;font-weight:750}
+.scorecard-volume strong{display:block;font-size:clamp(23px,2.8vw,34px);margin-top:8px;color:#f1f8fe}
+.scorecard-note{margin-top:25px;line-height:1.7}
+@media(max-width:1050px){.report-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.scorecard-grid{grid-template-columns:1fr}.scorecard-volume{grid-template-columns:repeat(2,minmax(0,1fr))}.report-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.scorecard-tile{padding:20px}}
