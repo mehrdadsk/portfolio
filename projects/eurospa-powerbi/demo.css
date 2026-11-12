@@ -37,3 +37,18 @@
 .coverage-row strong{text-align:right;font:750 12px ui-monospace,monospace;color:#d9f1fa}
 @media(max-width:950px){.report-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.report-tabs{gap:5px;padding:5px}.report-tab{font-size:11px;padding:7px 6px;min-height:53px}.contribution-row{grid-template-columns:22px minmax(70px,110px) minmax(45px,1fr) 53px;gap:5px}.contrib-rank,.contrib-name,.contribution-row strong{font-size:10px}.coverage-row{grid-template-columns:83px minmax(20px,1fr) 57px;gap:7px}.coverage-name,.coverage-row strong{font-size:11px}}
+
+/* Visible KPI assessments across all four dashboards. */
+.kpi-heading{margin:26px 0 12px}
+.kpi-heading h4{font-size:19px;margin:0 0 3px;letter-spacing:-.025em;color:var(--text)}
+.kpi-heading p{margin:0;color:var(--soft);font-size:12px}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px;margin:12px 0 24px}
+.kpi-card{padding:21px;border:1px solid #456776;background:linear-gradient(155deg,#1b3441,#10212e);border-radius:14px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.kpi-name{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#c8e7eb}
+.kpi-number{font-size:clamp(30px,3vw,42px);line-height:1.18;letter-spacing:-.045em;color:#f5fbff;margin:12px 0 6px;font-variant-numeric:tabular-nums}
+.kpi-target{font-size:12px;color:#b9d0df;margin-bottom:12px}
+.kpi-status{display:inline-flex;font-size:12px;font-weight:800;padding:5px 10px;border-radius:6px;border:1px solid transparent}
+.kpi-status.is-met{color:#9ef7d2;background:#1b4039;border-color:#36856d}
+.kpi-status.is-below{color:#ffd5a0;background:#4b3222;border-color:#98623d}
+.kpi-status.is-na{color:#d2dae2;background:#35414c;border-color:#60717e}
+.kpi-detail{font-size:11px;color:var(--muted);margin-top:13px}
