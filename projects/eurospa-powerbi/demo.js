@@ -210,9 +210,9 @@
     .forEach(v=>tr.append(el("td","",v)));
   totals.append(tr);
 
-  const reports=["overview","treatments","contribution","completeness"];
+  const reports=["scorecard","overview","treatments","contribution","completeness"];
   function selectTab(name,updateHash=false,focus=false){
-    if(!reports.includes(name))name="overview";
+    if(!reports.includes(name))name="scorecard";
     $$(".report-tab").forEach(tab=>{
       const active=tab.dataset.report===name;
       tab.setAttribute("aria-selected",String(active));
@@ -226,9 +226,9 @@
     const hash=window.location.hash.slice(1);
     if(reports.includes(hash))return hash;
     if(hash==="data-table")return "overview";
-    return "overview";
+    return "scorecard";
   }
-  $$(".report-tab").forEach(tab=>{
+  $(".report-tab").forEach(tab=>{
     tab.addEventListener("click",()=>selectTab(tab.dataset.report,true));
     tab.addEventListener("keydown",e=>{
       if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;
@@ -244,7 +244,7 @@
   render();
   const initialTab=tabFromHash();
   selectTab(initialTab);
-  if(window.location.hash && ["#overview","#treatments","#contribution","#completeness","#data-table"].includes(window.location.hash)){
+  if(window.location.hash && ["#scorecard","#overview","#treatments","#contribution","#completeness","#data-table"].includes(window.location.hash)){
     window.requestAnimationFrame(()=>document.getElementById("visuals").scrollIntoView({block:"start"}));
   }
 })();
