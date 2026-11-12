@@ -27,6 +27,17 @@
   <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
 </div>
 <p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The original Power BI project and pipeline are not yet published in this repository.</p>
+<section class="method" aria-labelledby="kpi-title">
+  <p class="eyebrow">KPI DESIGN · SYNTHETIC PROTOTYPE</p>
+  <h2 id="kpi-title">From dashboards to measurable KPIs</h2>
+  <p>The Power BI prototype makes registry reporting measurable rather than purely visual. KPI definitions specify the numerator, denominator, relevant filters and interpretation, so each value can be inspected consistently across registries.</p>
+  <div class="method-grid">
+    <div><h3>Scale and contribution</h3><p>Patient, treatment and visit counts; each registry's share of the pooled total. Country selection reveals which source contributes to each measure.</p></div>
+    <div><h3>Treatment patterns</h3><p>Percentage of TNFi, IL-17i and other classes within treatment line. The evolving Power BI design supports diagnosis group, gender and age at drug baseline (&lt;30, 30–49, 50–70, &gt;70) as slicers.</p></div>
+    <div><h3>Coverage and quality</h3><p>Observed visit checkpoint coverage, interpreted with appropriate follow-up denominators. The public preview is not equivalent to variable-level missingness or data-quality certification.</p></div>
+  </div>
+  <p class="notice"><strong>KPI achievement:</strong> An observed value and an achieved target are different. The design can show achieved / not achieved against an explicitly configured threshold, but no real-world targets or achievement claims are assigned to this synthetic public demo. The public browser preview does not implement every slicer in the local Power BI prototype.</p>
+</section>
 
 <section id="visuals" class="panel-area" aria-labelledby="visuals-heading">
   <div class="section-head">
