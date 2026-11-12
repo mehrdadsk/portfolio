@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#0a111b">
 <title>EuroSpA Synthetic Power BI Dashboard Demo | Mehrdad Shoae Kazemi</title>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./demo.css?v=dashboard-suite-3">
-<script src="./data.js?v=dashboard-suite-3" defer></script><script src="./demo.js?v=dashboard-suite-3" defer></script>
+<link rel="stylesheet" href="./demo.css?v=kpi-cards-20261112">
+<script src="./data.js?v=kpi-cards-20261112" defer></script><script src="./demo.js?v=kpi-cards-20261112" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to dashboard</a>
@@ -26,7 +26,7 @@
   </div>
   <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
 </div>
-<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo is a simplified illustration and may not have all KPI cards, achievement-status indicators or Power BI slicers.</p>
+<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo now includes calculated KPI cards and illustrative target-status indicators, but does not reproduce all Power BI slicers.</p>
 <section class="method" aria-labelledby="kpi-title">
   <p class="eyebrow">KPI DESIGN · SYNTHETIC PROTOTYPE</p>
   <h2 id="kpi-title">KPI-driven Power BI reporting</h2>
@@ -36,7 +36,7 @@
     <div><h3>Treatment patterns</h3><p>Percentage of TNFi, IL-17i and other classes within treatment line. The evolving Power BI design supports diagnosis group, gender and age at drug baseline (&lt;30, 30–49, 50–70, &gt;70) as slicers.</p></div>
     <div><h3>Coverage and quality</h3><p>Observed visit checkpoint coverage, interpreted with appropriate follow-up denominators. The public preview is not equivalent to variable-level missingness or data-quality certification.</p></div>
   </div>
-  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo uses synthetic data and does not reproduce every KPI card or slicer from the Power BI repository.</p>
+  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo now calculates sample KPI status against explicitly labelled illustrative thresholds. These are not validated clinical performance targets, and the web demo does not reproduce every Power BI slicer.</p>
 </section>
 
 <section id="visuals" class="panel-area" aria-labelledby="visuals-heading">
@@ -55,7 +55,7 @@
 
   <section id="overview" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-overview">
     <div class="report-heading"><h3>Registry overview</h3><p>Synthetic pooled totals, country-level shares and a detailed registry table.</p></div>
-    <div class="stat-grid" id="stats" aria-live="polite"></div>
+    <div class="stat-grid" id="stats" aria-live="polite"></div><div class="kpi-heading"><h4>Target-based KPIs</h4><p>Illustrative portfolio targets — not clinical benchmarks. Status recalculates when you select a registry.</p></div><div class="kpi-grid" id="overview-kpis" aria-live="polite"></div>
     <div class="chart-panel">
       <div class="chart-title"><h3>Share of the pooled total</h3><span id="selected-label">All registries</span></div>
       <p class="helper">Colored segment = selected registry; grey segment = other registries. Denominator is the corresponding pooled total.</p>
@@ -69,6 +69,7 @@
 
   <section id="treatments" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-treatment" hidden>
     <div class="report-heading"><h3>Treatment-line dashboard</h3><p>Percentage of TNFi, IL-17i and other targeted drugs within each therapy line.</p></div>
+    <div class="kpi-heading"><h4>Treatment KPIs</h4><p>Illustrative thresholds; treatment-line percentages use the selected line as denominator.</p></div><div class="kpi-grid" id="treatment-kpis" aria-live="polite"></div>
     <div class="chart-panel">
       <div class="chart-title"><h3>Drug class by treatment line</h3><span id="line-label">All registries</span></div>
       <p class="helper">Each bar sums to 100% within its treatment line. Light grey means other biologic or targeted drug classes.</p>
@@ -79,7 +80,7 @@
 
   <section id="contribution" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-contribution" hidden>
     <div class="report-heading"><h3>Contribution to the pooled data</h3><p>Compare how each synthetic registry contributes patients, treatments and visits to the overall pool.</p></div>
-    <div id="contribution-stats" class="stat-grid compact-stats" aria-live="polite"></div>
+    <div id="contribution-stats" class="stat-grid compact-stats" aria-live="polite"></div><div class="kpi-heading"><h4>Contribution KPI</h4><p>Illustrative 5% patient contribution threshold; pooled totals are displayed as reference, not evaluated against a target.</p></div><div class="kpi-grid" id="contribution-kpis" aria-live="polite"></div>
     <div class="chart-panel">
       <div class="chart-title"><h3>Ranking of registry contributions</h3><label class="metric-select">Measure
         <select id="contribution-metric" aria-label="Choose contribution measure"><option value="patients">Patients</option><option value="treatments">Treatments</option><option value="visits">Visits</option></select>
@@ -92,7 +93,7 @@
   <section id="completeness" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-completeness" hidden>
     <div class="report-heading"><h3>Data completeness / visit coverage</h3><p>Illustrative timepoint coverage from synthetic treatment-level visit indicators, not a clinical-variable missingness audit.</p></div>
     <p class="notice coverage-disclaimer"><strong>Interpretation:</strong> A recorded visit indicator (1) means a synthetic treatment has an observed visit at that checkpoint. A 0 means no recorded visit at that checkpoint; it does <em>not</em> by itself establish missing data or follow-up eligibility. This is a coverage-based example of a completeness report, not a recreation of your original variable-level completeness dashboard.</p>
-    <div id="coverage-stats" class="stat-grid compact-stats" aria-live="polite"></div>
+    <div id="coverage-stats" class="stat-grid compact-stats" aria-live="polite"></div><div class="kpi-heading"><h4>Visit coverage KPI</h4><p>Baseline observation only, compared with an illustrative 85% threshold. Later follow-up has no achievement target because follow-up eligibility is unknown.</p></div><div class="kpi-grid" id="coverage-kpis" aria-live="polite"></div>
     <div class="chart-panel">
       <div class="chart-title"><h3>Observed visit checkpoints</h3><span id="coverage-label">All registries</span></div>
       <p class="helper">Observed visit indicators ÷ treatment records for the selected registry. Later timepoints naturally have smaller proportions; this is <strong>not</strong> necessarily data loss.</p>
