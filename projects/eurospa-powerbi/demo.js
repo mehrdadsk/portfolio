@@ -155,8 +155,50 @@
       return tr;
     }));
   }
+
+  // Explicitly illustrative targets for demonstrating KPI assessment, not clinical goals.
+  const demoTargets={patientShare:5,visitsPerTreatment:2.5,firstLineTNFi:50,secondLineIL17i:20,baselineCoverage:85};
+  function kpiCard(label,numericValue,unit,target,caption,eligible=true){
+    const node=el("article","kpi-card");
+    const achieved=eligible&&numericValue>=target;
+    const status=eligible?(achieved?"Achieved":"Below target"):"N/A";
+    node.append(el("span","kpi-name",label),el("strong","kpi-number",Number.isFinite(numericValue)?numericValue.toFixed(1)+unit:"—"));
+    const targetLine=el("div","kpi-target",eligible?"Demo target ≥ "+target+unit:"No valid target");
+    const statusLine=el("span","kpi-status "+(eligible?(achieved?"is-met":"is-below"):"is-na"),status);
+    node.append(targetLine,statusLine,el("small","kpi-detail",caption));
+    return node;
+  }
+  function renderKPIs(selection){
+    const {patients,treatments,visits}=selection.values;
+    const pooled=selection.code==="ALL";
+    const patientsShare=100*patients/data.total.patients;
+    $("#overview-kpis").replaceChildren(
+      kpiCard("Patient share of pool",patientsShare,"%",demoTargets.patientShare,
+        pooled?"Pooled reference; not a country comparison":"Selected patients ÷ pooled patients",!pooled),
+      kpiCard("Visits per treatment",visits/Math.max(1,treatments),"",demoTargets.visitsPerTreatment,
+        "Recorded visits ÷ treatment records")
+    );
+    const lines=treatmentCounts(selection.code),first=lines[0],second=lines[1];
+    const firstTotal=first.reduce((a,b)=>a+b,0),secondTotal=second.reduce((a,b)=>a+b,0);
+    $("#treatment-kpis").replaceChildren(
+      kpiCard("First-line TNFi share",100*first[0]/Math.max(1,firstTotal),"%",demoTargets.firstLineTNFi,
+        "First-line TNFi ÷ all first-line classes"),
+      kpiCard("Second-line IL-17i share",100*second[1]/Math.max(1,secondTotal),"%",demoTargets.secondLineIL17i,
+        "Second-line IL-17i ÷ all second-line classes")
+    );
+    $("#contribution-kpis").replaceChildren(
+      kpiCard("Patient contribution",patientsShare,"%",demoTargets.patientShare,
+        pooled?"All registries are the denominator":"Selected registry patients ÷ pooled patients",!pooled)
+    );
+    const cv=coverageValues(selection.code),baselineRate=100*cv[1]/Math.max(1,cv[0]);
+    $("#coverage-kpis").replaceChildren(
+      kpiCard("Baseline visit observed",baselineRate,"%",demoTargets.baselineCoverage,
+        "Recorded baseline visit indicators ÷ treatment rows; not a missingness audit")
+    );
+  }
   function render(){
     const selection=selected();
+    renderKPIs(selection);
     renderOverview(selection);
     renderTreatments(selection);
     renderContribution(selection);
