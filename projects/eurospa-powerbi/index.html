@@ -2,126 +2,141 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Interactive synthetic EuroSpA reporting demos: registry overview, treatment-line distribution, pooled contribution, and visit coverage completeness, with charts and tables.">
+<meta name="description" content="EuroSpA 2026 Power BI project: six verified PBIP dashboards, five research-feasibility KPIs, automated synthetic pooled-data preparation, and reproducible definitions.">
 <meta name="theme-color" content="#0a111b">
-<title>EuroSpA Synthetic Power BI Dashboard Demo | Mehrdad Shoae Kazemi</title>
+<title>EuroSpA Power BI &amp; Research Feasibility | Mehrdad Shoae Kazemi</title>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./demo.css?v=executive-scorecard-20261112">
-<script src="./data.js?v=executive-scorecard-20261112" defer></script><script src="./demo.js?v=executive-scorecard-20261112" defer></script>
+<link rel="stylesheet" href="./demo.css?v=verified-pbip-20261113">
+<style>
+.project-hero{padding:64px 0 28px}.project-hero h1{font-size:clamp(38px,4.3vw,63px);line-height:1.1;letter-spacing:-.055em;margin:14px 0 18px}.project-hero p{max-width:750px}
+.verify-panel{background:linear-gradient(140deg,#193139,#111f2e);border:1px solid #40616b;border-radius:16px;padding:25px}
+.verify-panel h2{font-size:24px;margin:3px 0 8px}.verify-panel p{color:var(--soft);font-size:13px}
+.proof-list{list-style:none;margin:13px 0 0;padding:0;display:grid;gap:9px}
+.proof-list li{padding:9px 0;border-top:1px solid #32515c;color:#e1ecf6;font-size:13px}
+.project-stats{margin:30px 0 12px}.section-note{max-width:880px;font-size:14px;color:var(--soft);line-height:1.8}
+.report-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:27px 0 10px}
+.report-card{background:#142632;border:1px solid var(--edge);border-radius:13px;padding:23px;min-width:0}
+.report-card .page-no{font:700 12px ui-monospace,monospace;color:var(--aqua)}.report-card h3{font-size:21px;margin:12px 0 8px}
+.report-card p{font-size:13px;color:var(--soft);margin:0}.report-card small{font-size:11px;color:var(--muted);display:block;margin-top:16px}
+.metric-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.metric-card{border:1px solid #3d5d6b;border-radius:12px;padding:22px;background:#142531}.metric-card h3{font-size:19px;margin:7px 0}.metric-card p{color:var(--soft);font-size:13px;line-height:1.65;margin:0}
+.metric-number{font:700 11px ui-monospace,monospace;letter-spacing:.12em;color:var(--aqua)}
+.definition{font:12px ui-monospace,Consolas,monospace;color:#d5f0ed;background:#0d1b27;border:1px solid #304a5b;border-radius:7px;padding:12px;margin:12px 0 0;overflow-wrap:anywhere}
+.source-line{display:block;color:var(--muted);font-size:12px;margin-top:13px}
+.data-caption{font-size:13px;color:var(--soft);max-width:950px;line-height:1.7}
+.table-wrap table td:first-child{font-weight:700}.legend-inline{display:flex;gap:14px;flex-wrap:wrap;color:var(--soft);font-size:12px;margin:15px 0}
+.legend-inline span{display:inline-block;border-left:3px solid var(--aqua);padding-left:9px}
+.tech-row{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.tech-row span{border:1px solid #3c5a67;color:#d4e7ed;padding:6px 11px;border-radius:999px;font-size:12px}
+.method{padding:52px 0}.panel-area{padding:54px 0}
+@media(max-width:950px){.report-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.project-hero{padding-top:32px}.report-cards,.metric-cards{grid-template-columns:1fr}.report-card,.metric-card{padding:19px}.project-stats{grid-template-columns:repeat(2,minmax(0,1fr))}table{font-size:12px}}
+</style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to dashboard</a>
+<a class="skip" href="#main">Skip to project</a>
 <header class="topbar">
 <a class="back" href="../../projects.html">← Portfolio projects</a>
-<span class="brand">M<span>.</span> / EUROSPA DEMO</span>
-<a href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">Public demo code ↗</a>
+<span class="brand">M<span>.</span> / EUROSPA · 2026</span>
+<a href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">Project documentation ↗</a>
 </header>
 <main id="main" class="shell">
-<div class="hero-grid">
+<section class="project-hero hero-grid" aria-labelledby="project-title">
   <div>
-    <p class="eyebrow">FEATURED PROJECT · 2026 · SYNTHETIC DATA ONLY</p>
-    <h1>Turning pooled clinical records into <em>clear reporting.</em></h1>
-    <p class="lede">An interactive browser-based recreation of selected <strong>EuroSpA Power BI prototype</strong> views. The source is an aggregated synthetic workbook; these are illustrative charts, not screenshots of a confidential reporting system or a hosted PBIX file.</p>
-    <div class="links"><a class="button primary" href="#visuals">Explore five dashboards ↓</a><a class="button" href="#data-table">Inspect table ↓</a><a class="button" href="https://github.com/mehrdadsk/synthetic_eurospa_powerbi_dashboard" target="_blank" rel="noopener noreferrer">Power BI KPI project on GitHub ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/demo.js" target="_blank" rel="noopener noreferrer">View demo JavaScript ↗</a></div>
+    <p class="eyebrow">2026 · POWER BI PROJECT FILES · VERIFIED SYNTHETIC DATA</p>
+    <h1 id="project-title">EuroSpA Power BI <em>research reporting &amp; feasibility.</em></h1>
+    <p class="lede">A reusable Python-to-Power-BI pipeline for pooled clinical-registry data. The real master PBIP project contains six report pages, including an executive scorecard and a five-KPI Research Feasibility dashboard. Individual study reports inherit the same template.</p>
+    <div class="links">
+      <a class="button primary" href="#reports">See the six real report pages ↓</a>
+      <a class="button" href="#research">Research KPIs ↓</a>
+      <a class="button" href="#verified-data">Verified synthetic data ↓</a>
+      <a class="button" href="./kpi-source.md">KPI source definitions ↗</a>
+    </div>
   </div>
-  <img class="hero-img" src="./animated-preview.svg" alt="Looping animated stacked bars for first-, second-, third-line TNFi, IL-17i, and other drug-class distributions on synthetic Danish registry counts." width="1060" height="520">
+  <aside class="verify-panel" aria-label="Project provenance">
+    <p class="eyebrow">SOURCE-VERIFIED · NOVEMBER 2026</p>
+    <h2>Built from the actual PBIP repository</h2>
+    <p>Page names and KPI rules below were checked against the master Power BI report and semantic-model definitions. The sample numbers are computed from the included synthetic CSV.</p>
+    <ul class="proof-list">
+      <li>6 actual Power BI report pages — no invented dashboard tabs</li>
+      <li>One editable master PBIP; generated study reports inherit updates</li>
+      <li>Diagnosis, country, gender, baseline age, line, drug class and drug-name filtering</li>
+      <li>5 study-feasibility measures with documented denominators</li>
+      <li>No live Power BI embed, imaginary screenshots or confidential registry data</li>
+    </ul>
+  </aside>
+</section>
+<div class="stat-grid project-stats" aria-label="Verified synthetic dataset size">
+  <article class="stat-card"><span>SYNTHETIC PATIENTS</span><strong>2,468</strong><small>Distinct country + patient IDs</small></article>
+  <article class="stat-card"><span>TREATMENT EPISODES</span><strong>3,637</strong><small>Treatment-level source rows</small></article>
+  <article class="stat-card"><span>VISIT CHECKPOINTS</span><strong>9,524</strong><small>Recorded synthetic timepoint visits</small></article>
+  <article class="stat-card"><span>REGISTRIES</span><strong>17</strong><small>Countries in the synthetic example</small></article>
 </div>
-<p class="notice"><strong>Scope note:</strong> The underlying project was developed as a Power BI / Python reporting prototype. This independent web demo recreates selected visual ideas using summarized synthetic data. The separate Power BI KPI project is linked above; the portfolio-hosted browser demo includes a readable Executive KPI Scorecard snapshot alongside four interactive reporting views, but is not a Power BI embed.</p>
-<section class="method" aria-labelledby="kpi-title">
-  <p class="eyebrow">KPI DESIGN · SYNTHETIC PROTOTYPE</p>
-  <h2 id="kpi-title">KPI-driven Power BI reporting</h2>
-  <p>The Power BI project goes beyond visualising counts: it defines measurable indicators, compares results with configured thresholds when present and makes status interpretable. Each KPI has a defined numerator, denominator, filter context and interpretation, supporting consistent registry-level reporting.</p>
+<p class="notice"><strong>Important:</strong> This is a portfolio description of the genuine Power BI/Python files, not a browser recreation of Power BI. The previous fabricated/illustrative dashboard charts and unsupported “2 of 4 targets achieved” claim have been removed. Only published synthetic examples are shown; the source PBIP project has not been made public on this GitHub repository.</p>
+
+<section id="reports" class="panel-area" aria-labelledby="reports-title">
+  <p class="eyebrow">ACTUAL POWER BI REPORT MANIFEST · SIX PAGES</p>
+  <h2 id="reports-title">What's in the master dashboard</h2>
+  <p class="section-note">These are the exact report-page names in <code>template/PowerBI_charts/EuroSpA_Dashboard.Report</code>. Each study receives the same pages when the Python pipeline runs.</p>
+  <div class="report-cards">
+    <article class="report-card" id="overview"><span class="page-no">PAGE 01</span><h3>Registry Overview</h3><p>Registry-level patient, treatment and visit totals; contribution to pooled data and country-aware reporting.</p><small>Power BI page: Registry Overview</small></article>
+    <article class="report-card" id="treatments"><span class="page-no">PAGE 02</span><h3>Treatment Lines</h3><p>Treatment-line and drug-class distributions, with cohort filters including diagnosis and baseline characteristics.</p><small>Power BI page: Treatment Lines</small></article>
+    <article class="report-card" id="completeness"><span class="page-no">PAGE 03</span><h3>Visit Completeness</h3><p>Observed treatment-timepoint checkpoints. This is distinct from missingness of individual clinical outcome values.</p><small>Power BI page: Visit Completeness</small></article>
+    <article class="report-card" id="scorecard"><span class="page-no">PAGE 04</span><h3>Executive KPI Scorecard</h3><p>Operational indicators and target/status views defined in the PBIP model, not recreated from imagined numbers.</p><small>Power BI page: Executive KPI Scorecard</small></article>
+    <article class="report-card" id="research-feasibility"><span class="page-no">PAGE 05</span><h3>Research Feasibility</h3><p>Eligible cohorts, outcome completeness, paired outcomes, retention maturity and country-specific usable contributions.</p><small>Power BI page: Research Feasibility</small></article>
+    <article class="report-card" id="security"><span class="page-no">PAGE 06</span><h3>Definitions &amp; Security</h3><p>Report definitions and documented access-model considerations; viewing a demo does not grant country-level data access.</p><small>Power BI page: Definitions &amp; Security</small></article>
+  </div>
+</section>
+
+<section id="research" class="panel-area" aria-labelledby="research-title">
+  <p class="eyebrow">RESEARCH FEASIBILITY · FIVE KPIs</p>
+  <h2 id="research-title">Can this upload support a research study?</h2>
+  <p class="section-note">The selected country, diagnosis, sex, age at drug baseline, treatment line, drug class and drug name define the cohort. Variable, outcome month and retention horizon further define applicable measures.</p>
+  <div class="metric-cards">
+    <article class="metric-card"><span class="metric-number">01 / COHORT</span><h3>Eligible patients &amp; treatments</h3><p>Count eligible treatment episodes. Patient counts need unique-patient logic: the present model limits additive patient counts to a single line, drug class and drug name to avoid double counting.</p><div class="definition">N eligible treatments · N eligible patients (where interpretable)</div></article>
+    <article class="metric-card"><span class="metric-number">02 / OUTCOMES</span><h3>Follow-up variable completeness</h3><p>Valid clinical measurements at a selected follow-up divided by treatment episodes in the cohort. No separate <code>is_real_visit_*</code> check is required for the outcome KPI.</p><div class="definition">Valid values at month t / all eligible treatments</div></article>
+    <article class="metric-card"><span class="metric-number">03 / RETENTION</span><h3>Drug retention follow-up adequacy</h3><p>Episodes with an observed stop before the chosen horizon or valid observation extending through it. Counts at risk and documented discontinuations are displayed separately; adequacy is not drug-survival probability.</p><div class="definition">(Early observed stops + observed through t) / eligible treatments</div></article>
+    <article class="metric-card"><span class="metric-number">04 / LONGITUDINAL</span><h3>Paired clinical completeness</h3><p>Episodes with the same valid clinical measurement both at baseline and at the selected follow-up, supporting change-from-baseline or response analyses.</p><div class="definition">Valid baseline AND month t / eligible treatments</div></article>
+    <article class="metric-card"><span class="metric-number">05 / COMPARABILITY</span><h3>Usable country contributions</h3><p>Contributing registries, full country labels, eligible measured treatment counts and shares for a selected outcome and follow-up period.</p><div class="definition">Country measured episodes / selected pooled measured episodes</div></article>
+  </div>
+  <p class="notice"><strong>User-defined completeness labels:</strong> Low &lt;20%; Medium 20–40% (inclusive); Sufficient &gt;40%. These are descriptive completeness thresholds, <em>not</em> statistical power thresholds or proof of study feasibility.</p>
+</section>
+
+<section id="verified-data" class="panel-area" aria-labelledby="data-title">
+  <p class="eyebrow">REPRODUCIBLE EXAMPLE · SYNTHETIC CSV</p>
+  <h2 id="data-title">Measured values, not invented dashboard charts</h2>
+  <p class="data-caption">Computed directly from the <code>examples/synthetic_pooled_data.csv</code> included in the clean release (3,637 treatment episodes). A value is counted when the corresponding source field is a valid non-missing numeric measurement. The paired column requires baseline and six-month values in the same treatment row.</p>
+  <div id="data-table" class="table-wrap">
+    <table>
+      <caption>Unfiltered synthetic sample: clinical outcome coverage by treatment episode</caption>
+      <thead><tr><th scope="col">Clinical variable</th><th scope="col">Baseline</th><th scope="col">6 months</th><th scope="col">12 months</th><th scope="col">Baseline + 6m (paired)</th></tr></thead>
+      <tbody>
+      <tr><td>CRP</td><td>2,978 · 81.9%</td><td>2,309 · 63.5%</td><td>1,629 · 44.8%</td><td>1,898 · 52.2%</td></tr>
+      <tr><td>HAQ</td><td>2,951 · 81.1%</td><td>2,352 · 64.7%</td><td>1,611 · 44.3%</td><td>1,908 · 52.5%</td></tr>
+      <tr><td>ASDAS-CRP</td><td>1,019 · 28.0%</td><td>821 · 22.6%</td><td>596 · 16.4%</td><td>398 · 10.9%</td></tr>
+      <tr><td>BASDAI</td><td>880 · 24.2%</td><td>683 · 18.8%</td><td>515 · 14.2%</td><td>326 · 9.0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="source-line">Illustrative synthetic data, not clinical study outcomes. Numbers may differ from a filtered Power BI view. <a href="./verified-synthetic-metrics.csv"><u>Download this verified table (CSV)</u></a>.</p>
+</section>
+
+<section id="contribution" class="method" aria-labelledby="engineering-title">
+  <p class="eyebrow">REUSABLE ENGINEERING WORKFLOW</p>
+  <h2 id="engineering-title">From pooled uploads to study-specific reporting</h2>
   <div class="method-grid">
-    <div><h3>Scale and contribution</h3><p>Patient, treatment and visit counts; each registry's share of the pooled total. Country selection reveals which source contributes to each measure.</p></div>
-    <div><h3>Treatment patterns</h3><p>Percentage of TNFi, IL-17i and other classes within treatment line. The evolving Power BI design supports diagnosis group, gender and age at drug baseline (&lt;30, 30–49, 50–70, &gt;70) as slicers.</p></div>
-    <div><h3>Coverage and quality</h3><p>Observed visit checkpoint coverage, interpreted with appropriate follow-up denominators. The public preview is not equivalent to variable-level missingness or data-quality certification.</p></div>
+    <div><h3>01 · Prepare</h3><p>Read an approved study input (.csv, .xlsx, .rds or .RData); harmonise fields, drug labels and cohort filters; validate and aggregate.</p></div>
+    <div><h3>02 · Generate</h3><p>Run <code>python run.py</code> to produce Excel summary tables and clone/relink the master PBIP into study-specific report folders.</p></div>
+    <div><h3>03 · Interpret</h3><p>Use the shared slicers, denominator-aware measures and country contributions to assess data readiness and compare uploads.</p></div>
   </div>
-  <p class="notice"><strong>KPI achievement:</strong> KPI values are distinct from their status. Achieved / not achieved should be displayed only when an explicit threshold exists; a KPI without a target has no achievement status. The portfolio browser demo presents the Executive KPI Scorecard as a pooled synthetic snapshot, and calculates additional illustrative KPI cards for the other four report views. These are not validated clinical performance targets, and the web demo does not reproduce every Power BI slicer.</p>
-</section>
-
-<section id="visuals" class="panel-area" aria-labelledby="visuals-heading">
-  <div class="section-head">
-    <div><p class="eyebrow">FIVE DASHBOARD VIEWS · 2026</p><h2 id="visuals-heading">Explore the synthetic reporting suite</h2></div>
-    <label class="country-select">Select a registry
-      <select id="country" aria-label="Select registry"><option value="ALL">All registries</option></select>
-    </label>
+  <div class="tech-row" aria-label="Technology stack"><span>Power BI Desktop</span><span>PBIP / TMDL</span><span>DAX</span><span>Python</span><span>Excel aggregate model</span><span>Clinical RWD</span><span>Git</span></div>
+  <div class="links">
+    <a class="button primary" href="./kpi-source.md">Read actual KPI DAX definitions ↗</a>
+    <a class="button" href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">View public case-study source ↗</a>
+    <a class="button" href="../../projects.html">Back to portfolio ↗</a>
   </div>
-  <div class="report-tabs" role="tablist" aria-label="Dashboard views">
-    <button type="button" class="report-tab" id="tab-scorecard" role="tab" aria-controls="scorecard" aria-selected="true" data-report="scorecard">01 / Executive KPI scorecard</button>
-    <button type="button" class="report-tab" id="tab-overview" role="tab" aria-controls="overview" aria-selected="false" tabindex="-1" data-report="overview">02 / Registry overview</button>
-    <button type="button" class="report-tab" id="tab-treatment" role="tab" aria-controls="treatments" aria-selected="false" tabindex="-1" data-report="treatments">03 / Treatment lines</button>
-    <button type="button" class="report-tab" id="tab-contribution" role="tab" aria-controls="contribution" aria-selected="false" tabindex="-1" data-report="contribution">04 / Pooled contribution</button>
-    <button type="button" class="report-tab" id="tab-completeness" role="tab" aria-controls="completeness" aria-selected="false" tabindex="-1" data-report="completeness">05 / Data completeness</button>
-  </div>
-
-  <section id="scorecard" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-scorecard">
-    <div class="report-heading"><h3>Executive KPI Scorecard</h3><p>Four independent data-quality measures with clearly defined illustrative thresholds — not clinical standards.</p></div>
-    <div class="scorecard-banner"><div><span class="scorecard-overline">QUALITY TARGETS ACHIEVED</span><strong>2 <small>/ 4</small></strong><p>Two of four illustrative quality targets were achieved in the synthetic pooled snapshot.</p></div><span class="scorecard-pill">SYNTHETIC DATA · ALL REGISTRIES</span></div>
-    <div class="scorecard-grid" aria-label="Four executive quality KPIs">
-      <article class="scorecard-tile"><h4>Visit data completeness</h4><div class="scorecard-main"><strong>60%</strong><span class="scorecard-status below">Below target</span></div><p class="scorecard-target">Target ≥ 80% of eligible recorded values</p><div class="scorecard-progress"><span style="width:60%"></span></div><small>Non-missing values ÷ eligible values for structurally available visit fields</small></article>
-      <article class="scorecard-tile"><h4>Structural availability</h4><div class="scorecard-main"><strong>91%</strong><span class="scorecard-status achieved">Achieved</span></div><p class="scorecard-target">Target ≥ 90% of expected variable/timepoint rows</p><div class="scorecard-progress"><span style="width:91%"></span></div><small>Available rows ÷ expected variable/timepoint rows</small></article>
-      <article class="scorecard-tile"><h4>Unmapped drug episodes</h4><div class="scorecard-main"><strong>1%</strong><span class="scorecard-status below">Action needed</span></div><p class="scorecard-target">Target ≤ 0.5% of treatment episodes</p><div class="scorecard-progress"><span style="width:1%"></span></div><small>Unmapped episodes ÷ all treatment episodes; lower is better</small></article>
-      <article class="scorecard-tile"><h4>Treatment line coverage</h4><div class="scorecard-main"><strong>100%</strong><span class="scorecard-status achieved">Achieved</span></div><p class="scorecard-target">Target ≥ 99% of treatment episodes</p><div class="scorecard-progress"><span style="width:100%"></span></div><small>Recognized treatment-line episodes ÷ all episodes</small></article>
-    </div>
-    <h4 class="scorecard-subhead">Volume / context</h4><div class="scorecard-volume"><div><span>Patients</span><strong>2,468</strong></div><div><span>Treatments</span><strong>3,637</strong></div><div><span>Visits</span><strong>9,524</strong></div><div><span>Registries</span><strong>17</strong></div></div>
-    <p class="notice scorecard-note"><strong>Snapshot, not a live Power BI embed:</strong> These four quality KPI values reproduce the pooled synthetic example shown on the Power BI Executive KPI Scorecard. The registry selector above controls the other four portfolio reports; this scorecard deliberately stays on the all-registry snapshot, because the required KPI source breakdowns and diagnosis/gender filters are not published in this browser demo. For fully interactive filtered metrics, use the linked Power BI project.</p>
-  </section>
-
-  <section id="overview" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-overview" hidden>
-    <div class="report-heading"><h3>Registry overview</h3><p>Synthetic pooled totals, country-level shares and a detailed registry table.</p></div>
-    <div class="stat-grid" id="stats" aria-live="polite"></div><div class="kpi-heading"><h4>Target-based KPIs</h4><p>Illustrative portfolio targets — not clinical benchmarks. Status recalculates when you select a registry.</p></div><div class="kpi-grid" id="overview-kpis" aria-live="polite"></div>
-    <div class="chart-panel">
-      <div class="chart-title"><h3>Share of the pooled total</h3><span id="selected-label">All registries</span></div>
-      <p class="helper">Colored segment = selected registry; grey segment = other registries. Denominator is the corresponding pooled total.</p>
-      <div id="share-chart" class="share-chart" role="img" aria-label="Bar chart of selected-registry shares of patients, treatments and visits"></div>
-    </div>
-    <div id="data-table" class="table-section compact-table">
-      <div class="section-head"><div><p class="eyebrow">SUMMARY TABLE</p><h3>Country contributions in numbers</h3></div><span class="helper">17 synthetic registries</span></div>
-      <div class="table-wrap"><table><caption>Country-level synthetic patients, treatments and visits</caption><thead><tr><th scope="col">Country</th><th scope="col">Registry</th><th scope="col">Patients</th><th scope="col">Treatments</th><th scope="col">Visits</th></tr></thead><tbody id="registry-table"></tbody><tfoot id="registry-totals"></tfoot></table></div>
-    </div>
-  </section>
-
-  <section id="treatments" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-treatment" hidden>
-    <div class="report-heading"><h3>Treatment-line dashboard</h3><p>Percentage of TNFi, IL-17i and other targeted drugs within each therapy line.</p></div>
-    <div class="kpi-heading"><h4>Treatment KPIs</h4><p>Illustrative thresholds; treatment-line percentages use the selected line as denominator.</p></div><div class="kpi-grid" id="treatment-kpis" aria-live="polite"></div>
-    <div class="chart-panel">
-      <div class="chart-title"><h3>Drug class by treatment line</h3><span id="line-label">All registries</span></div>
-      <p class="helper">Each bar sums to 100% within its treatment line. Light grey means other biologic or targeted drug classes.</p>
-      <div id="line-chart" role="img" aria-label="Stacked treatment-line distributions by drug class"></div>
-      <div class="legend"><span><i class="key tnf"></i>TNFi</span><span><i class="key il17"></i>IL-17i</span><span><i class="key other"></i>Other classes</span></div>
-    </div>
-  </section>
-
-  <section id="contribution" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-contribution" hidden>
-    <div class="report-heading"><h3>Contribution to the pooled data</h3><p>Compare how each synthetic registry contributes patients, treatments and visits to the overall pool.</p></div>
-    <div id="contribution-stats" class="stat-grid compact-stats" aria-live="polite"></div><div class="kpi-heading"><h4>Contribution KPI</h4><p>Illustrative 5% patient contribution threshold; pooled totals are displayed as reference, not evaluated against a target.</p></div><div class="kpi-grid" id="contribution-kpis" aria-live="polite"></div>
-    <div class="chart-panel">
-      <div class="chart-title"><h3>Ranking of registry contributions</h3><label class="metric-select">Measure
-        <select id="contribution-metric" aria-label="Choose contribution measure"><option value="patients">Patients</option><option value="treatments">Treatments</option><option value="visits">Visits</option></select>
-      </label></div>
-      <p class="helper">The full ranking stays visible; the country selected above is highlighted. Shares use pooled totals as denominators.</p>
-      <div id="contribution-bars" class="contribution-bars" role="img" aria-label="Ranked share of pooled totals contributed by each synthetic registry"></div>
-    </div>
-  </section>
-
-  <section id="completeness" class="dashboard-panel" role="tabpanel" aria-labelledby="tab-completeness" hidden>
-    <div class="report-heading"><h3>Data completeness / visit coverage</h3><p>Illustrative timepoint coverage from synthetic treatment-level visit indicators, not a clinical-variable missingness audit.</p></div>
-    <p class="notice coverage-disclaimer"><strong>Interpretation:</strong> A recorded visit indicator (1) means a synthetic treatment has an observed visit at that checkpoint. A 0 means no recorded visit at that checkpoint; it does <em>not</em> by itself establish missing data or follow-up eligibility. This is a coverage-based example of a completeness report, not a recreation of your original variable-level completeness dashboard.</p>
-    <div id="coverage-stats" class="stat-grid compact-stats" aria-live="polite"></div><div class="kpi-heading"><h4>Visit coverage KPI</h4><p>Baseline observation only, compared with an illustrative 85% threshold. Later follow-up has no achievement target because follow-up eligibility is unknown.</p></div><div class="kpi-grid" id="coverage-kpis" aria-live="polite"></div>
-    <div class="chart-panel">
-      <div class="chart-title"><h3>Observed visit checkpoints</h3><span id="coverage-label">All registries</span></div>
-      <p class="helper">Observed visit indicators ÷ treatment records for the selected registry. Later timepoints naturally have smaller proportions; this is <strong>not</strong> necessarily data loss.</p>
-      <div id="coverage-chart" class="coverage-chart" role="img" aria-label="Synthetic visit checkpoint presence rates for baseline through 60 months"></div>
-    </div>
-    <div class="table-section compact-table"><div class="section-head"><div><p class="eyebrow">CHECKPOINT TABLE</p><h3>Visit coverage by timepoint</h3></div></div>
-      <div class="table-wrap"><table><caption>Synthetic visit indicator counts and rates</caption><thead><tr><th scope="col">Checkpoint</th><th scope="col">Observed</th><th scope="col">Treatment rows</th><th scope="col">Recorded share</th></tr></thead><tbody id="coverage-table"></tbody></table></div>
-    </div>
-  </section>
-</section>
-<section class="method" aria-labelledby="method-title"><p class="eyebrow">03 / METHOD & SOURCES</p><h2 id="method-title">What this example demonstrates</h2>
-<div class="method-grid"><div><h3>Approach</h3><p>Aggregated counts from a synthetic pooled registry dataset are linked to country filters. Treatment-line groupings are derived from the synthetic treatment summary, and shares are calculated against the correct denominator.</p></div><div><h3>What was prototyped</h3><p>Registry overview, treatment-line distributions, pooled contribution and an illustrative checkpoint coverage dashboard with country filtering. The original Power BI workflow also separates report creation from any future authenticated country-specific portal.</p></div><div><h3>Privacy & provenance</h3><p>Only synthetic aggregated values are published. No real patient-level rows, private registry records, hospital access tokens, or internal Power BI links are included.</p></div></div>
-<div class="links"><a class="button" href="https://github.com/mehrdadsk/portfolio/blob/main/projects/eurospa-powerbi/data.js" target="_blank" rel="noopener noreferrer">Inspect synthetic aggregates ↗</a><a class="button" href="https://github.com/mehrdadsk/portfolio/tree/main/projects/eurospa-powerbi" target="_blank" rel="noopener noreferrer">View demo source ↗</a></div>
+  <p class="notice"><strong>Public sharing:</strong> Only synthetic examples and documentation are exposed here. The full local PBIP/Python source is not currently hosted in this portfolio repository. Images of real pooled-study results have not been published. Approved screenshots exported from the synthetic PBIP can be added without recreating plots.</p>
 </section>
 </main>
-<footer><span>Mehrdad Shoae Kazemi · EuroSpA synthetic report demonstration · 2026</span><a href="../../projects.html">Return to Projects ↑</a></footer>
+<footer><span>Mehrdad Shoae Kazemi · Verified EuroSpA synthetic Power BI project · 2026</span><a href="../../projects.html">Return to Projects ↑</a></footer>
 </body></html>
