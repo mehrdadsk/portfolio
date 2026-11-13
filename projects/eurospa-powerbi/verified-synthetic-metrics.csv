@@ -1,0 +1,5 @@
+variable,baseline_valid,baseline_pct,month6_valid,month6_pct,month12_valid,month12_pct,baseline_and_6month_valid,baseline_and_6month_pct,denominator,source
+crp,2978,81.9,2309,63.5,1629,44.8,1898,52.2,3637,examples/synthetic_pooled_data.csv
+haq,2951,81.1,2352,64.7,1611,44.3,1908,52.5,3637,examples/synthetic_pooled_data.csv
+asdas_crp,1019,28.0,821,22.6,596,16.4,398,10.9,3637,examples/synthetic_pooled_data.csv
+basdai,880,24.2,683,18.8,515,14.2,326,9.0,3637,examples/synthetic_pooled_data.csv
