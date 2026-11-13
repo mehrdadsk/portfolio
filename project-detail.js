@@ -68,7 +68,7 @@
   const links=el("div","case-links");
   [["demoUrl","Interactive demo"],["plotsUrl","Plots"],["contributionUrl","Pooled contribution"],
     ["completenessUrl","Completeness dashboard"],["tableUrl","Data table"],["codeUrl","GitHub code"]]
-    .forEach(([k,label])=>{if(project[k])links.append(link(project[k],k==="codeUrl"?(project.codeLabel||label):label));});
+    .forEach(([k,label])=>{if(project[k])links.append(link(project[k],k==="codeUrl"?(project.codeLabel||label):(project.id==="eurospa-dashboard" && k==="demoUrl"?"Power BI case study":(project.id==="eurospa-dashboard" && k==="plotsUrl"?"Verified report pages":label))));});
   if(!links.children.length)links.append(el("p","case-unavailable","Code and visual examples have not yet been published for this project."));
   resources.append(links);root.append(resources);
   if(project.confidentiality){
