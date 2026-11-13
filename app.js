@@ -86,8 +86,8 @@
   }
   function addResources(parent,p){
     const panel=el("div","project-resources");
-    if(p.demoUrl)panel.append(resourceLink(p.demoUrl,"Interactive demo"));
-    if(p.plotsUrl)panel.append(resourceLink(p.plotsUrl,"Plots"));
+    if(p.demoUrl)panel.append(resourceLink(p.demoUrl,p.id==="eurospa-dashboard"?"Power BI case study":"Interactive demo"));
+    if(p.plotsUrl)panel.append(resourceLink(p.plotsUrl,p.id==="eurospa-dashboard"?"Verified report pages":"Plots"));
     if(p.contributionUrl)panel.append(resourceLink(p.contributionUrl,"Pooled contribution"));
     if(p.completenessUrl)panel.append(resourceLink(p.completenessUrl,"Completeness report"));
     if(p.tableUrl)panel.append(resourceLink(p.tableUrl,"Data table"));
