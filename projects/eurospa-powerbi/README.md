@@ -16,6 +16,14 @@ The master has **six actual pages**:
 5. Research Feasibility
 6. Definitions & Security
 
+## New portfolio walkthrough sections
+
+The portfolio page now includes dedicated explanations for:
+
+- **Executive KPI Scorecard** — coverage, quality, target-versus-actual interpretation and country-aware comparisons. This is a description of the existing Power BI page, not a new claim about specific numeric targets.
+- **Treatment Lines** — therapy sequence distributions, drug class and individual drug-name composition, with diagnosis, gender, country, age-at-drug-baseline and therapy filters.
+- **Research Feasibility** — the five measures below, including denominator rules and country-specific usable outcomes.
+
 Research Feasibility measures:
 - eligible treatments and eligible patients (patient counts have additive cohort limitations);
 - clinical follow-up completeness by variable and month;
