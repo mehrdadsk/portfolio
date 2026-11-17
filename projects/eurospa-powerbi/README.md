@@ -1,52 +1,26 @@
-# EuroSpA Power BI & Research Feasibility — verified portfolio case study (2026)
+# EuroSpA Power BI — interactive synthetic portfolio case study (2026)
 
-This project page describes the **real November 2026 Power BI Desktop PBIP** in the cleaned EuroSpA repository, not an independently invented five-tab JavaScript simulation.
+[Open the interactive dashboard](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/)
 
-[Open the portfolio case study](https://mehrdadsk.github.io/portfolio/projects/eurospa-powerbi/)
+The project landing page is now a **working browser-based dashboard** with six navigable report sections and functional slicers. Its single self-contained HTML file embeds 3,637 synthetic treatment-level records derived from `EuroSpA_PowerBI_Clean_Integrated.zip`. It does not require Power BI authentication, a server or uploading a dataset.
 
-## What was verified
+## Six interactive sections
 
-Source archive: `EuroSpA_PowerBI_Clean_Integrated.zip`, specifically `template/PowerBI_charts/EuroSpA_Dashboard.Report/definition/pages`, the TMDL semantic model, `run.py`, `README.md`, and `examples/synthetic_pooled_data.csv`.
+1. Registry Overview — patients, treatments, visits and country contributions.
+2. Treatment Lines — drug-class composition across therapy lines and individual drug names.
+3. Visit Completeness — observed visit checkpoints and per-variable missingness.
+4. Executive KPI Scorecard — actual versus configured thresholds (80% completeness, 90% structural coverage, at most 0.5% unmapped, 99% treatment-line coverage).
+5. Research Feasibility — eligible treatment/patient counts, variable completeness, paired outcomes, retention maturity and countries with usable outcomes.
+6. Definitions & Security — numerator/denominator rules, interpretation and limitations.
 
-The master has **six actual pages**:
-1. Registry Overview
-2. Treatment Lines
-3. Visit Completeness
-4. Executive KPI Scorecard
-5. Research Feasibility
-6. Definitions & Security
+The browser version uses country, diagnosis, gender, age at drug baseline, treatment line, drug class, drug name, variable, timepoint and retention horizon selectors. Charts and tables recompute from the synthetic records, and clicking a country row or class segment applies a filter.
 
-## New portfolio walkthrough sections
+## Provenance and scope
 
-The portfolio page now includes dedicated explanations for:
+Source: `EuroSpA_PowerBI_Clean_Integrated.zip`, including the master PBIP page definitions, semantic model measures, `research_feasibility.py`, `eurospa_extensions.py`, `drug_class_map.csv` and `examples/synthetic_pooled_data.csv`. Clinical variable completeness was checked against the published synthetic verification counts.
 
-- **Executive KPI Scorecard** — coverage, quality, target-versus-actual interpretation and country-aware comparisons. This is a description of the existing Power BI page, not a new claim about specific numeric targets.
-- **Treatment Lines** — therapy sequence distributions, drug class and individual drug-name composition, with diagnosis, gender, country, age-at-drug-baseline and therapy filters.
-- **Research Feasibility** — the five measures below, including denominator rules and country-specific usable outcomes.
+This is **not** Power BI itself: Publish to web is disabled on the hospital account. Exact pixel-for-pixel report rendering, DAX execution, Power BI's full selection semantics and native slicer multiselection are not replicated; equivalent web controls have been implemented and the layout is adapted for the portfolio. Do not represent the site as a native Power BI embed. The working PBIP and full production pipeline are not publicly hosted.
 
-Research Feasibility measures:
-- eligible treatments and eligible patients (patient counts have additive cohort limitations);
-- clinical follow-up completeness by variable and month;
-- retention follow-up adequacy, number at risk and observed events;
-- paired baseline + follow-up completeness;
-- country-level usable-outcome counts and shares.
+**Privacy:** only artificial synthetic treatment episodes are present. Never expose confidential EuroSpA study data, credentials or organization-specific access details in this public page.
 
-The model supports Country, Diagnosis, Gender, Age at drug baseline, Treatment Line, Drug Class, Drug Name, Clinical Variable, Outcome Month and Retention Month slicers.
-
-**Thresholds:** Low <20%; Medium 20–40%, inclusive; Sufficient >40%. They are user-specified completeness labels, not statistical power determinations.
-
-## Authentic synthetic example
-
-The archive's approved synthetic example contains **2,468 distinct country+patient pairs, 3,637 treatment episodes, 9,524 synthetic recorded timepoint visits, and 17 registries**.
-
-The unfiltered outcome table in the portfolio page was counted from the original treatment-level CSV. Download [verified-synthetic-metrics.csv](./verified-synthetic-metrics.csv) or inspect [kpi-source.md](./kpi-source.md) for actual PBIP measure definitions.
-
-The source PBIP and full Python pipeline remain local and have **not** been represented as publicly hosted. The public source here is the truthful portfolio case study, not the full working Power BI solution.
-
-## What was removed
-
-The former page showed **five recreated browser dashboards**, an animated fake-treatment chart and an illustrative "2 of 4 targets achieved" snapshot. Those visuals and claims have been removed from the rendered site because they were not exports from the current six-page PBIP and were misleading in a portfolio about real work.
-
-## Privacy
-
-Use synthetic data only in public examples. Do not publish any real pooled patient-level data, confidential study screenshots, credentials or organisation-specific server paths. An approved **synthetic** Power BI Desktop export can be added later, clearly labeled as a screenshot rather than an HTML recreation.
+[Documented DAX measures](./kpi-source.md) · [Download CSV of verified selected metrics](./verified-synthetic-metrics.csv)
