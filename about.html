@@ -36,6 +36,17 @@
       background-image: none !important;
     }
   </style>
+  <style>
+    .journey-feature{padding-top:16px;padding-bottom:70px}
+    .journey-intro{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:24px}
+    .journey-intro h2{font-size:clamp(29px,3.6vw,48px);letter-spacing:-.045em;color:#f2f7fa;line-height:1.12;margin:8px 0 0}
+    .journey-intro p{max-width:390px;font-size:14px;line-height:1.65;color:#b2c3cf;margin:0}
+    .journey-embed{border:1px solid #37536a;border-radius:17px;overflow:hidden;box-shadow:0 26px 85px rgba(0,0,0,.24);background:#091320}
+    .journey-embed iframe{width:100%;height:auto;aspect-ratio:16/9;border:0;display:block}
+    .journey-caption{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:#9bb2c1;margin:14px 0 0}
+    .journey-caption a{color:#60dbcf;font-weight:700}
+    @media(max-width:750px){.journey-intro{display:block}.journey-intro p{margin-top:12px}.journey-embed iframe{aspect-ratio:auto;height:590px}.journey-feature{padding-bottom:48px}}
+  </style>
   <title>About me | Mehrdad Shoae Kazemi</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -71,6 +82,14 @@
             <p id="personal-story">I moved from Iran to Denmark in 2015. Denmark is now home to my family and me. Moving countries has been an important part of my life, both personally and professionally.</p>
           </div>
         </div>
+      </section>
+      <section class="section-shell journey-feature" aria-labelledby="journey-heading">
+        <div class="journey-intro">
+          <div><div class="section-kicker">THE STORY BEHIND THE WORK</div><h2 id="journey-heading">My journey in 60 seconds</h2></div>
+          <p>A caption-only motion-graphics timeline from Tehran to Denmark, and from nutrition sciences to clinical data engineering.</p>
+        </div>
+        <div class="journey-embed"><iframe src="./journey.html" title="60-second animated biography of Mehrdad Shoae Kazemi" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
+        <p class="journey-caption"><span>Animated maps · Career milestones · No voice-over</span><a href="./journey.html" target="_blank" rel="noopener noreferrer">Open full-screen ↗</a></p>
       </section>
       <div class="section-shell detail-next"><span>CONTINUE EXPLORING</span><a href="./education.html">Education <span aria-hidden="true">↗</span></a></div>
     </main>
