@@ -45,10 +45,12 @@
   <div>
     <p class="eyebrow">2026 · POWER BI PROJECT FILES · VERIFIED SYNTHETIC DATA</p>
     <h1 id="project-title">EuroSpA Power BI <em>research reporting &amp; feasibility.</em></h1>
-    <p class="lede">A reusable Python-to-Power-BI pipeline for pooled clinical-registry data. The real master PBIP project contains six report pages, including an executive scorecard and a five-KPI Research Feasibility dashboard. Individual study reports inherit the same template.</p>
+    <p class="lede">A reusable Python-to-Power-BI pipeline for pooled clinical-registry data. The real master PBIP project contains six report pages, including an Executive KPI Scorecard, treatment-line reporting and a five-KPI Research Feasibility dashboard. Individual study reports inherit the same template.</p>
     <div class="links">
-      <a class="button primary" href="#reports">See the six real report pages ↓</a>
+      <a class="button primary" href="#reports">Explore the six report pages ↓</a>
       <a class="button" href="#research">Research KPIs ↓</a>
+      <a class="button" href="#executive-detail">Executive KPIs ↓</a>
+      <a class="button" href="#treatment-detail">Treatment lines ↓</a>
       <a class="button" href="#verified-data">Verified synthetic data ↓</a>
       <a class="button" href="./kpi-source.md">KPI source definitions ↗</a>
     </div>
@@ -86,6 +88,32 @@
     <article class="report-card" id="research-feasibility"><span class="page-no">PAGE 05</span><h3>Research Feasibility</h3><p>Eligible cohorts, outcome completeness, paired outcomes, retention maturity and country-specific usable contributions.</p><small>Power BI page: Research Feasibility</small></article>
     <article class="report-card" id="security"><span class="page-no">PAGE 06</span><h3>Definitions &amp; Security</h3><p>Report definitions and documented access-model considerations; viewing a demo does not grant country-level data access.</p><small>Power BI page: Definitions &amp; Security</small></article>
   </div>
+</section>
+
+<section id="executive-detail" class="panel-area" aria-labelledby="executive-detail-title">
+  <p class="eyebrow">EXECUTIVE REPORTING · PAGE 04</p>
+  <h2 id="executive-detail-title">Executive KPI Scorecard</h2>
+  <p class="section-note">The executive page translates pooled-data preparation and coverage into a management-level view. Its scorecards are intended to show the current measure, any configured target and the resulting status in the current report context—rather than presenting one fixed target-achievement count for all registries.</p>
+  <div class="metric-cards">
+    <article class="metric-card"><span class="metric-number">01 / COVERAGE</span><h3>Registry &amp; cohort footprint</h3><p>Summarise the number of contributing countries and the patient, treatment and visit footprint for the current study or selection. Country comparisons must use the appropriate denominator.</p></article>
+    <article class="metric-card"><span class="metric-number">02 / DATA QUALITY</span><h3>Completeness &amp; readiness</h3><p>Make missingness and available follow-up visible before analysis. A recorded timepoint is not equivalent to a valid clinical outcome value; these remain separate indicators.</p></article>
+    <article class="metric-card"><span class="metric-number">03 / TARGETS</span><h3>Achievement versus target</h3><p>Where a target is defined in the semantic model, compare the observed result against that target. Avoid interpreting a missing or non-applicable KPI as a failure—or claiming an achievement count not backed by source measures.</p></article>
+    <article class="metric-card"><span class="metric-number">04 / INTERPRETATION</span><h3>Country-aware decisions</h3><p>Read indicators within the selected registry and clinical cohort; review country-specific contributions instead of assuming a pooled score describes every participating registry.</p></article>
+  </div>
+  <p class="source-line">This section explains the purpose and interpretation of the existing Executive KPI Scorecard. No unsourced target values, achieved-count claims or fabricated Power BI screenshots are displayed.</p>
+</section>
+
+<section id="treatment-detail" class="panel-area" aria-labelledby="treatment-detail-title">
+  <p class="eyebrow">TREATMENT PATTERNS · PAGE 02</p>
+  <h2 id="treatment-detail-title">Treatment Lines &amp; Drug Classes</h2>
+  <p class="section-note">An interactive cohort view of how treatment episodes are distributed across successive therapy lines, drug classes and individual drug names. The controls support comparing treatment patterns across diagnoses and baseline characteristics.</p>
+  <div class="metric-cards">
+    <article class="metric-card"><span class="metric-number">01 / THERAPY SEQUENCE</span><h3>Line-of-treatment distributions</h3><p>Explore first and later treatment lines to see how the composition of treatment episodes changes along the observed therapy sequence.</p></article>
+    <article class="metric-card"><span class="metric-number">02 / DRUG COMPOSITION</span><h3>Drug class &amp; drug name</h3><p>Inspect the distribution of treatment classes and individual medicines within each selected line, while keeping treatment episodes distinct from unique patients.</p></article>
+    <article class="metric-card"><span class="metric-number">03 / COHORT FILTERS</span><h3>Clinical &amp; demographic slices</h3><p>Filter by diagnosis group, country, gender and <strong>age at drug baseline</strong>, alongside treatment line, drug class and drug name. Age refers to treatment initiation, not current age.</p></article>
+    <article class="metric-card"><span class="metric-number">04 / RESEARCH USE</span><h3>Feasibility by treatment subgroup</h3><p>Use selected therapy lines and drug groups as the cohort context for outcome availability, follow-up adequacy and participating-country comparisons on the Research Feasibility page.</p></article>
+  </div>
+  <p class="source-line">Visual and slicer descriptions correspond to the documented Treatment Lines page; no made-up treatment counts or distribution plots are shown.</p>
 </section>
 
 <section id="research" class="panel-area" aria-labelledby="research-title">
