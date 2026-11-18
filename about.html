@@ -36,7 +36,7 @@
       background-image: none !important;
     }
   </style>
-  <link rel="stylesheet" href="./about-video.css?v=3">
+  <link rel="stylesheet" href="./about-video.css?v=4">
   <title>About me | Mehrdad Shoae Kazemi</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -62,13 +62,9 @@
     </header>
     <main id="main">
       <div class="section-shell detail-breadcrumb"><a href="./index.html">← Portfolio overview</a><span>/ About me</span></div>
-      <section class="section-shell section-padding recruiter-about video-only-about" id="about-me" aria-label="My personal journey">
+      <section class="section-shell section-padding recruiter-about video-only-about" id="about-me" aria-label="About me — personal journey video">
         <div class="life-story-player">
-          <div class="life-story-placeholder" id="life-story-placeholder" role="status">
-            <span class="life-story-route">MASHHAD <span aria-hidden="true">→</span> COPENHAGEN</span>
-            <span class="life-story-pending">Video currently unavailable.</span>
-          </div>
-          <video id="life-story-video" controls playsinline preload="metadata" hidden
+          <video id="life-story-video" controls playsinline preload="metadata"
                  poster="./assets/videos/MK_life_story_poster.jpg"
                  aria-label="My personal journey from Iran to Denmark">
             <source src="./assets/videos/MK_life_story_v3.mp4" type="video/mp4">
@@ -78,23 +74,6 @@
       </section>
       <div class="section-shell detail-next"><span>CONTINUE EXPLORING</span><a href="./education.html">Education <span aria-hidden="true">↗</span></a></div>
     </main>
-  <script>
-    (() => {
-      const video = document.getElementById('life-story-video');
-      const placeholder = document.getElementById('life-story-placeholder');
-      if (!video || !placeholder) return;
-      const revealVideo = () => {
-        placeholder.hidden = true;
-        video.hidden = false;
-      };
-      video.addEventListener('loadedmetadata', revealVideo, { once: true });
-      video.addEventListener('error', () => {
-        placeholder.hidden = false;
-        video.hidden = true;
-      });
-      video.load();
-    })();
-  </script>
 <footer class="site-footer"><div class="section-shell footer-inner">
       <a class="brand" href="./index.html"><span class="brand-symbol">M<span class="brand-dot">.</span></span><span class="brand-caption">MEHRDAD <span>SHOAE KAZEMI</span></span></a>
       <p>Professional portfolio · <span id="updated-year"></span></p>
