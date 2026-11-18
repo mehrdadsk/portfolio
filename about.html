@@ -36,7 +36,7 @@
       background-image: none !important;
     }
   </style>
-  <link rel="stylesheet" href="./about-video.css?v=2">
+  <link rel="stylesheet" href="./about-video.css?v=3">
   <title>About me | Mehrdad Shoae Kazemi</title>
   <script src="./content.js" defer></script>
   <script src="./app.js" defer></script>
@@ -62,39 +62,19 @@
     </header>
     <main id="main">
       <div class="section-shell detail-breadcrumb"><a href="./index.html">← Portfolio overview</a><span>/ About me</span></div>
-      <section class="section-shell section-padding recruiter-about" id="about-me" aria-labelledby="about-me-title">
-        <div class="recruiter-about-grid">
-          <div>
-            <div class="section-kicker">BEYOND THE RÉSUMÉ</div>
-            <h2 id="about-me-title">A little about me</h2>
-          </div>
-          <div class="recruiter-about-copy">
-            <p id="personal-story">I moved from Iran to Denmark in 2015. Denmark is now home to my family and me. Moving countries has been an important part of my life, both personally and professionally.</p>
-          </div>
-        </div>
-      <div class="life-story-feature" id="life-story-feature">
-        <div class="life-story-heading">
-          <div>
-            <div class="life-story-kicker">MY JOURNEY · 62 SECONDS</div>
-            <h3 id="journey-video-title">The story behind the résumé</h3>
-          </div>
-          <p>A short visual timeline of my life, education and move from Iran to Denmark.</p>
-        </div>
+      <section class="section-shell section-padding recruiter-about video-only-about" id="about-me" aria-label="My personal journey">
         <div class="life-story-player">
           <div class="life-story-placeholder" id="life-story-placeholder" role="status">
             <span class="life-story-route">MASHHAD <span aria-hidden="true">→</span> COPENHAGEN</span>
-            <strong>One journey. New opportunities.</strong>
-            <span class="life-story-pending">The personal journey video has not yet been uploaded to the site.</span>
+            <span class="life-story-pending">Video currently unavailable.</span>
           </div>
           <video id="life-story-video" controls playsinline preload="metadata" hidden
                  poster="./assets/videos/MK_life_story_poster.jpg"
-                 aria-labelledby="journey-video-title">
+                 aria-label="My personal journey from Iran to Denmark">
             <source src="./assets/videos/MK_life_story_v3.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
         </div>
-        <p class="life-story-note">A short visual account of the path from Iran to Denmark.</p>
-      </div>
       </section>
       <div class="section-shell detail-next"><span>CONTINUE EXPLORING</span><a href="./education.html">Education <span aria-hidden="true">↗</span></a></div>
     </main>
