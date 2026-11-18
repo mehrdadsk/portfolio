@@ -61,3 +61,41 @@
   .life-story-heading p { font-size: 13px; }
   .life-story-player { border-radius: 10px; }
 }
+
+/* Keep a meaningful visual introduction in place until the film is uploaded. */
+.life-story-feature[hidden],
+.life-story-placeholder[hidden],
+.life-story-player video[hidden] { display: none !important; }
+.life-story-player {
+  position: relative;
+}
+.life-story-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 28px;
+  background: radial-gradient(ellipse at 53% 22%, #242334 0%, #101522 62%, #0b0e17 100%);
+}
+.life-story-route {
+  color: #54dfd4;
+  font: 700 12px ui-monospace, Consolas, monospace;
+  letter-spacing: .13em;
+}
+.life-story-route span { display: inline-block; padding-inline: 12px; color: #f6c26c; }
+.life-story-placeholder strong {
+  color: #f6fbff;
+  font-size: clamp(21px, 3vw, 32px);
+  letter-spacing: -.04em;
+}
+.life-story-pending {
+  color: #b7c3cd;
+  font-size: 13px;
+  max-width: 360px;
+  line-height: 1.6;
+}
